@@ -53,23 +53,7 @@ export default defineComponent({
         .flatMap((id) => {
           const lab = this.$store.state.labs.get(id);
           return (lab === undefined) ? [] : [lab];
-        }).sort((a, b) => {
-          if (a.course < b.course) {
-            return -1;
-          }
-          if (b.course < a.course) {
-            return 1;
-          }
-
-          if (a.section < b.section) {
-            return -1;
-          }
-          if (b.section < a.section) {
-            return 1;
-          }
-
-          return 0;
-        });
+        }).sort((a, b) => a.course - b.course || a.section - b.section);
     },
   },
   data() {
