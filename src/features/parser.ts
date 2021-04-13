@@ -16,15 +16,13 @@ export function parseLabFile(file: File): Promise<Lab[]> {
     '315',
   ];
 
-  const reader = new FileReader();
-
   return new Promise((resolve, reject) => {
     const result: Lab[] = [];
 
-    reader.onload = (event) => {
+    file.text().then((text) => {
       let jsonData;
       try {
-        jsonData = JSON.parse(event.target!.result as string);
+        jsonData = JSON.parse(text);
       } catch (e) {
         reject(new Error(e));
       }
@@ -62,21 +60,17 @@ export function parseLabFile(file: File): Promise<Lab[]> {
       });
 
       resolve(result);
-    };
-
-    reader.readAsText(file);
+    });
   });
 }
 
 export function parsePtSchedule(file: File): Promise<PeerTeacher> {
-  const reader = new FileReader();
-
   return new Promise((resolve) => {
-    reader.onload = (event) => {
+    file.text().then((text) => {
       const peerTeacher = new PeerTeacher();
       const namePattern = /^(.*)\s(.*)\s(\d{9})/;
       const eventPattern = /^(M?T?W?R?F?)\s(\d{1,2}:\d{2})\s?-\s?(\d{1,2}:\d{2})/;
-      const lines = (event.target!.result as string).split('\n').filter((line) => line.trim());
+      const lines = text.split('\n').filter((line) => line.trim());
 
       lines.forEach((line) => {
         const ptName = line.match(namePattern);
@@ -95,9 +89,7 @@ export function parsePtSchedule(file: File): Promise<PeerTeacher> {
       });
 
       resolve(peerTeacher);
-    };
-
-    reader.readAsText(file);
+    });
   });
 }
 
@@ -105,11 +97,9 @@ export function parsePtDatabase(file: File): Promise<{
   labs: Map<string, Lab>,
   peerTeachers: Map<number, PeerTeacher>
 }> {
-  const reader = new FileReader();
-
   return new Promise((resolve) => {
-    reader.onload = (event) => {
-      const jsonObj = JSON.parse(event.target!.result as string);
+    file.text().then((text) => {
+      const jsonObj = JSON.parse(text);
       const result = {
         labs: new Map(),
         peerTeachers: new Map(),
@@ -134,8 +124,6 @@ export function parsePtDatabase(file: File): Promise<{
       });
 
       resolve(result);
-    };
-
-    reader.readAsText(file);
+    });
   });
 }
