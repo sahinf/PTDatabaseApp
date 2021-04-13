@@ -76,6 +76,12 @@ export default {
 </script>
 
 <style>
+#action-bar {
+  max-width: 100vw;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 #action-bar > * {
   margin-left: 0.5rem;
 }
