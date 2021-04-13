@@ -1,12 +1,12 @@
 <template>
   <div id="action-bar">
     <FileUpload
-      :accept="'application/json'"
-      @fileChanged="handleLabChange">Import Lab Schedule</FileUpload>
-    <FileUpload
       :accept="'text/plain'"
       :multiple="true"
       @fileChanged="handlePtChange">Upload PT Schedule</FileUpload>
+    <FileUpload
+      :accept="'application/json'"
+      @fileChanged="handleLabChange">Import Lab Schedule</FileUpload>
       <UIButton @click="save">Export</UIButton>
   </div>
 </template>

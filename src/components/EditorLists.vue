@@ -111,6 +111,7 @@ h3 {
 
 .list-item {
   align-items: center;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: space-between;
   margin: 0.5em;
