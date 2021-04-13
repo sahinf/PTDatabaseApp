@@ -21,62 +21,58 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import ActionBar from '@/components/ActionBar.vue';
 import List from '@/components/List.vue';
 import PeerTeacher from '@/models/PeerTeacher';
+import Lab from '@/models/Lab';
 
-export default {
+export default defineComponent({
   name: 'Editor',
   components: {
     ActionBar,
     List,
   },
   computed: {
-    labs() {
+    labs(): Lab[] {
       return Array.from(this.$store.state.labs.values()).sort((a, b) => a.id
         .localeCompare(b.id));
     },
-    peerTeachers() {
+    peerTeachers(): PeerTeacher[] {
       return Array.from(this.$store.state.peerTeachers.values()).sort((a, b) => a.lastname
         .toUpperCase().localeCompare(b.lastname.toUpperCase()));
     },
-    compatibleLabs() {
+    compatibleLabs(): Lab[] {
       const temp = this.labs.filter((lab) => (!this.selectedPeerTeacher.assignedLabs.has(lab.id)
         && !this.selectedPeerTeacher.conflictsWith(lab.event)));
 
       const currentAssignments = this.selectedPeerTeacherAssignments;
-      return temp.filter((lab) => {
-        let compatible = true;
-        currentAssignments.every((assignedLab) => {
-          if (lab.event.conflictsWith(assignedLab.event)) {
-            compatible = false;
-            return false;
-          }
-          return true;
-        });
-        return compatible;
-      });
+      return temp.filter((lab) => !currentAssignments
+        .some((assignedLab) => lab.event.conflictsWith(assignedLab.event)));
     },
-    selectedPeerTeacherAssignments() {
-      return [...this.selectedPeerTeacher.assignedLabs.values()].map((id) => this.$store.state.labs
-        .get(id)).sort((a, b) => {
-        if (a.course < b.course) {
-          return -1;
-        }
-        if (b.course < a.course) {
-          return 1;
-        }
+    selectedPeerTeacherAssignments(): Lab[] {
+      return Array.from(this.selectedPeerTeacher.assignedLabs.values())
+        .flatMap((id) => {
+          const lab = this.$store.state.labs.get(id);
+          return (lab === undefined) ? [] : [lab];
+        }).sort((a, b) => {
+          if (a.course < b.course) {
+            return -1;
+          }
+          if (b.course < a.course) {
+            return 1;
+          }
 
-        if (a.section < b.section) {
-          return -1;
-        }
-        if (b.section < a.section) {
-          return 1;
-        }
+          if (a.section < b.section) {
+            return -1;
+          }
+          if (b.section < a.section) {
+            return 1;
+          }
 
-        return 0;
-      });
+          return 0;
+        });
     },
   },
   data() {
@@ -85,25 +81,25 @@ export default {
     };
   },
   methods: {
-    handlePtClick(peerTeacher) {
+    handlePtClick(peerTeacher: PeerTeacher) {
       this.selectedPeerTeacher = peerTeacher;
     },
-    deletePeerTeacher(id) {
+    deletePeerTeacher(id: number) {
       if (this.selectedPeerTeacher.id === id) {
         this.selectedPeerTeacher = new PeerTeacher();
       }
       this.$store.commit('deletePeerTeacher', id);
     },
-    assignLab(id) {
+    assignLab(id: string) {
       if (this.selectedPeerTeacher.id !== 0) {
         this.selectedPeerTeacher.assignedLabs.add(id);
       }
     },
-    unassignLab(id) {
+    unassignLab(id: string) {
       this.selectedPeerTeacher.assignedLabs.delete(id);
     },
   },
-};
+});
 </script>
 
 <style>

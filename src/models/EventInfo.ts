@@ -1,13 +1,19 @@
 export default class EventInfo {
-  constructor(days = '', start = 0, end = 0) {
+  days: string;
+
+  start: number;
+
+  end: number;
+
+  constructor(days: string = '', start = 0, end = 0) {
     this.days = days;
     this.start = start;
     this.end = end;
   }
 
-  static timeToStr(time) {
+  static timeToStr(time: number) {
     let hour = Math.floor(time / 100);
-    let minute = time % 100;
+    const minute = time % 100;
     const meridiem = (hour < 12) ? 'AM' : 'PM';
 
     if (hour === 0) {
@@ -17,13 +23,12 @@ export default class EventInfo {
     }
 
     if (minute < 10) {
-      minute = `0${minute}`;
+      return `${hour}:0${minute} ${meridiem}`;
     }
-
     return `${hour}:${minute} ${meridiem}`;
   }
 
-  conflictsWith(event) {
+  conflictsWith(event: EventInfo) {
     const daysConflict = event.days.match(new RegExp(`[${this.days}]`));
 
     if (daysConflict) {
