@@ -1,6 +1,12 @@
 import EventInfo from '@/models/EventInfo';
 
 export default class Lab {
+  course: number;
+
+  section: number;
+
+  event: EventInfo;
+
   constructor(course = 0, section = 0, event = new EventInfo()) {
     this.course = course;
     this.section = section;

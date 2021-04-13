@@ -7,18 +7,19 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import FileUpload from '../components/FileUpload.vue';
 
 import { parsePtDatabase } from '../features/parser';
 
-export default {
+export default defineComponent({
   name: 'About',
   components: {
     FileUpload,
   },
   methods: {
-    handleDatabaseChange(files) {
+    handleDatabaseChange(files: File[]) {
       parsePtDatabase(files[0]).then((result) => {
         this.$store.commit('setLabs', result.labs);
         this.$store.commit('setPeerTeachers', result.peerTeachers);
@@ -26,5 +27,5 @@ export default {
       });
     },
   },
-};
+});
 </script>

@@ -1,4 +1,16 @@
+import EventInfo from './EventInfo';
+
 export default class PeerTeacher {
+  firstname: string;
+
+  lastname: string;
+
+  uin: number;
+
+  events: EventInfo[];
+
+  assignedLabs: Set<string>;
+
   constructor(firstname = '', lastname = '', uin = 0) {
     this.firstname = firstname;
     this.lastname = lastname;
@@ -7,7 +19,7 @@ export default class PeerTeacher {
     this.assignedLabs = new Set();
   }
 
-  conflictsWith(event) {
+  conflictsWith(event: EventInfo) {
     let conflicts = false;
     this.events.every((item) => {
       if (item.conflictsWith(event)) {
