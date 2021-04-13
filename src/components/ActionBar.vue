@@ -1,25 +1,26 @@
 <template>
-  <div>
-    <file-upload
+  <div id="action-bar">
+    <FileUpload
+      :accept="'application/json'"
+      @fileChanged="handleLabChange">Import Lab Schedule</FileUpload>
+    <FileUpload
       :accept="'text/plain'"
       :multiple="true"
-      @file-changed="handlePtChange">Upload PT Schedule</file-upload>
-    <file-upload
-      :accept="'application/json'"
-      @file-changed="handleLabChange">Upload Lab Schedule</file-upload>
-    <button @click="save">Export</button>
+      @fileChanged="handlePtChange">Upload PT Schedule</FileUpload>
+      <UIButton @click="save">Export</UIButton>
   </div>
 </template>
 
 <script>
 import FileUpload from '@/components/FileUpload.vue';
-
 import { parseLabFile, parsePtSchedule } from '@/features/parser';
+import UIButton from '@/components/UIButton.vue';
 
 export default {
   name: 'ActionBar',
   components: {
     FileUpload,
+    UIButton,
   },
   methods: {
     handleLabChange(files) {
@@ -73,3 +74,13 @@ export default {
   },
 };
 </script>
+
+<style>
+#action-bar > * {
+  margin-left: 0.5rem;
+}
+
+#action-bar > *:first-child {
+  margin-left: 0;
+}
+</style>

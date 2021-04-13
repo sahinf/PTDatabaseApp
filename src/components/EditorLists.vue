@@ -1,5 +1,5 @@
 <template>
-  <div id="editor">
+  <div id="editor-lists">
     <div class="column">
       <list :items="peerTeachers" @selection-changed="handlePtClick" #default="pt">
         {{ pt.item.name }} <button @click.stop="deletePeerTeacher(pt.item.id)">X</button>
@@ -84,9 +84,10 @@ export default defineComponent({
 </script>
 
 <style>
-#editor {
+#editor-lists {
   display: flex;
   max-height: inherit;
+  min-height: 0;
 }
 
 .column {

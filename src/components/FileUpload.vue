@@ -30,12 +30,18 @@ export default {
   background-color: #500000;
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 5px;
+  padding: 0.5em;
   text-align: center;
 }
 
 .file-upload-lbl:hover {
   color: grey;
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  .file-upload-lbl {
+    background-color: #81302b;
+  }
 }
 </style>

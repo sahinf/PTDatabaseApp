@@ -28,7 +28,6 @@ export default {
 }
 
 .list-item {
-  border: 1px solid grey;
   border-radius: 5px;
   margin: 5px 0;
   padding: 0.15em;
@@ -37,5 +36,12 @@ export default {
 
 .list-item:hover {
   background-color: rgb(182, 182, 182);
+}
+
+@media (prefers-color-scheme: dark) {
+  .list-item {
+    background-color: #303030;
+    color: white;
+  }
 }
 </style>
