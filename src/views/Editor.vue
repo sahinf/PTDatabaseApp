@@ -37,4 +37,8 @@ export default defineComponent({
   flex-direction: column;
   max-height: inherit;
 }
+
+#action-bar {
+  flex-shrink: 0;
+}
 </style>
