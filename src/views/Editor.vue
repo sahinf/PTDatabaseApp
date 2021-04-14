@@ -1,16 +1,16 @@
 <template>
-  <div id="home">
-    <action-bar />
-    <editor-lists :peerTeachers="peerTeachers" :labs="labs" />
+  <div id="editor">
+    <ActionBar />
+    <EditorLists :peerTeachers="peerTeachers" :labs="labs" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
 import ActionBar from '@/components/ActionBar.vue';
+import { defineComponent } from 'vue';
 import EditorLists from '@/components/EditorLists.vue';
-import PeerTeacher from '@/models/PeerTeacher';
 import Lab from '@/models/Lab';
+import PeerTeacher from '@/models/PeerTeacher';
 
 export default defineComponent({
   name: 'Editor',
@@ -32,7 +32,13 @@ export default defineComponent({
 </script>
 
 <style>
-#home {
+#editor {
+  display: flex;
+  flex-direction: column;
   max-height: inherit;
+}
+
+#action-bar {
+  flex-shrink: 0;
 }
 </style>

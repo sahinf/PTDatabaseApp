@@ -39,7 +39,7 @@ export default class EventInfo {
 
   get info() {
     if (this.days === '') {
-      return 'ONLINE';
+      return 'WEB';
     }
     return `${this.days} ${EventInfo.timeToStr(this.start)}-${EventInfo.timeToStr(this.end)}`;
   }

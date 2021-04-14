@@ -1,19 +1,28 @@
 <template>
-  <div id="editor">
+  <div id="editor-lists">
     <div class="column">
-      <list :items="peerTeachers" @selection-changed="handlePtClick" #default="pt">
-        {{ pt.item.name }} <button @click.stop="deletePeerTeacher(pt.item.id)">X</button>
-      </list>
+      <h3 class="column-header">Peer Teachers</h3>
+      <List :items="peerTeachers" @selection-changed="handlePtClick" #default="pt">
+        <span class="list-item">
+          {{ pt.item.name }} <button @click.stop="deletePeerTeacher(pt.item.id)">x</button>
+        </span>
+      </List>
     </div>
     <div class="column">
-      <list :items="compatibleLabs" #default="lab">
-        {{ lab.item.fullInfo }} <button @click.stop="assignLab(lab.item.id)">+</button>
-      </list>
+      <h3 class="column-header">Labs</h3>
+      <List :items="compatibleLabs" #default="lab">
+        <span class="list-item">
+          {{ lab.item.fullInfo }} <button @click.stop="assignLab(lab.item.id)">+</button>
+        </span>
+      </List>
     </div>
     <div class="column">
-      <list :items="selectedPeerTeacherAssignments" #default="lab">
-        {{ lab.item.fullInfo }} <button @click.stop="unassignLab(lab.item.id)">X</button>
-      </list>
+      <h3 class="column-header">{{ this.selectedPeerTeacher.name }}</h3>
+      <List :items="selectedPeerTeacherAssignments" #default="lab">
+        <span class="list-item">
+          {{ lab.item.fullInfo }} <button @click.stop="unassignLab(lab.item.id)">x</button>
+        </span>
+      </List>
     </div>
   </div>
 </template>
@@ -84,13 +93,57 @@ export default defineComponent({
 </script>
 
 <style>
-#editor {
+#editor-lists {
   display: flex;
   max-height: inherit;
+  min-height: 0;
+}
+
+.column-header {
+  margin: 0;
 }
 
 .column {
   flex: 1;
   overflow: auto;
+}
+
+.list-item {
+  align-items: center;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.list-item:hover {
+  background-color: #c0c0c0;
+}
+
+.list-item > button {
+  background-color: #500000;
+  border: none;
+  color: white;
+  font-size: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .column-header {
+    color: white;
+  }
+
+  .list-item {
+    background-color: #303030;
+    color: white;
+  }
+
+  .list-item:hover {
+    background-color: #707070;
+  }
+
+  .list-item > button {
+    background-color: #81302b;
+  }
 }
 </style>
