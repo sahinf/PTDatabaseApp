@@ -1,7 +1,7 @@
 <template>
   <div id="editor-lists">
     <div class="column">
-      <h3>Peer Teachers</h3>
+      <h3 class="column-header">Peer Teachers</h3>
       <List :items="peerTeachers" @selection-changed="handlePtClick" #default="pt">
         <span class="list-item">
           {{ pt.item.name }} <button @click.stop="deletePeerTeacher(pt.item.id)">x</button>
@@ -9,7 +9,7 @@
       </List>
     </div>
     <div class="column">
-      <h3>Labs</h3>
+      <h3 class="column-header">Labs</h3>
       <List :items="compatibleLabs" #default="lab">
         <span class="list-item">
           {{ lab.item.fullInfo }} <button @click.stop="assignLab(lab.item.id)">+</button>
@@ -17,7 +17,7 @@
       </List>
     </div>
     <div class="column">
-      <h3>Assignments</h3>
+      <h3 class="column-header">{{ this.selectedPeerTeacher.name }}</h3>
       <List :items="selectedPeerTeacherAssignments" #default="lab">
         <span class="list-item">
           {{ lab.item.fullInfo }} <button @click.stop="unassignLab(lab.item.id)">x</button>
@@ -99,8 +99,7 @@ export default defineComponent({
   min-height: 0;
 }
 
-h3 {
-  color: white;
+.column-header {
   margin: 0;
 }
 
@@ -126,11 +125,14 @@ h3 {
   background-color: #500000;
   border: none;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1em;
 }
 
 @media (prefers-color-scheme: dark) {
+  .column-header {
+    color: white;
+  }
+
   .list-item {
     background-color: #303030;
     color: white;

@@ -29,7 +29,6 @@ export default {
 .file-upload-lbl {
   background-color: #500000;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0.5em;
   text-align: center;
 }

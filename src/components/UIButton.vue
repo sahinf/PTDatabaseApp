@@ -15,7 +15,6 @@ export default defineComponent({
   background-color: #500000;
   border: none;
   color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1em;
   padding: 0.5em;
 }
