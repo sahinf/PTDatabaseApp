@@ -20,7 +20,7 @@ export default {
     },
   },
   emits: {
-    selectionChanged: null,
+    fileChanged: null,
   },
 };
 </script>
