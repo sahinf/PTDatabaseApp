@@ -2,25 +2,28 @@
   <div id="editor-lists">
     <div class="column">
       <h3 class="column-header">Peer Teachers</h3>
-      <List :items="peerTeachers" @selection-changed="handlePtClick" #default="pt">
+      <List
+        :items="peerTeachers"
+        @selection-changed="handlePtClick"
+        #default="{ item: { id, name } }">
         <span class="list-item">
-          {{ pt.item.name }} <button @click.stop="deletePeerTeacher(pt.item.id)">x</button>
+          {{ name }} <button @click.stop="deletePeerTeacher(id)">x</button>
         </span>
       </List>
     </div>
     <div class="column">
       <h3 class="column-header">Labs</h3>
-      <List :items="compatibleLabs" #default="lab">
+      <List :items="compatibleLabs" #default="{ item: { fullInfo, id } }">
         <span class="list-item">
-          {{ lab.item.fullInfo }} <button @click.stop="assignLab(lab.item.id)">+</button>
+          {{ fullInfo }} <button @click.stop="assignLab(id)">+</button>
         </span>
       </List>
     </div>
     <div class="column">
       <h3 class="column-header">{{ this.selectedPeerTeacher.name }}</h3>
-      <List :items="selectedPeerTeacherAssignments" #default="lab">
+      <List :items="selectedPeerTeacherAssignments" #default="{ item: { fullInfo, id } }">
         <span class="list-item">
-          {{ lab.item.fullInfo }} <button @click.stop="unassignLab(lab.item.id)">x</button>
+          {{ fullInfo }} <button @click.stop="unassignLab(id)">x</button>
         </span>
       </List>
     </div>

@@ -11,40 +11,33 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import FileUpload from '@/components/FileUpload.vue';
 import { parseLabFile, parsePtSchedule } from '@/features/parser';
 import UIButton from '@/components/UIButton.vue';
+import PeerTeacher from '@/models/PeerTeacher';
 
-export default {
+export default defineComponent({
   name: 'ActionBar',
   components: {
     FileUpload,
     UIButton,
   },
   methods: {
-    handleLabChange(files) {
-      parseLabFile(files[0])
-        .then((data) => {
-          this.$store.commit('importLabs', data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+    async handleLabChange(files: File[]) {
+      const data = await parseLabFile(files[0]);
+      this.$store.commit('importLabs', data);
     },
-    handlePtChange(files) {
-      const result = [];
-      const promises = [];
+    async handlePtChange(files: File[]) {
+      const promises: Promise<PeerTeacher>[] = [];
 
       files.forEach((file) => {
-        const p = parsePtSchedule(file).then((data) => result.push(data));
-        promises.push(p);
+        promises.push(parsePtSchedule(file));
       });
 
-      Promise.all(promises)
-        .then(() => {
-          this.$store.commit('addPeerTeachers', result);
-        });
+      const result = await Promise.all(promises);
+      this.$store.commit('addPeerTeachers', result);
     },
     save() {
       const database = {
@@ -64,7 +57,7 @@ export default {
       const url = window.URL.createObjectURL(blob);
       anchor.href = url;
       anchor.download = 'pt-db.json';
-      anchor.style = 'display: none';
+      anchor.style.display = 'none';
 
       document.body.appendChild(anchor);
       anchor.click();
@@ -72,7 +65,7 @@ export default {
       window.URL.revokeObjectURL(url);
     },
   },
-};
+});
 </script>
 
 <style>
