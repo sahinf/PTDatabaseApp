@@ -9,11 +9,16 @@
   </label>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'FileUpload',
   props: {
-    accept: String,
+    accept: {
+      type: String,
+      required: false,
+    },
     multiple: {
       type: Boolean,
       default: false,
@@ -22,7 +27,7 @@ export default {
   emits: {
     fileChanged: null,
   },
-};
+});
 </script>
 
 <style scoped>

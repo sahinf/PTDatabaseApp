@@ -9,16 +9,21 @@
   </ul>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'List',
   props: {
-    items: Array,
+    items: {
+      type: Array,
+      default: [] as any[],
+    },
   },
   emits: {
     selectionChanged: null,
   },
-};
+});
 </script>
 
 <style scoped>

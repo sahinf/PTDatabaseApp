@@ -22,12 +22,11 @@ export default defineComponent({
     UIButton,
   },
   methods: {
-    handleDatabaseChange(files: File[]) {
-      parsePtDatabase(files[0]).then((result) => {
-        this.$store.commit('setLabs', result.labs);
-        this.$store.commit('setPeerTeachers', result.peerTeachers);
-        this.$router.push({ name: 'Editor' });
-      });
+    async handleDatabaseChange(files: File[]) {
+      const result = await parsePtDatabase(files[0]);
+      this.$store.commit('setLabs', result.labs);
+      this.$store.commit('setPeerTeachers', result.peerTeachers);
+      this.$router.push({ name: 'Editor' });
     },
   },
 });
