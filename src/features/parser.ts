@@ -30,28 +30,26 @@ export async function parseLabFile(file: File): Promise<Lab[]> {
     if (validCourses.includes(lab.courseNumber)) {
       const newLab = new Lab(lab.courseNumber, lab.sequenceNumber);
 
-      if (lab.instructionalMethod !== 'Web Based') {
-        lab.meetingsFaculty.every((meeting: any) => {
-          const { meetingTime } = meeting;
+      lab.meetingsFaculty.every((meeting: any) => {
+        const { meetingTime } = meeting;
 
-          if (meetingTime.meetingType === 'LAB') {
-            let days = '';
-            days += meetingTime.monday ? 'M' : '';
-            days += meetingTime.tuesday ? 'T' : '';
-            days += meetingTime.wednesday ? 'W' : '';
-            days += meetingTime.thursday ? 'R' : '';
-            days += meetingTime.friday ? 'F' : '';
+        if (meetingTime.meetingType === 'LAB') {
+          let days = '';
+          days += meetingTime.monday ? 'M' : '';
+          days += meetingTime.tuesday ? 'T' : '';
+          days += meetingTime.wednesday ? 'W' : '';
+          days += meetingTime.thursday ? 'R' : '';
+          days += meetingTime.friday ? 'F' : '';
 
-            newLab.event.days = days;
-            newLab.event.start = parseInt(meetingTime.beginTime, 10);
-            newLab.event.end = parseInt(meetingTime.endTime, 10);
+          newLab.event.days = days;
+          newLab.event.start = parseInt(meetingTime.beginTime, 10);
+          newLab.event.end = parseInt(meetingTime.endTime, 10);
 
-            return false;
-          }
+          return false;
+        }
 
-          return true;
-        });
-      }
+        return true;
+      });
 
       result.push(newLab);
     }
