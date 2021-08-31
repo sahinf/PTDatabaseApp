@@ -6,8 +6,8 @@
 </template>
 
 <script lang="ts">
-import ActionBar from '@/components/ActionBar.vue';
 import { defineComponent } from 'vue';
+import ActionBar from '@/components/ActionBar.vue';
 import EditorLists from '@/components/EditorLists.vue';
 import Lab from '@/models/Lab';
 import PeerTeacher from '@/models/PeerTeacher';

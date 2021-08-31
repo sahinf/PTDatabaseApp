@@ -44,11 +44,11 @@ export default defineComponent({
   props: {
     peerTeachers: {
       type: Array as PropType<PeerTeacher[]>,
-      default: [],
+      default: () => [],
     },
     labs: {
       type: Array as PropType<Lab[]>,
-      default: [],
+      default: () => [],
     },
   },
   computed: {

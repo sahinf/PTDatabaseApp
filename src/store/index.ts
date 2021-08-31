@@ -1,6 +1,6 @@
+import { createStore } from 'vuex';
 import Lab from '@/models/Lab';
 import PeerTeacher from '@/models/PeerTeacher';
-import { createStore } from 'vuex';
 
 export default createStore({
   state: {
