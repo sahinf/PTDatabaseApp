@@ -23,7 +23,7 @@
 <div id="editor-lists">
   <div class="column">
     <h3 class="col-header">Peer Teachers</h3>
-    <List twoline singleSelection class="editor-list">
+    <List twoLine singleSelection class="editor-list">
       {#each peerTeachers as pt}
         <Item>
           <Text>
@@ -47,14 +47,13 @@
   </div>
   <div class="column">
     <h3 class="col-header">Labs</h3>
-    <List twoline singleSelection class="editor-list">
+    <List threeLine class="editor-list">
       {#each labs as lab}
         <Item>
           <Text>
-            <PrimaryText>{lab.course}-{lab.section} [{lab.time}]</PrimaryText>
-            <SecondaryText>
-              {lab.location}
-            </SecondaryText>
+            <PrimaryText>{lab.course}-{lab.section}</PrimaryText>
+            <SecondaryText>{lab.time}</SecondaryText>
+            <SecondaryText>{lab.location}</SecondaryText>
           </Text>
           <Meta class="material-icons"
             ><IconButton
@@ -70,7 +69,7 @@
   </div>
   <div class="column">
     <h3 class="col-header">PT - Assigned Labs</h3>
-    <List twoline singleSelection class="editor-list">
+    <List threeLine class="editor-list">
       {#each nothing as n}
         <Item>
           <Text>
