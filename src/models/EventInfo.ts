@@ -43,6 +43,11 @@ export default class EventInfo {
         return `${hour}:${minute} ${meridiem}`;
     }
 
+    conflictsWith(event: EventInfo) {
+        const daysConflict = event.days.match(new RegExp(`[${this.days}]`));
+        return daysConflict && this.start <= event.end && event.start <= this.end;
+    }
+
     get info() {
         if(this.days === "") {
             return `WEB`;

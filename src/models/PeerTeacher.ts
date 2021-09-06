@@ -37,4 +37,12 @@ export default class PeerTeacher {
         pt.labs = new Set(labs);
         return pt;
     }
+
+    conflictsWith(event: EventInfo) {
+        return this.events.some(item => item.conflictsWith(event));
+    }
+
+    get name() {
+        return `${this.firstname} ${this.lastname}`;
+    }
 }
