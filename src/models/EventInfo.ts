@@ -1,3 +1,9 @@
+interface EventInfoSerializeInfo {
+    days: string,
+    start: number,
+    end: number
+}
+
 export default class EventInfo {
     days: string;
     start: number;
@@ -14,6 +20,10 @@ export default class EventInfo {
         this.days = days;
         this.start = start;
         this.end = end;
+    }
+
+    static fromJSON({days, start, end}: EventInfoSerializeInfo) {
+        return new EventInfo(days, start, end);
     }
 
     static timeToStr(time: number) {

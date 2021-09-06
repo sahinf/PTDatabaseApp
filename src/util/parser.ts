@@ -24,6 +24,32 @@ interface LabSchedule {
     }[]
 };
 
+interface DatabaseFile {
+    labs: {
+        id: number,
+        course: number,
+        section: number,
+        event: {
+            days: string,
+            start: number,
+            end: number
+        },
+        building: string,
+        room: string
+    }[],
+    peerTeachers: {
+        id: number,
+        firstname: string,
+        lastname: string,
+        events: {
+            days: string,
+            start: number,
+            end: number
+        }[],
+        labs: number[]
+    }[]
+}
+
 /**
  * Parses a peer teacher schedule
  * @param schedule The schedule to parse
@@ -104,4 +130,26 @@ export function parseLabSchedule(schedule: LabSchedule) {
     }
 
     return results;
+}
+
+/**
+ * Parses a database file into maps of Lab and PeerTeacher objects
+ * @param database The database object from a database file
+ * @returns And object with lab and peer teacher maps
+ */
+export function parseDatabase(database: DatabaseFile) {
+    const result = {
+        labs: new Map<number, Lab>(),
+        peerTeachers: new Map<number, PeerTeacher>()
+    }
+
+    database.labs.forEach(lab => {
+        result.labs.set(lab.id, Lab.fromJSON(lab));
+    });
+
+    database.peerTeachers.forEach(pt => {
+        result.peerTeachers.set(pt.id, PeerTeacher.fromJSON(pt));
+    });
+
+    return result;
 }

@@ -3,7 +3,11 @@
   import IconButton from "@smui/icon-button";
   import Snackbar, { Actions } from "@smui/snackbar";
   import FileUpload from "./FileUpload.svelte";
-  import { parseLabScheduleFile, parsePTFile } from "../logic/EditorActions";
+  import {
+    parseDatabaseFile,
+    parseLabScheduleFile,
+    parsePTFile,
+  } from "../logic/EditorActions";
   import { labStore, ptStore } from "../stores";
 
   let ptSchedules: FileList | null;
@@ -50,10 +54,48 @@
   }
 
   $: {
-    if (dbFile?.length) console.log(dbFile);
+    if (dbFile?.length) {
+      parseDatabaseFile(dbFile[0])
+        .then((database) => {
+          labStore.set(database.labs);
+          ptStore.set(database.peerTeachers);
+        })
+        .catch(() => {
+          snackbarText = "Failed to import database. See console for details.";
+          snackbar.open();
+        });
+    }
   }
 
-  function exportDB() {}
+  function exportDB() {
+    const peerTeachers = [...$ptStore.values()];
+    const labs = [...$labStore.values()];
+    const database = {
+      labs: labs,
+      peerTeachers: peerTeachers,
+    };
+
+    const dbObj = JSON.stringify(database, (_, value) => {
+      // Need to manually convert the PeerTeacher objects'
+      // `labs` set to an array because `JSON.stringify` doesn't
+      // support "stringing" it out of the box
+      if (typeof value === "object" && value instanceof Set) {
+        return [...value];
+      }
+      return value;
+    });
+
+    const blob = new Blob([dbObj], { type: "text/json" });
+    const anchor = document.createElement("a");
+    const url = window.URL.createObjectURL(blob);
+    anchor.href = url;
+    anchor.download = "pt-db.json";
+    anchor.style.display = "none";
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    window.URL.revokeObjectURL(url);
+  }
 </script>
 
 <div id="action-bar">

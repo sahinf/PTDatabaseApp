@@ -1,4 +1,16 @@
-import type EventInfo from "./EventInfo";
+import EventInfo from "./EventInfo";
+
+interface PeerTeacherSerializeInfo {
+    id: number,
+    firstname: string,
+    lastname: string,
+    events: {
+        days: string,
+        start: number,
+        end: number
+    }[],
+    labs: number[]
+}
 
 export default class PeerTeacher {
     id: number;
@@ -17,5 +29,12 @@ export default class PeerTeacher {
         this.lastname = lastname;
         this.events = [];
         this.labs = new Set();
+    }
+
+    static fromJSON({id, firstname, lastname, events, labs}: PeerTeacherSerializeInfo) {
+        const pt = new PeerTeacher(id, firstname, lastname);
+        pt.events = events.map(e => EventInfo.fromJSON(e));
+        pt.labs = new Set(labs);
+        return pt;
     }
 }

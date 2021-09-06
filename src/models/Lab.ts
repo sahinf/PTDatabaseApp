@@ -1,4 +1,16 @@
-import type EventInfo from "./EventInfo";
+import EventInfo from "./EventInfo";
+
+interface LabSerializeInfo {
+    course: number,
+    section: number,
+    event: {
+        days: string,
+        start: number,
+        end: number
+    },
+    building: string,
+    room: string
+}
 
 export default class Lab {
     id: number;
@@ -22,6 +34,10 @@ export default class Lab {
         this.event = event;
         this.building = building;
         this.room = room;
+    }
+
+    static fromJSON({course, section, event, building, room}: LabSerializeInfo) {
+        return new Lab(course, section, EventInfo.fromJSON(event), building, room);
     }
 
     get time() {
