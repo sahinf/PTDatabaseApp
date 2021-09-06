@@ -1,23 +1,34 @@
-import EventInfo from '@/models/EventInfo';
+import type EventInfo from "./EventInfo";
 
 export default class Lab {
-  course: number;
+    id: number;
+    course: number;
+    section: number;
+    event: EventInfo;
+    building: string;
+    room: string;
 
-  section: number;
+    constructor(course: number | string, section: number | string, event: EventInfo, building = "", room = "") {
+        if(typeof course === "string") {
+            course = parseInt(course, 10);
+        }
+        if(typeof section === "string") {
+            section = parseInt(section, 10);
+        }
 
-  event: EventInfo;
+        this.id = parseInt(`${course}${section}`, 10);
+        this.course = course;
+        this.section = section;
+        this.event = event;
+        this.building = building;
+        this.room = room;
+    }
 
-  constructor(course = 0, section = 0, event = new EventInfo()) {
-    this.course = course;
-    this.section = section;
-    this.event = event;
-  }
+    get time() {
+        return this.event.info;
+    }
 
-  get id() {
-    return `${this.course}-${this.section}`;
-  }
-
-  get fullInfo() {
-    return `${this.id} ${this.event.info}`;
-  }
+    get location() {
+        return `${this.building}-${this.room}`;
+    }
 }

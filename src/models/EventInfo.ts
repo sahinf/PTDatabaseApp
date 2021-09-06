@@ -1,46 +1,45 @@
 export default class EventInfo {
-  days: string;
+    days: string;
+    start: number;
+    end: number;
 
-  start: number;
+    constructor(days: string, start: number | string, end: number | string) {
+        if (typeof start === "string") {
+            start = parseInt(start, 10);
+        }
+        if (typeof end === "string") {
+            end = parseInt(end, 10);
+        }
 
-  end: number;
-
-  constructor(days: string = '', start = 0, end = 0) {
-    this.days = days;
-    this.start = start;
-    this.end = end;
-  }
-
-  static timeToStr(time: number) {
-    let hour = Math.floor(time / 100);
-    const minute = time % 100;
-    const meridiem = (hour < 12) ? 'AM' : 'PM';
-
-    if (hour === 0) {
-      hour = 12;
-    } else if (hour > 12) {
-      hour -= 12;
+        this.days = days;
+        this.start = start;
+        this.end = end;
     }
 
-    if (minute < 10) {
-      return `${hour}:0${minute} ${meridiem}`;
-    }
-    return `${hour}:${minute} ${meridiem}`;
-  }
+    static timeToStr(time: number) {
+        let hour = Math.floor(time / 100);
+        const minute = time % 100;
+        const meridiem = (hour < 12) ? 'AM' : 'PM';
 
-  conflictsWith(event: EventInfo) {
-    const daysConflict = event.days.match(new RegExp(`[${this.days}]`));
+        if (hour === 0) {
+            hour = 12;
+        } else if (hour > 12) {
+            hour -= 12;
+        }
 
-    if (daysConflict) {
-      return (this.start <= event.end) && (event.start <= this.end);
+        if (minute < 10) {
+            return `${hour}:0${minute} ${meridiem}`;
+        }
+        return `${hour}:${minute} ${meridiem}`;
     }
-    return false;
-  }
 
-  get info() {
-    if (this.days === '') {
-      return 'WEB';
+    get info() {
+        if(this.days === "") {
+            return `WEB`;
+        }else if(this.start === -1 || this.end === -1) {
+            return `${this.days}`;
+        } else {
+            return `${this.days} ${EventInfo.timeToStr(this.start)}-${EventInfo.timeToStr(this.end)}`;
+        }
     }
-    return `${this.days} ${EventInfo.timeToStr(this.start)}-${EventInfo.timeToStr(this.end)}`;
-  }
 }
