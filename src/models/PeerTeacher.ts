@@ -1,41 +1,48 @@
-import EventInfo from './EventInfo';
+import EventInfo from "./EventInfo";
+
+interface PeerTeacherSerializeInfo {
+    id: number,
+    firstname: string,
+    lastname: string,
+    events: {
+        days: string,
+        start: number,
+        end: number
+    }[],
+    labs: number[]
+}
 
 export default class PeerTeacher {
-  firstname: string;
+    id: number;
+    firstname: string;
+    lastname: string;
+    events: EventInfo[];
+    labs: Set<number>;
 
-  lastname: string;
+    constructor(id: number | string, firstname: string, lastname: string) {
+        if(typeof id === "string") {
+            id = parseInt(id, 10);
+        }
 
-  uin: number;
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.events = [];
+        this.labs = new Set();
+    }
 
-  events: EventInfo[];
+    static fromJSON({id, firstname, lastname, events, labs}: PeerTeacherSerializeInfo) {
+        const pt = new PeerTeacher(id, firstname, lastname);
+        pt.events = events.map(e => EventInfo.fromJSON(e));
+        pt.labs = new Set(labs);
+        return pt;
+    }
 
-  assignedLabs: Set<string>;
+    conflictsWith(event: EventInfo) {
+        return this.events.some(item => item.conflictsWith(event));
+    }
 
-  constructor(firstname = '', lastname = '', uin = 0) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.uin = uin;
-    this.events = [];
-    this.assignedLabs = new Set();
-  }
-
-  conflictsWith(event: EventInfo) {
-    let conflicts = false;
-    this.events.every((item) => {
-      if (item.conflictsWith(event)) {
-        conflicts = true;
-        return false;
-      }
-      return true;
-    });
-    return conflicts;
-  }
-
-  get name() {
-    return `${this.firstname} ${this.lastname}`;
-  }
-
-  get id() {
-    return this.uin;
-  }
+    get name() {
+        return `${this.firstname} ${this.lastname}`;
+    }
 }

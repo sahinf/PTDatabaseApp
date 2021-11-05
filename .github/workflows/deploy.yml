@@ -1,5 +1,5 @@
-name: Deploy to gh-pages
- 
+name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [ master ]
@@ -7,35 +7,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup node
+      - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: '14'
       
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build static files
-        run: npm run build
-      
-      - name: Init repo in dist folder and commit static files
+      - name: Install and Build
         run: |
-          cd dist
-          git init
-          git add -A
-          git config --local user.email "ghactions@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "deploy"
-          
-      - name: Force push to gh-pages branch
-        uses: ad-m/github-push-action@v0.6.0
+          npm ci
+          npm run build
+      
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          force: true
-          directory: ./dist
-          
+          folder: public
