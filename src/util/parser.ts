@@ -20,6 +20,9 @@ interface LabSchedule {
                 tuesday: boolean,
                 wednesday: boolean
             }
+        }[],
+        sectionAttributes: {
+            description: string
         }[]
     }[]
 };
@@ -57,7 +60,7 @@ interface DatabaseFile {
  */
 export function parsePTSchedule(schedule: string) {
     // namePatter: <firstname> <lastname> <uin>
-    const namePattern = /^(.*)\s(.*)\s(\d{9})/;
+    const namePattern = /^(.*?)\s(.*)\s(\d{9})/;
     // eventPattern (24hr time): MTWRF hh:mm - hh:mm
     const eventPattern = /^(M?T?W?R?F?)\s(\d{1,2}:\d{2})\s?-\s?(\d{1,2}:\d{2})/;
     const lines = schedule.split("\n").filter(line => line.trim());
@@ -94,7 +97,7 @@ export function parseLabSchedule(schedule: LabSchedule) {
 
     const courses = schedule.data;
     for(const course of courses) {
-        if(!taughtCourses.includes(course.courseNumber)) {
+        if(!taughtCourses.includes(course.courseNumber) || course.sectionAttributes[0].description === "McAllen") {
             continue;
         }
 
