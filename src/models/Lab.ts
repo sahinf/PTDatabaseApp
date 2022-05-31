@@ -1,3 +1,4 @@
+import { assign } from "svelte/internal";
 import EventInfo from "./EventInfo";
 
 interface LabSerializeInfo {
@@ -9,7 +10,8 @@ interface LabSerializeInfo {
         end: number
     },
     building: string,
-    room: string
+    room: string,
+    assigned: boolean
 }
 
 export default class Lab {
@@ -19,12 +21,13 @@ export default class Lab {
     event: EventInfo;
     building: string;
     room: string;
+    assigned: boolean;
 
-    constructor(course: number | string, section: number | string, event: EventInfo, building = "", room = "") {
-        if(typeof course === "string") {
+    constructor(course: number | string, section: number | string, event: EventInfo, building = "", room = "", assigned = false) {
+        if (typeof course === "string") {
             course = parseInt(course, 10);
         }
-        if(typeof section === "string") {
+        if (typeof section === "string") {
             section = parseInt(section, 10);
         }
 
@@ -34,10 +37,11 @@ export default class Lab {
         this.event = event;
         this.building = building;
         this.room = room;
+        this.assigned = assigned;
     }
 
-    static fromJSON({course, section, event, building, room}: LabSerializeInfo) {
-        return new Lab(course, section, EventInfo.fromJSON(event), building, room);
+    static fromJSON({ course, section, event, building, room, assigned }: LabSerializeInfo) {
+        return new Lab(course, section, EventInfo.fromJSON(event), building, room, assigned);
     }
 
     get time() {
