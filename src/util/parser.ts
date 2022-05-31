@@ -38,7 +38,8 @@ interface DatabaseFile {
             end: number
         },
         building: string,
-        room: string
+        room: string,
+        assigned: boolean
     }[],
     peerTeachers: {
         id: number,
@@ -66,7 +67,7 @@ export function parsePTSchedule(schedule: string) {
     const lines = schedule.split("\n").filter(line => line.trim());
 
     const nameLine = lines.find(line => line.match(namePattern));
-    if(nameLine === undefined) {
+    if (nameLine === undefined) {
         throw new PeerTeacherImportError(`No peer teacher in schedule`);
     }
 
@@ -81,7 +82,7 @@ export function parsePTSchedule(schedule: string) {
             end = end.replace(":", "");
             return new EventInfo(days, start, end);
         });
-    
+
     peerTeacher.events = events;
     return peerTeacher;
 }
@@ -92,19 +93,19 @@ export function parsePTSchedule(schedule: string) {
  * @returns An array of labs
  */
 export function parseLabSchedule(schedule: LabSchedule) {
-    const taughtCourses = ['110', '111', '121', '206', '221', '312', '313', '315'];
+    const taughtCourses = ['110', '111', '120', '121', '206', '221', '312', '313', '315', '331'];
     const results: Lab[] = [];
 
     const courses = schedule.data;
-    for(const course of courses) {
-        if(!taughtCourses.includes(course.courseNumber) || course.sectionAttributes[0].description === "McAllen") {
+    for (const course of courses) {
+        if (!taughtCourses.includes(course.courseNumber) || course.sectionAttributes[0].description === "McAllen") {
             continue;
         }
 
-        for(const meeting of course.meetingsFaculty) {
+        for (const meeting of course.meetingsFaculty) {
             const { meetingTime } = meeting;
 
-            if(meetingTime.meetingType !== "LAB") {
+            if (meetingTime.meetingType !== "LAB") {
                 continue;
             }
 
@@ -118,14 +119,14 @@ export function parseLabSchedule(schedule: LabSchedule) {
             const start = meetingTime.beginTime === null ? -1 : meetingTime.beginTime;
             const end = meetingTime.endTime === null ? -1 : meetingTime.endTime;
             const { courseNumber, sequenceNumber } = course;
-            const { building, room} = meetingTime;
+            const { building, room } = meetingTime;
 
             results.push(
                 new Lab(
-                    courseNumber, 
-                    sequenceNumber, 
-                    new EventInfo(days, start, end), 
-                    building, 
+                    courseNumber,
+                    sequenceNumber,
+                    new EventInfo(days, start, end),
+                    building,
                     room
                 )
             );
