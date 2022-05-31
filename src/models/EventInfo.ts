@@ -22,7 +22,7 @@ export default class EventInfo {
         this.end = end;
     }
 
-    static fromJSON({days, start, end}: EventInfoSerializeInfo) {
+    static fromJSON({ days, start, end }: EventInfoSerializeInfo) {
         return new EventInfo(days, start, end);
     }
 
@@ -49,9 +49,9 @@ export default class EventInfo {
     }
 
     get info() {
-        if(this.days === "") {
+        if (this.days === "") {
             return `WEB`;
-        }else if(this.start === -1 || this.end === -1) {
+        } else if (this.start === -1 || this.end === -1) {
             return `${this.days}`;
         } else {
             return `${this.days} ${EventInfo.timeToStr(this.start)}-${EventInfo.timeToStr(this.end)}`;

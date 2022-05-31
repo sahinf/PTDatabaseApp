@@ -20,7 +20,7 @@ export default class PeerTeacher {
     labs: Set<number>;
 
     constructor(id: number | string, firstname: string, lastname: string) {
-        if(typeof id === "string") {
+        if (typeof id === "string") {
             id = parseInt(id, 10);
         }
 
@@ -31,7 +31,7 @@ export default class PeerTeacher {
         this.labs = new Set();
     }
 
-    static fromJSON({id, firstname, lastname, events, labs}: PeerTeacherSerializeInfo) {
+    static fromJSON({ id, firstname, lastname, events, labs }: PeerTeacherSerializeInfo) {
         const pt = new PeerTeacher(id, firstname, lastname);
         pt.events = events.map(e => EventInfo.fromJSON(e));
         pt.labs = new Set(labs);
