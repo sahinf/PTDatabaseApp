@@ -44,6 +44,11 @@
       selectedPeerTeacher = undefined;
     }
 
+    $ptStore.get(id)?.labs.forEach((lab_id) => {
+      const lab = $labStore?.get(lab_id);
+      if (lab !== undefined) lab.assigned = false;
+    });
+
     ptStore.update((val) => {
       val.delete(id);
       return val;
