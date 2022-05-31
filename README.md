@@ -39,3 +39,81 @@ If you're building a single-page app (SPA) with multiple routes, sirv needs to b
 ```js
 "start": "sirv public --single"
 ```
+
+
+# Develop
+
+This application uses Svelte and Typescript.
+
+## Svelte
+Svelte is a tool for building fast web applications, similar to React, Angular, or Vue. 
+
+We highly recommend going through the [quick tutorial that Svelte maintainers have prepared](https://svelte.dev/tutorial/basics).
+
+## Typescript
+Typescript is a superset of Javascript. It is statically typed (strong typing enforcement like in C or C++) as opposed to the dynamically typed Javascript (what are types?). Typescript is also more object-oriented (supports interfaces for example), while Javascript is a more prototype based language.
+
+Typescript is compiled into Javascript by the TSC compiler. Install `Node.js` on your system and then use npm to install the compiler
+
+```bash
+npm install -g typescript
+```
+Then you can compile a typescript file as such
+
+```bash
+tsc app.ts
+```
+and then run the compiled js file using `node` as such
+
+```bash
+node app.js
+```
+
+Although, this should ideally be handled by an npm `package.json` script as in this project.
+
+**package.json**
+```js
+{
+  "name": "typescript-project",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {
+    "typescript": "^4.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node out/app.js",
+    "prestart": "npm run build",
+    "build": "tsc"
+  }
+}
+```
+**tsconfig.json**
+```js
+{
+    "compilerOptions": {
+        "outDir": "./out",
+        "rootDir": "./src",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "target": "es6"
+    }
+}
+```
+
+The above would be a standalone typescript project.
+```
+typescript-project
+|-node_modules/
+|-out/
+    |-app.js
+    |-app.js.map
+|-src/
+    |-app.ts
+|-package.json
+|-package-lock.json
+|-tsconfig.json
+```
+If we were to using Svelte as in this project, then
+the `package.json` script would use `rollup` instead
+of `node`.
