@@ -114,6 +114,6 @@ typescript-project
 |-package-lock.json
 |-tsconfig.json
 ```
-If we were to using Svelte as in this project, then
+If we were to use Svelte (as in this project), then
 the `package.json` script would use `rollup` instead
 of `node`.
