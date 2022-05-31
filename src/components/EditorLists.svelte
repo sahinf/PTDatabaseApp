@@ -29,8 +29,11 @@
 
   $: compatibleLabs = labs.filter(
     (lab) =>
-      !selectedPeerTeacher?.labs.has(lab.id) &&
+      // Lab not already assigned
+      !lab.assigned &&
+      // PT schedule not conflict with lab
       !selectedPeerTeacher?.conflictsWith(lab.event) &&
+      // PT's labs not conflict with this lab
       !assignedLabs.some((assignment) =>
         assignment.event.conflictsWith(lab.event)
       )
