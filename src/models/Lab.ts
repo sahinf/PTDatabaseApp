@@ -51,4 +51,8 @@ export default class Lab {
     get location() {
         return `${this.building}-${this.room}`;
     }
+
+    get pay_hours() {
+        return this.event.duration_mins / 50;
+    }
 }
