@@ -99,7 +99,7 @@
           <Text>
             <PrimaryText>{pt.name}</PrimaryText>
             <SecondaryText>{pt.id}</SecondaryText>
-            <SecondaryText>Assigned hours: {pt.hours}</SecondaryText>
+            <SecondaryText>Assigned hours: {pt.lab_hours}</SecondaryText>
           </Text>
           <Meta>
             <IconButton
