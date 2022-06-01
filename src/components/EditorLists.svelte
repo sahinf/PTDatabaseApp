@@ -49,9 +49,9 @@
       if (lab !== undefined) lab.assigned = false;
     });
 
-    ptStore.update((val) => {
-      val.delete(id);
-      return val;
+    ptStore.update((map) => {
+      map.delete(id);
+      return map;
     });
   }
 
