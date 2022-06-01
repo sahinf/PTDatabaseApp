@@ -108,9 +108,15 @@
   <FileUpload accept="application/json" bind:files={dbFile}>
     <Label>Import DB</Label>
   </FileUpload>
-  <Button variant="raised" ripple={false} on:click={exportDB}>
+  <Button
+    variant="raised"
+    ripple={false}
+    on:click={exportDB}
+    style="overflow: hidden; margin-left: 0.1em; margin-right: 0.5em;"
+  >
     <Label>Export DB</Label>
   </Button>
+  <div id="info" />
 </div>
 <Snackbar bind:this={snackbar} labelText={snackbarText}>
   <Label />
@@ -120,9 +126,17 @@
 </Snackbar>
 
 <style>
+
   #action-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    border-radius: 1em;
+    /* background-image: linear-gradient(to right, red, purple); */
+    background-size: 100vw;
+    max-height: 2em;
     max-width: 100vw;
-    overflow-x: auto;
-    white-space: nowrap;
+    overflow: hidden;
+    padding: 0.6em;
   }
 </style>
