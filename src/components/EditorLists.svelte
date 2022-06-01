@@ -7,6 +7,14 @@
     SecondaryText,
     Text,
   } from "@smui/list";
+  import Card, {
+    Content,
+    PrimaryAction,
+    Actions,
+    ActionButtons,
+    ActionIcons,
+  } from "@smui/card";
+  import Button, { Label } from "@smui/button";
   import type PeerTeacher from "../models/PeerTeacher";
   import { labStore, ptStore } from "../stores";
 
@@ -53,7 +61,7 @@
       map.delete(id);
       return map;
     });
-    
+
     // Self assignemnt to update `assignedLabs` and `compatibleLabs`
     selectedPeerTeacher = selectedPeerTeacher;
   }
@@ -83,17 +91,20 @@
     // Self assignment to update PT values used in `Peer Teacher` column
     peerTeachers = peerTeachers;
   }
+
+  $: clicked = 0;
 </script>
 
-<div id="editor-lists">
+<div class="assign-labs">
   <div class="column">
-    <h3 class="col-header">Peer Teachers</h3>
-    <List twoLine singleSelection class="editor-list">
+    <div class="col-header">Peer Teachers</div>
+    <List threeLine avatarList singleSelection class="editor-list">
       {#each peerTeachers as pt}
         <Item on:SMUI:action={() => (selectedPeerTeacher = pt)}>
           <Text>
             <PrimaryText>{pt.name}</PrimaryText>
             <SecondaryText>{pt.id}</SecondaryText>
+            <SecondaryText>Assigned hours: {pt.hours}</SecondaryText>
           </Text>
           <Meta>
             <IconButton
@@ -110,7 +121,7 @@
     </List>
   </div>
   <div class="column">
-    <h3 class="col-header">Labs</h3>
+    <div class="col-header">Labs</div>
     <List threeLine class="editor-list">
       {#each compatibleLabs as lab}
         <Item>
@@ -134,9 +145,9 @@
     </List>
   </div>
   <div class="column">
-    <h3 class="col-header">
-      {selectedPeerTeacher?.name ?? "PT"} - Assigned Labs
-    </h3>
+    <div class="col-header">
+      {selectedPeerTeacher?.name ?? "PT"}
+    </div>
     <List threeLine class="editor-list">
       {#each assignedLabs as lab}
         <Item>
@@ -162,24 +173,45 @@
 </div>
 
 <style>
-  #editor-lists {
+  .assign-labs {
     display: flex;
-    max-height: inherit;
     min-height: 0;
-    overflow-x: auto;
+    max-width: 100vw;
+    overflow: hidden;
+    font-family: "Fira Code", sans-serif;
+    border-radius: 2em 2em 2em 2em;
+    margin-top: 1.5em;
   }
 
   .col-header {
-    font-family: Roboto, sans-serif;
+    font-family: inherit;
+    text-align: center;
+    max-height: 1em;
+    overflow: hidden;
+    font-size: x-large;
+    font-weight: 600;
+    border: 0.1em solid rgb(6, 69, 48);
+    border-radius: 2em 2em;
+    margin: 0.3em 0.4em 0em 0.4em;
+
+    /* border: 5px solid red;
+    border-style: solid;
+    background-color: pink; */
   }
 
   .column {
+    display: flex row;
+    font-family: inherit;
     flex: 1;
-    min-width: 15em;
-    overflow: auto;
+
+    background-color: rgb(192, 192, 164);
   }
 
   * :global(.editor-list) {
-    border: 1px solid black;
+    margin: 0.5em 0em 0.5em 0.5em;
+    font-family: inherit;
+    font-weight: 600;
+    height: 70vh;
+    overflow: auto;
   }
 </style>
