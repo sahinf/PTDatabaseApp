@@ -7,14 +7,6 @@
     SecondaryText,
     Text,
   } from "@smui/list";
-  import Card, {
-    Content,
-    PrimaryAction,
-    Actions,
-    ActionButtons,
-    ActionIcons,
-  } from "@smui/card";
-  import Button, { Label } from "@smui/button";
   import type PeerTeacher from "../models/PeerTeacher";
   import { labStore, ptStore } from "../stores";
 
@@ -67,11 +59,12 @@
   }
 
   function assignLab(id: number) {
-    selectedPeerTeacher?.labs.add(id);
-
     // Mark lab as assigned
     const lab = $labStore.get(id);
-    if (lab !== undefined) lab.assigned = true;
+    if (lab === undefined) return;
+    lab.assigned = true;
+
+    selectedPeerTeacher?.labs.add(id);
 
     // Self assignemnt to update `assignedLabs` and `compatibleLabs`
     selectedPeerTeacher = selectedPeerTeacher;
@@ -80,11 +73,13 @@
   }
 
   function unassignLab(id: number) {
+    const lab = $labStore.get(id);
+    if (lab === undefined) return;
+    lab.assigned = false;
+
     selectedPeerTeacher?.labs.delete(id);
 
     // Mark lab as unassigned
-    const lab = $labStore.get(id);
-    if (lab !== undefined) lab.assigned = false;
 
     // Self assignemnt to update `assignedLabs` and `compatibleLabs`
     selectedPeerTeacher = selectedPeerTeacher;
@@ -191,8 +186,9 @@
     font-size: x-large;
     font-weight: 600;
     border: 0.1em solid rgb(6, 69, 48);
-    border-radius: 2em 2em;
-    margin: 0.3em 0.4em 0em 0.4em;
+    border-radius: 20em 20em;
+    margin: 0.3em 1em 0em 1em;
+    /* font-size: 0.90em; */
 
     /* border: 5px solid red;
     border-style: solid;
