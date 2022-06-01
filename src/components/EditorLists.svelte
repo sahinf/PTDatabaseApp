@@ -60,8 +60,6 @@
 
   function assignLab(id: number) {
     selectedPeerTeacher?.labs.add(id);
-    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
-    selectedPeerTeacher = selectedPeerTeacher;
 
     // Mark lab as assigned
     const lab = $labStore.get(id);
@@ -75,8 +73,6 @@
 
   function unassignLab(id: number) {
     selectedPeerTeacher?.labs.delete(id);
-    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
-    selectedPeerTeacher = selectedPeerTeacher;
 
     // Mark lab as unassigned
     const lab = $labStore.get(id);
