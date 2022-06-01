@@ -53,6 +53,9 @@
       map.delete(id);
       return map;
     });
+    
+    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
+    selectedPeerTeacher = selectedPeerTeacher;
   }
 
   function assignLab(id: number) {
