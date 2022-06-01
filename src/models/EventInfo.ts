@@ -57,4 +57,10 @@ export default class EventInfo {
             return `${this.days} ${EventInfo.timeToStr(this.start)}-${EventInfo.timeToStr(this.end)}`;
         }
     }
+
+    get duration_mins() {
+        const diff_hours = Math.floor(this.end / 100) - Math.floor(this.start / 100);
+        const diff_mins = this.end % 100 - this.start % 100;
+        return (diff_hours * 60 + diff_mins) * this.days.length;
+    }
 }
