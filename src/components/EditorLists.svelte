@@ -66,6 +66,11 @@
     // Mark lab as assigned
     const lab = $labStore.get(id);
     if (lab !== undefined) lab.assigned = true;
+
+    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
+    selectedPeerTeacher = selectedPeerTeacher;
+    // Self assignment to update PT values used in `Peer Teacher` column
+    peerTeachers = peerTeachers;
   }
 
   function unassignLab(id: number) {
@@ -76,6 +81,11 @@
     // Mark lab as unassigned
     const lab = $labStore.get(id);
     if (lab !== undefined) lab.assigned = false;
+
+    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
+    selectedPeerTeacher = selectedPeerTeacher;
+    // Self assignment to update PT values used in `Peer Teacher` column
+    peerTeachers = peerTeachers;
   }
 </script>
 
