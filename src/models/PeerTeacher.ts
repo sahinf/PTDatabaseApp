@@ -1,4 +1,6 @@
 import EventInfo from "./EventInfo";
+import { labStore } from "../stores";
+import { get } from "svelte/store"
 
 interface PeerTeacherSerializeInfo {
     id: number,
@@ -42,7 +44,19 @@ export default class PeerTeacher {
         return this.events.some(item => item.conflictsWith(event));
     }
 
-    get name() {
+    get name(): string {
         return `${this.firstname} ${this.lastname}`;
     }
+
+    get lab_hours(): number {
+        const all_labs = get(labStore);
+
+        let total_hours = 0;
+        this.labs.forEach((lab_id) => {
+            total_hours += all_labs.get(lab_id)!.pay_hours;
+        })
+
+        return total_hours;
+    }
+
 }
