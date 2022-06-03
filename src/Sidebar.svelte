@@ -1,5 +1,16 @@
 <script>
     import DarkModeSwitch from "./DarkModeSwitch.svelte";
+
+    $: active_section = 2;
+
+    let sections = [
+        'File Uploads',
+        'Peer Teachers',
+        'Labs',
+        'Active Peer Teachers',
+        'Stats',
+        'TAMU html output'
+    ]
 </script>
 
 <!-- Entire Page -->
@@ -13,19 +24,17 @@
             <!-- Text -->
             <div>Peer Teacher Manager</div>
             <div>
-                <DarkModeSwitch/>
+                <DarkModeSwitch />
             </div>
         </div>
 
         <!-- Sidebar sections -->
-        <div class=" overflow-y-auto">
-            {#each Array(20) as _, i}
-                <div
-                    class="flex h-20 bg-sky-400 hover:bg-sky-700 active:bg-sky-800 border-b hover:drop-shadow-2xl font-bold justify-center items-center"
-                >
-                    Selection {i + 1}
-                </div>
-            {/each}
+        <div class="flex-col overflow-y-auto">
+            <ul class="menu bg-base-100 w-full">
+                {#each sections as sec, i}
+                    <li><div> {sec} </div></li>
+                {/each}
+            </ul>
         </div>
     </div>
 
