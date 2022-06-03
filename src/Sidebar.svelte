@@ -1,3 +1,7 @@
+<script>
+    import DarkModeSwitch from "./DarkModeSwitch.svelte";
+</script>
+
 <!-- Entire Page -->
 <div class="flex flex-row h-screen">
     <!-- SIDEBAR -->
@@ -6,7 +10,11 @@
         <div
             class="font-serif flex-none text-center text-2xl text-neutral-900 p-4 border-b font-black"
         >
-            Peer Teacher Manager
+            <!-- Text -->
+            <div>Peer Teacher Manager</div>
+            <div>
+                <DarkModeSwitch/>
+            </div>
         </div>
 
         <!-- Sidebar sections -->
@@ -17,7 +25,6 @@
                 >
                     Selection {i + 1}
                 </div>
-                <button class="btn btn-primary">Button</button>
             {/each}
         </div>
     </div>
