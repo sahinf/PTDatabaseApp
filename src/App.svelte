@@ -1,11 +1,9 @@
 <!-- This is the Root component that loads other components -->
 <script lang="ts">
-	import Editor from "./components/Editor.svelte";
-	import Sidebar from "./Sidebar.svelte";
+	import Sidebar from "./components/Sidebar.svelte";
 </script>
 
 <Sidebar />
-<Editor />
 
 <style global>
 	@tailwind base;
