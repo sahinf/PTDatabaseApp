@@ -37,9 +37,12 @@
         <!-- Sidebar sections -->
         <div class="flex-col overflow-y-auto">
             <ul class="menu bg-base-100 w-full text-xl">
-                {#each sections as sec, i}
+                {#each sections as sec}
                     <li>
-                        <div class="" on:click={() => chooseSection(sec)}>
+                        <div
+                            class={selected == sec ? "active" : ""}
+                            on:click={() => chooseSection(sec)}
+                        >
                             {sec.name}
                         </div>
                     </li>
