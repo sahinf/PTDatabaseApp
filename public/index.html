@@ -19,10 +19,13 @@
 
   <!-- Set initial theme the theme -->
   <script>
-    if ("theme" in localStorage)
+    if ("theme" in localStorage) {
       document.documentElement.setAttribute('data-theme', localStorage.theme)
-    else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+    }
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       localStorage.theme = 'dark'
+      document.documentElement.setAttribute('data-theme', 'dark')
+    }
     else
       localStorage.theme = 'light'
   </script>
