@@ -17,8 +17,4 @@
 			font-family: sans-serif, Proxima Nova;
 		}
 	}
-
-	* {
-		background-color: #EEEEEE;
-	}
 </style>
