@@ -1,5 +1,5 @@
 <script>
-    import DarkModeSwitch from "./DarkModeSwitch.svelte";
+    import DarkModeSwitch from "./components/DarkModeSwitch.svelte";
     
     let active_section : undefined;
 
