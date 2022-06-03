@@ -15,18 +15,15 @@
     }
 
     function isDarkMode() {
-        return localStorage.theme == "dark";
+        if (localStorage.theme == "dark") return "";
+        return "checked"
     }
 </script>
 
 <label class="swap swap-rotate">
     <!-- this hidden checkbox controls the state -->
     <!-- Make Moon/Sun icon based on current theme -->
-    {#if isDarkMode()}
-        <input type="checkbox" on:click={toggleDarkMode} />
-    {:else}
-        <input type="checkbox" checked="checked" on:click={toggleDarkMode} />
-    {/if}
+    <input type="checkbox" checked={isDarkMode()} on:click={toggleDarkMode} />
 
     <!-- sun icon -->
     <svg
