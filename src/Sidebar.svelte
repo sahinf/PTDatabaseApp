@@ -1,7 +1,7 @@
 <script>
     import DarkModeSwitch from "./DarkModeSwitch.svelte";
-
-    $: active_section = 2;
+    
+    let active_section : undefined;
 
     let sections = [
         'File Uploads',
@@ -11,6 +11,16 @@
         'Stats',
         'TAMU html output'
     ]
+
+    let sections2 = [
+        {name: 'File Uploads', file: null, isActive: 'active'},
+        {name: 'Peer Teachers', file: null, isActive: 'active'}
+    ]
+
+    function chooseSection(sec) {
+        active_section = sec;
+        console.log('Chose section', active_section)
+    }
 </script>
 
 <!-- Entire Page -->
@@ -30,9 +40,12 @@
 
         <!-- Sidebar sections -->
         <div class="flex-col overflow-y-auto">
-            <ul class="menu bg-base-100 w-full">
+            <ul class="menu bg-base-100 w-full text-xl">
                 {#each sections as sec, i}
-                    <li><div> {sec} </div></li>
+                    <li><div class=""> {sec} </div></li>
+                {/each}
+                {#each sections2 as sec, i}
+                    <li><div class="" on:click={() => chooseSection(sec)}> {sec.name} </div></li>
                 {/each}
             </ul>
         </div>
