@@ -1,25 +1,21 @@
-<script>
-    import DarkModeSwitch from "./components/DarkModeSwitch.svelte";
-    
-    let active_section : undefined;
+<script lang="ts">
+    import DarkModeSwitch from "./DarkModeSwitch.svelte";
+    import AssignLabs from "./AssignLabs.svelte";
 
     let sections = [
-        'File Uploads',
-        'Peer Teachers',
-        'Labs',
-        'Active Peer Teachers',
-        'Stats',
-        'TAMU html output'
-    ]
+        { name: "File Uploads", component: null },
+        { name: "Peer Teachers", component: null },
+        { name: "Assign Labs", component: AssignLabs },
+        { name: "Labs", component: null },
+        { name: "Active Peer Teachers", component: null },
+        { name: "Stats", component: null },
+        { name: "TAMU Html Output", component: null },
+    ];
 
-    let sections2 = [
-        {name: 'File Uploads', file: null, isActive: 'active'},
-        {name: 'Peer Teachers', file: null, isActive: 'active'}
-    ]
+    let selected = sections[0];
 
     function chooseSection(sec) {
-        active_section = sec;
-        console.log('Chose section', active_section)
+        selected = sec;
     }
 </script>
 
@@ -42,15 +38,18 @@
         <div class="flex-col overflow-y-auto">
             <ul class="menu bg-base-100 w-full text-xl">
                 {#each sections as sec, i}
-                    <li><div class=""> {sec} </div></li>
-                {/each}
-                {#each sections2 as sec, i}
-                    <li><div class="" on:click={() => chooseSection(sec)}> {sec.name} </div></li>
+                    <li>
+                        <div class="" on:click={() => chooseSection(sec)}>
+                            {sec.name}
+                        </div>
+                    </li>
                 {/each}
             </ul>
         </div>
     </div>
 
-    <!-- Main content -->
-    <div class="flex-auto">Content</div>
+    <!-- Chosen Section / Component -->
+    <div class="flex-auto">
+        <svelte:component this={selected.component} />
+    </div>
 </div>
