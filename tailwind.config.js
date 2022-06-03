@@ -3,5 +3,12 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
+
+  // Daisyui had some theme turned on by default
+  daisyui: {
+    themes: false,
+ }
 }
