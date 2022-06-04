@@ -36,6 +36,10 @@
             snackbarText = `Failed to add ${failed.length} PTs. See console for details.`;
             snackbar.open();
           }
+        })
+        .finally( () => {
+          snackbarText = "Sucessfullyed imported Peer Teacher/s!";
+          snackbar.open();
         });
     }
   }
@@ -50,6 +54,10 @@
           snackbarText =
             "Failed to import lab schedule. See console for details.";
           snackbar.open();
+        })
+        .finally(() => {
+          snackbarText = "Sucessfullyed imported Lab/s!";
+          snackbar.open();
         });
     }
   }
@@ -63,6 +71,10 @@
         })
         .catch(() => {
           snackbarText = "Failed to import database. See console for details.";
+          snackbar.open();
+        })
+        .finally(() => {
+          snackbarText = "Sucessfullyed imported database!";
           snackbar.open();
         });
     }
@@ -120,7 +132,7 @@
         color="btn-success"
         accept="application/json"
         multiple={true}
-        bind:files={ptSchedules}
+        bind:files={labSchedule}
       />
     </Card>
 
