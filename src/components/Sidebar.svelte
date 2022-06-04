@@ -1,9 +1,10 @@
 <script lang="ts">
     import DarkModeSwitch from "./DarkModeSwitch.svelte";
     import AssignLabs from "./AssignLabs.svelte";
+    import FileUploads from "./FileUploads.svelte"
 
     let sections = [
-        { name: "File Uploads", component: null },
+        { name: "File Uploads", component: FileUploads },
         { name: "Peer Teachers", component: null },
         { name: "Assign Labs", component: AssignLabs },
         { name: "Labs", component: null },
