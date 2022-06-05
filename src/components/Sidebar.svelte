@@ -1,7 +1,7 @@
 <script lang="ts">
     import DarkModeSwitch from "./DarkModeSwitch.svelte";
     import AssignLabs from "./AssignLabs.svelte";
-    import FileUploads from "./FileUploads.svelte"
+    import FileUploads from "./FileUploads.svelte";
 
     let sections = [
         { name: "File Uploads", component: FileUploads },
@@ -13,7 +13,8 @@
         { name: "TAMU Html Output", component: null },
     ];
 
-    let selected = sections[0];
+    // Set initial page to Assign Labs while I work on it
+    let selected = sections[2];
 
     function chooseSection(sec) {
         selected = sec;
@@ -26,7 +27,7 @@
     <div class="w-2/12 flex flex-col border-r">
         <!-- Header for sidebar sections -->
         <div
-            class="font-serif flex-none text-center text-2xl text-neutral-900 p-4 border-b font-black"
+            class="font-serif flex-none text-center text-2xl text-neutral-900 p-4 border-b font-black overflow-hidden"
         >
             <!-- Text -->
             <div>Peer Teacher Manager</div>
