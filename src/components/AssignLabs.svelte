@@ -88,9 +88,18 @@
   }
 
   $: clicked = 0;
+
+  $: columns = [
+    { header: "Peer Teachers", body: [...peerTeachers] },
+    { header: "Labs", body: [...compatibleLabs] },
+    {
+      header: selectedPeerTeacher?.name ?? "PT's Labs",
+      body: [...assignedLabs],
+    },
+  ];
 </script>
 
-<div class="assign-labs">
+<!-- <div class="assign-labs">
   <div class="column">
     <div class="col-header">Peer Teachers</div>
     <List threeLine avatarList singleSelection class="editor-list">
@@ -165,10 +174,31 @@
       {/each}
     </List>
   </div>
+</div> -->
+
+<div class="flex flex-row h-full px-[10%] pt-[3%] pb-[10%]">
+  <!-- Peer Teachers -->
+  <div class="flex flex-none flex-col w-1/3 border-4 border-solid rounded-lg border-slate-500 hover:border-8 hover:border-slate-700 overflow-hidden">
+    <!-- Header -->
+    <div class="flex font-sans text-lg text-center flex-none h-10 border-2 rounded-t-md border-slate-400 overflow-hidden">
+      Peer Teachers
+    </div>
+    <!-- Body -->
+    <div class="">Body</div>
+  </div>
+
+  <!-- Labs -->
+  <!-- <div class="assign-box bg-red-500">
+    <div class="assign-box-header">Labs</div>
+    <div />
+  </div> -->
+
+  <!-- Currently assigned to PT -->
+  <!-- <div class="assign-box bg-blue-500">Current</div> -->
 </div>
 
 <style>
-  .assign-labs {
+  /* .assign-labs {
     display: flex;
     min-height: 0;
     max-width: 100vw;
@@ -188,11 +218,6 @@
     border: 0.1em solid rgb(6, 69, 48);
     border-radius: 20em 20em;
     margin: 0.3em 1em 0em 1em;
-    /* font-size: 0.90em; */
-
-    /* border: 5px solid red;
-    border-style: solid;
-    background-color: pink; */
   }
 
   .column {
@@ -209,5 +234,5 @@
     font-weight: 600;
     height: 70vh;
     overflow: auto;
-  }
+  } */
 </style>
