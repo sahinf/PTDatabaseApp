@@ -1,6 +1,6 @@
 <script lang="ts">
     import DarkModeSwitch from "./DarkModeSwitch.svelte";
-    import AssignLabs from "./AssignLabs.svelte";
+    import AssignLabs from "./AssignLabs/AssignLabs.svelte";
     import FileUploads from "./FileUploads.svelte";
 
     let sections = [

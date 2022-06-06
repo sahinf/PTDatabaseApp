@@ -7,8 +7,10 @@
     SecondaryText,
     Text,
   } from "@smui/list";
-  import type PeerTeacher from "../models/PeerTeacher";
-  import { labStore, ptStore } from "../stores";
+  import type PeerTeacher from "../../models/PeerTeacher";
+  import { labStore, ptStore } from "../../stores";
+  import Lab from "./Lab.svelte";
+  import PT from "./PT.svelte";
 
   let selectedPeerTeacher: PeerTeacher | undefined;
 
@@ -90,11 +92,12 @@
   $: clicked = 0;
 
   $: columns = [
-    { header: "Peer Teachers", body: [...peerTeachers] },
-    { header: "Labs", body: [...compatibleLabs] },
+    { header: "Peer Teachers", data: [...peerTeachers], component: PT },
+    { header: "Labs", data: [...compatibleLabs], component: Lab },
     {
       header: selectedPeerTeacher?.name ?? "PT's Labs",
-      body: [...assignedLabs],
+      data: [...assignedLabs],
+      component: Lab,
     },
   ];
 </script>
@@ -177,24 +180,15 @@
 </div> -->
 
 <div class="flex flex-row h-full px-[10%] pt-[3%] pb-[10%]">
-  <!-- Peer Teachers -->
-  <div class="flex flex-none flex-col w-1/3 border-4 border-solid rounded-lg border-slate-500 hover:border-8 hover:border-slate-700 overflow-hidden">
-    <!-- Header -->
-    <div class="flex font-sans text-lg text-center flex-none h-10 border-2 rounded-t-md border-slate-400 overflow-hidden">
-      Peer Teachers
+  <!-- 3 Columns -->
+
+  <div class="assign-box">
+
+    <div class="assign-box-header">
+      Peer Teacher
     </div>
-    <!-- Body -->
-    <div class="">Body</div>
   </div>
 
-  <!-- Labs -->
-  <!-- <div class="assign-box bg-red-500">
-    <div class="assign-box-header">Labs</div>
-    <div />
-  </div> -->
-
-  <!-- Currently assigned to PT -->
-  <!-- <div class="assign-box bg-blue-500">Current</div> -->
 </div>
 
 <style>
