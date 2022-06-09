@@ -1,12 +1,4 @@
 <script lang="ts">
-  import IconButton from "@smui/icon-button";
-  import List, {
-    Item,
-    Meta,
-    PrimaryText,
-    SecondaryText,
-    Text,
-  } from "@smui/list";
   import type PeerTeacher from "../../models/PeerTeacher";
   import { labStore, ptStore } from "../../stores";
   import Lab from "./Lab.svelte";
@@ -115,83 +107,6 @@
     }
   });
 </script>
-
-<!-- <div class="assign-labs">
-  <div class="column">
-    <div class="col-header">Peer Teachers</div>
-    <List threeLine avatarList singleSelection class="editor-list">
-      {#each peerTeachers as pt}
-        <Item on:SMUI:action={() => (selectedPeerTeacher = pt)}>
-          <Text>
-            <PrimaryText>{pt.name}</PrimaryText>
-            <SecondaryText>{pt.id}</SecondaryText>
-            <SecondaryText>Assigned hours: {pt.lab_hours}</SecondaryText>
-          </Text>
-          <Meta>
-            <IconButton
-              class="material-icons"
-              on:click$stopPropagation={() => {
-                deletePT(pt.id);
-              }}
-            >
-              remove_circle
-            </IconButton>
-          </Meta>
-        </Item>
-      {/each}
-    </List>
-  </div>
-  <div class="column">
-    <div class="col-header">Labs</div>
-    <List threeLine class="editor-list">
-      {#each compatibleLabs as lab}
-        <Item>
-          <Text>
-            <PrimaryText>{lab.course}-{lab.section}</PrimaryText>
-            <SecondaryText>{lab.time}</SecondaryText>
-            <SecondaryText>{lab.location}</SecondaryText>
-          </Text>
-          <Meta class="material-icons">
-            <IconButton
-              class="material-icons"
-              on:click$stopPropagation={() => {
-                assignLab(lab.id);
-              }}
-            >
-              add_circle
-            </IconButton>
-          </Meta>
-        </Item>
-      {/each}
-    </List>
-  </div>
-  <div class="column">
-    <div class="col-header">
-      {selectedPeerTeacher?.name ?? "PT"}
-    </div>
-    <List threeLine class="editor-list">
-      {#each assignedLabs as lab}
-        <Item>
-          <Text>
-            <PrimaryText>{lab.course}-{lab.section}</PrimaryText>
-            <SecondaryText>{lab.time}</SecondaryText>
-            <SecondaryText>{lab.location}</SecondaryText>
-          </Text>
-          <Meta class="material-icons">
-            <IconButton
-              class="material-icons"
-              on:click$stopPropagation={() => {
-                unassignLab(lab.id);
-              }}
-            >
-              remove_circle
-            </IconButton>
-          </Meta>
-        </Item>
-      {/each}
-    </List>
-  </div>
-</div> -->
 
 <div class="flex flex-row h-full px-[10%] pt-[3%] pb-[10%]">
   <!-- 3 Columns -->
