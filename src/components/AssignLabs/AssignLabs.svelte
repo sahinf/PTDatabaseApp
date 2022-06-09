@@ -11,6 +11,12 @@
   import { labStore, ptStore } from "../../stores";
   import Lab from "./Lab.svelte";
   import PT from "./PT.svelte";
+  import { onMount } from "svelte";
+  import {
+    parseDatabase,
+    parseDatabaseLocal,
+    parseLabSchedule,
+  } from "../../util/parser";
 
   let selectedPeerTeacher: PeerTeacher | undefined;
 
@@ -100,6 +106,14 @@
       component: Lab,
     },
   ];
+
+  // Load db from local storage so I don't have to keep uploading
+  onMount(() => {
+    const db = localStorage.getItem("db");
+    if (db) {
+      parseDatabaseLocal(JSON.parse(db));
+    }
+  });
 </script>
 
 <!-- <div class="assign-labs">
@@ -182,13 +196,45 @@
 <div class="flex flex-row h-full px-[10%] pt-[3%] pb-[10%]">
   <!-- 3 Columns -->
 
-  <div class="assign-box">
-
-    <div class="assign-box-header">
-      Peer Teacher
+  <div class="assign-box rounded-l-xl">
+    <div class="assign-box-header">Peer Teacher</div>
+    <div class="assign-box-body">
+      {#each peerTeachers as pt}
+        <div
+          class={selectedPeerTeacher == pt ? "border-l-8 border-blue-500" : ""}
+          on:click={() => {
+            selectedPeerTeacher = pt;
+          }}
+        >
+          <svelte:component this={PT} {pt} />
+        </div>
+      {/each}
     </div>
   </div>
 
+  <div class="assign-box">
+    <div class="assign-box-header">Labs</div>
+    <div class="assign-box-body">
+      {#each labs as lab}
+        <!-- <div> -->
+        <svelte:component this={Lab} {lab} />
+        <!-- </div> -->
+      {/each}
+    </div>
+  </div>
+
+  <div class="assign-box rounded-r-xl">
+    <div class="assign-box-header">
+      {selectedPeerTeacher?.name ?? "PT's Labs"}
+    </div>
+    <div class="assign-box-body">
+      {#each assignedLabs as lab}
+        <!-- <div> -->
+        <svelte:component this={Lab} {lab} />
+        <!-- </div> -->
+      {/each}
+    </div>
+  </div>
 </div>
 
 <style>
