@@ -1,6 +1,7 @@
 import EventInfo from "../models/EventInfo";
 import Lab from "../models/Lab";
 import PeerTeacher from "../models/PeerTeacher";
+import { labStore, ptStore } from "../stores";
 import { PeerTeacherImportError } from "./error";
 
 interface LabSchedule {
@@ -156,4 +157,27 @@ export function parseDatabase(database: DatabaseFile) {
     });
 
     return result;
+}
+
+/**
+ * Parses a JSON database into maps of Lab and Peer Teachers
+ * and updates local storage
+ * @param database The database object from a db file
+ */
+export function parseDatabaseLocal(database: DatabaseFile) {
+    const result = {
+        labs: new Map<number, Lab>(),
+        peerTeachers: new Map<number, PeerTeacher>()
+    }
+
+    database.labs.forEach(lab => {
+        result.labs.set(lab.id, Lab.fromJSON(lab));
+    });
+
+    database.peerTeachers.forEach(pt => {
+        result.peerTeachers.set(pt.id, PeerTeacher.fromJSON(pt));
+    });
+
+    labStore.set(result.labs);
+    ptStore.set(result.peerTeachers)
 }
