@@ -131,9 +131,7 @@
     <div class="assign-box-header">Labs</div>
     <div class="assign-box-body">
       {#each labs as lab}
-        <!-- <div> -->
         <svelte:component this={Lab} {lab} />
-        <!-- </div> -->
       {/each}
     </div>
   </div>
@@ -144,50 +142,8 @@
     </div>
     <div class="assign-box-body">
       {#each assignedLabs as lab}
-        <!-- <div> -->
-        <svelte:component this={Lab} {lab} />
-        <!-- </div> -->
+        <svelte:component this={Lab} {lab} assign={false} />
       {/each}
     </div>
   </div>
 </div>
-
-<style>
-  /* .assign-labs {
-    display: flex;
-    min-height: 0;
-    max-width: 100vw;
-    overflow: hidden;
-    font-family: "Fira Code", sans-serif;
-    border-radius: 2em 2em 2em 2em;
-    margin-top: 1.5em;
-  }
-
-  .col-header {
-    font-family: inherit;
-    text-align: center;
-    max-height: 1em;
-    overflow: hidden;
-    font-size: x-large;
-    font-weight: 600;
-    border: 0.1em solid rgb(6, 69, 48);
-    border-radius: 20em 20em;
-    margin: 0.3em 1em 0em 1em;
-  }
-
-  .column {
-    display: flex row;
-    font-family: inherit;
-    flex: 1;
-
-    background-color: rgb(192, 192, 164);
-  }
-
-  * :global(.editor-list) {
-    margin: 0.5em 0em 0.5em 0.5em;
-    font-family: inherit;
-    font-weight: 600;
-    height: 70vh;
-    overflow: auto;
-  } */
-</style>
