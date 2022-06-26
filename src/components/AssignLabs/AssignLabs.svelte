@@ -1,8 +1,8 @@
 <script lang="ts">
   import type PeerTeacher from "../../models/PeerTeacher";
   import { labStore, ptStore } from "../../stores";
-  import Lab from "./Lab.svelte";
-  import PT from "./PT.svelte";
+  import Lab from "./LabBox.svelte";
+  import PT from "./PTBox.svelte";
   import { onMount } from "svelte";
   import {
     parseDatabase,
@@ -63,7 +63,10 @@
   function assignLab(id: number) {
     // Mark lab as assigned
     const lab = $labStore.get(id);
-    if (lab === undefined) return;
+    if (lab === undefined) {
+      console.error("Error lab does not exist");
+      return;
+    }
     lab.assigned = true;
 
     selectedPeerTeacher?.labs.add(id);
@@ -88,18 +91,6 @@
     // Self assignment to update PT values used in `Peer Teacher` column
     peerTeachers = peerTeachers;
   }
-
-  $: clicked = 0;
-
-  $: columns = [
-    { header: "Peer Teachers", data: [...peerTeachers], component: PT },
-    { header: "Labs", data: [...compatibleLabs], component: Lab },
-    {
-      header: selectedPeerTeacher?.name ?? "PT's Labs",
-      data: [...assignedLabs],
-      component: Lab,
-    },
-  ];
 
   // Load db from local storage so I don't have to keep uploading
   onMount(() => {
@@ -128,6 +119,7 @@
               : ""}
             on:click={() => {
               selectedPeerTeacher = pt;
+              console.log(pt);
             }}
           >
             <svelte:component this={PT} {pt} />
@@ -136,15 +128,17 @@
       </div>
     </div>
 
+    <!-- Available Labs -->
     <div class="assign-box">
       <div class="assign-box-header">Labs</div>
       <div class="assign-box-body">
         {#each compatibleLabs as lab}
-          <svelte:component this={Lab} {lab} />
+          <svelte:component this={Lab} {lab} {selectedPeerTeacher} />
         {/each}
       </div>
     </div>
 
+    <!-- Selected PT's Labs -->
     <div class="assign-box rounded-r-xl">
       <div class="assign-box-header">
         {selectedPeerTeacher?.name ?? "PT's Labs"}
@@ -157,7 +151,7 @@
     </div>
   </div>
 
-  <!-- Bottom half: Universal non-assigned labs -->
+  <!-- Bottom half: Universal unassigned labs -->
   <div
     class="flex flex-row overflow-auto mt-[1vh] border-y-4 border-slate-500 w-full h-[17vh] items-center text-sm"
   >
