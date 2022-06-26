@@ -27,6 +27,8 @@
     })
     .sort((a, b) => a.id - b.id);
 
+  $: unassignedLabs = labs.filter((lab) => !lab.assigned);
+
   $: compatibleLabs = labs.filter(
     (lab) =>
       // Lab not already assigned
@@ -108,42 +110,64 @@
   });
 </script>
 
-<div class="flex flex-row h-full px-[10%] pt-[3%] pb-[10%]">
-  <!-- 3 Columns -->
+<div
+  class="flex-none overflow-hidden flex-col h-[100vh] w-[80vw] px-[2vw] pt-[1vh]"
+>
+  <!-- Top half: 3 Columns -->
+  <div class="flex flex-row h-[80vh]">
+    <!-- PT Box -->
+    <div class="assign-box rounded-l-xl">
+      <!-- PT Header -->
+      <div class="assign-box-header">Peer Teacher</div>
+      <!-- PT Body -->
+      <div class="assign-box-body">
+        {#each peerTeachers as pt}
+          <div
+            class={selectedPeerTeacher == pt
+              ? "border-l-8 border-blue-500"
+              : ""}
+            on:click={() => {
+              selectedPeerTeacher = pt;
+            }}
+          >
+            <svelte:component this={PT} {pt} />
+          </div>
+        {/each}
+      </div>
+    </div>
 
-  <div class="assign-box rounded-l-xl">
-    <div class="assign-box-header">Peer Teacher</div>
-    <div class="assign-box-body">
-      {#each peerTeachers as pt}
-        <div
-          class={selectedPeerTeacher == pt ? "border-l-8 border-blue-500" : ""}
-          on:click={() => {
-            selectedPeerTeacher = pt;
-          }}
-        >
-          <svelte:component this={PT} {pt} />
-        </div>
-      {/each}
+    <div class="assign-box">
+      <div class="assign-box-header">Labs</div>
+      <div class="assign-box-body">
+        {#each compatibleLabs as lab}
+          <svelte:component this={Lab} {lab} />
+        {/each}
+      </div>
+    </div>
+
+    <div class="assign-box rounded-r-xl">
+      <div class="assign-box-header">
+        {selectedPeerTeacher?.name ?? "PT's Labs"}
+      </div>
+      <div class="assign-box-body">
+        {#each assignedLabs as lab}
+          <svelte:component this={Lab} {lab} assign={false} />
+        {/each}
+      </div>
     </div>
   </div>
 
-  <div class="assign-box">
-    <div class="assign-box-header">Labs</div>
-    <div class="assign-box-body">
-      {#each labs as lab}
-        <svelte:component this={Lab} {lab} />
-      {/each}
-    </div>
-  </div>
-
-  <div class="assign-box rounded-r-xl">
-    <div class="assign-box-header">
-      {selectedPeerTeacher?.name ?? "PT's Labs"}
-    </div>
-    <div class="assign-box-body">
-      {#each assignedLabs as lab}
-        <svelte:component this={Lab} {lab} assign={false} />
-      {/each}
-    </div>
+  <!-- Bottom half: Universal non-assigned labs -->
+  <div
+    class="flex flex-row overflow-auto mt-[1vh] border-y-4 border-slate-500 w-full h-[17vh] items-center text-sm"
+  >
+    {#each unassignedLabs as lab}
+      <div
+        class="border rounded-xl hover:bg-sky-100 hover:text-black px-3 py-1 mx-2"
+      >
+        <p>{lab.course}</p>
+        <p>{lab.section}</p>
+      </div>
+    {/each}
   </div>
 </div>
