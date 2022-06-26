@@ -54,7 +54,7 @@ export default class EventInfo {
         } else if (this.start === -1 || this.end === -1) {
             return `${this.days}`;
         } else {
-            return `${this.days} ${EventInfo.timeToStr(this.start)}-${EventInfo.timeToStr(this.end)}`;
+            return `${this.days} ${EventInfo.timeToStr(this.start)} - ${EventInfo.timeToStr(this.end)}`;
         }
     }
 
