@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
     export let name;
     export let width = "1rem";
     export let height = "1rem";
     export let focusable = false;
+    export let handleClick = () => {
+        console.log("Default icon on:click function prints this");
+    };
     let icons = [
         {
             box: 24,
@@ -32,6 +35,7 @@
 </script>
 
 <svg
+    on:click={handleClick}
     class={$$props.class}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
