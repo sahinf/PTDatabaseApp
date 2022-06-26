@@ -46,7 +46,8 @@
 			border-bottom-color: rgb(148 163 184);
 			border-bottom-width: 4px;
 			text-align: center;
-			height: 10%;
+			/* height: 9%; */
+			height: 10vh;
 			overflow: hidden;
 			flex: none;
 		}
@@ -55,7 +56,7 @@
 			/* flex-direction: row; */
 			flex: 1 1 auto;
 			overflow-y: auto;
-			/* height: 100%; */
+			height: 100%;
 		}
 	}
 </style>
