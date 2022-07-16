@@ -9,12 +9,12 @@
 
   let sections = [
     { name: "File Uploads", component: FileUploads },
-    { name: "Peer Teachers", component: null },
+    { name: "Peer Teachers", component: null }, // TODO
     { name: "Assign Labs", component: AssignLabs },
-    { name: "Labs", component: null },
-    { name: "Active Peer Teachers", component: null },
-    { name: "Stats", component: null },
-    { name: "TAMU Html Output", component: null },
+    { name: "Labs", component: null }, // TODO
+    { name: "Active Peer Teachers", component: null }, // TODO
+    { name: "Stats", component: null }, // TODO
+    { name: "TAMU Html Output", component: null }, // TODO
   ];
 
   // Set initial page to Assign Labs while I work on it
@@ -22,8 +22,8 @@
 
   onMount(async () => {
     // load database on mount for testing purposes
-    console.log("reading local database")
-    parseDatabaseLocal(local_db)
+    console.log("reading local database");
+    parseDatabaseLocal(local_db);
   });
 
   function chooseSection(sec) {
