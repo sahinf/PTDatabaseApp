@@ -5,10 +5,8 @@
     export let lab: Lab;
     export let assign: boolean = true;
     export let selectedPeerTeacher: PeerTeacher | null = null;
-
-    function onIconClick() {
-        console.log("Clicked lab", lab.course, lab.section);
-    }
+    export let iconClick = () => {}
+    export let iconName :string = "plus-circle";
 </script>
 
 <!-- Lab box -->
@@ -20,15 +18,27 @@
         <!-- Top Half -->
         <div class="flex flex-row">
             <strong class="flex-grow">CSCE {lab.course} - {lab.section}</strong>
-            {#if assign}
+            <Icon name="minus-circle" class="h-6 w-6" handleClick={()=>{iconClick()}}/>
+        </div>
+    </div>
+    <!-- Bottom half -->
+    <div>
+        <p class="text-xs">{lab.event.info}</p>
+        <p class="text-xs">{lab.building} {lab.room}</p>
+    </div>
+</div>
+
+ <!-- {#if assign}
                 <Icon
                     name="plus-circle"
                     class="h-6 w-6"
                     handleClick={() => {
-                        selectedPeerTeacher?.assignLab(lab.id);
+                        iconClick()
+                        // selectedPeerTeacher?.assignLab(lab.id);
                         //TODO Adding a lab to a PT doesn't update the current "Labs" and "PT's Labs" columns 
                         //TODO This was handled by self assignment in the assign labs function in Scott's version, but now this logic is passed down into a child component (this component) and self-assigning down here does not seem to help
-                        selectedPeerTeacher = selectedPeerTeacher;
+
+                        //// selectedPeerTeacher = selectedPeerTeacher;
                     }}
                 />
             {:else}
@@ -43,12 +53,4 @@
                         );
                     }}
                 />
-            {/if}
-        </div>
-    </div>
-    <!-- Bottom half -->
-    <div>
-        <p class="text-xs">{lab.event.info}</p>
-        <p class="text-xs">{lab.building} {lab.room}</p>
-    </div>
-</div>
+            {/if} -->

@@ -78,6 +78,7 @@
   }
 
   function unassignLab(id: number) {
+    console.log("unassiging", id)
     const lab = $labStore.get(id);
     if (lab === undefined) return;
     lab.assigned = false;
@@ -119,7 +120,6 @@
               : ""}
             on:click={() => {
               selectedPeerTeacher = pt;
-              console.log(pt);
             }}
           >
             <svelte:component this={PT} {pt} />
@@ -133,7 +133,7 @@
       <div class="assign-box-header">Labs</div>
       <div class="assign-box-body">
         {#each compatibleLabs as lab}
-          <svelte:component this={Lab} {lab} {selectedPeerTeacher} />
+          <svelte:component this={Lab} {lab} iconClick={()=>{assignLab(lab.id)}} />
         {/each}
       </div>
     </div>
@@ -145,7 +145,7 @@
       </div>
       <div class="assign-box-body">
         {#each assignedLabs as lab}
-          <svelte:component this={Lab} {lab} assign={false} />
+          <svelte:component this={Lab} {lab} icon="minus-circle" iconClick={()=>{unassignLab(lab.id)}} />
         {/each}
       </div>
     </div>
