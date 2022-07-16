@@ -4,7 +4,7 @@
   export let height = "1rem";
   export let focusable = "false";
   export let handleClick = () => {
-    console.log("Default on:click handler for Icon.svelte. No handler passed");
+    console.log(`No click handler passed to icon "${name}"`);
   };
   let icons = [
     {
