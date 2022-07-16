@@ -41,6 +41,12 @@
       )
   );
 
+  function updateReactiveDeclarations() {
+    selectedPeerTeacher = selectedPeerTeacher;
+    peerTeachers = peerTeachers;
+    labs = labs;
+  }
+
   function deletePT(id: number) {
     if (selectedPeerTeacher?.id === id) {
       selectedPeerTeacher = undefined;
@@ -68,29 +74,16 @@
       return;
     }
     lab.assigned = true;
-
     selectedPeerTeacher?.labs.add(id);
-
-    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
-    selectedPeerTeacher = selectedPeerTeacher;
-    // Self assignment to update PT values used in `Peer Teacher` column
-    peerTeachers = peerTeachers;
+    updateReactiveDeclarations();
   }
 
   function unassignLab(id: number) {
-    console.log("unassiging", id)
     const lab = $labStore.get(id);
     if (lab === undefined) return;
     lab.assigned = false;
-
     selectedPeerTeacher?.labs.delete(id);
-
-    // Mark lab as unassigned
-
-    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
-    selectedPeerTeacher = selectedPeerTeacher;
-    // Self assignment to update PT values used in `Peer Teacher` column
-    peerTeachers = peerTeachers;
+    updateReactiveDeclarations();
   }
 
   // Load db from local storage so I don't have to keep uploading
@@ -133,7 +126,14 @@
       <div class="assign-box-header">Labs</div>
       <div class="assign-box-body">
         {#each compatibleLabs as lab}
-          <svelte:component this={Lab} {lab} iconClick={()=>{assignLab(lab.id)}} />
+          <svelte:component
+            this={Lab}
+            {lab}
+            iconName="plus-circle"
+            iconClick={() => {
+              assignLab(lab.id);
+            }}
+          />
         {/each}
       </div>
     </div>
@@ -145,7 +145,14 @@
       </div>
       <div class="assign-box-body">
         {#each assignedLabs as lab}
-          <svelte:component this={Lab} {lab} icon="minus-circle" iconClick={()=>{unassignLab(lab.id)}} />
+          <svelte:component
+            this={Lab}
+            {lab}
+            iconName="minus-circle"
+            iconClick={() => {
+              unassignLab(lab.id);
+            }}
+          />
         {/each}
       </div>
     </div>
