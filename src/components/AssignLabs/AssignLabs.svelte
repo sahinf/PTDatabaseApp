@@ -4,11 +4,7 @@
   import Lab from "./LabBox.svelte";
   import PT from "./PTBox.svelte";
   import { onMount } from "svelte";
-  import {
-    parseDatabase,
-    parseDatabaseLocal,
-    parseLabSchedule,
-  } from "../../util/parser";
+  import { parseDatabaseLocal } from "../../util/parser";
 
   let selectedPeerTeacher: PeerTeacher | undefined;
 
@@ -47,32 +43,9 @@
     labs = labs;
   }
 
-  function deletePT(id: number) {
-    if (selectedPeerTeacher?.id === id) {
-      selectedPeerTeacher = undefined;
-    }
-
-    $ptStore.get(id)?.labs.forEach((lab_id) => {
-      const lab = $labStore?.get(lab_id);
-      if (lab !== undefined) lab.assigned = false;
-    });
-
-    ptStore.update((map) => {
-      map.delete(id);
-      return map;
-    });
-
-    // Self assignemnt to update `assignedLabs` and `compatibleLabs`
-    selectedPeerTeacher = selectedPeerTeacher;
-  }
-
   function assignLab(id: number) {
-    // Mark lab as assigned
     const lab = $labStore.get(id);
-    if (lab === undefined) {
-      console.error("Error lab does not exist");
-      return;
-    }
+    if (lab === undefined) return;
     lab.assigned = true;
     selectedPeerTeacher?.labs.add(id);
     updateReactiveDeclarations();
@@ -151,6 +124,7 @@
             iconName="minus-circle"
             iconClick={() => {
               unassignLab(lab.id);
+              
             }}
           />
         {/each}
@@ -166,7 +140,7 @@
     >
       {#each unassignedLabs as lab}
         <div
-          class="border rounded-xl hover:bg-sky-100 hover:text-black px-3 py-1 mx-2"
+          class="hover:animate-bounce border rounded-xl hover:bg-sky-100 hover:text-black px-3 py-1 mx-2"
         >
           <p>{lab.course}</p>
           <p>{lab.section}</p>
