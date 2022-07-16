@@ -159,16 +159,19 @@
   </div>
 
   <!-- Bottom half: Universal unassigned labs -->
-  <div
-    class="flex flex-row overflow-auto mt-[1vh] border-y-4 border-slate-500 w-full h-[17vh] items-center text-sm"
-  >
-    {#each unassignedLabs as lab}
-      <div
-        class="border rounded-xl hover:bg-sky-100 hover:text-black px-3 py-1 mx-2"
-      >
-        <p>{lab.course}</p>
-        <p>{lab.section}</p>
-      </div>
-    {/each}
+  <div class="flex flex-col mt-2 text-center">
+    <h1>Unassigned Labs</h1>
+    <div
+      class="flex flex-row overflow-auto border-y-4 mt-1 border-slate-500 w-full items-center text-sm"
+    >
+      {#each unassignedLabs as lab}
+        <div
+          class="border rounded-xl hover:bg-sky-100 hover:text-black px-3 py-1 mx-2"
+        >
+          <p>{lab.course}</p>
+          <p>{lab.section}</p>
+        </div>
+      {/each}
+    </div>
   </div>
 </div>
