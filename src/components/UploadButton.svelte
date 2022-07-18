@@ -2,10 +2,10 @@
   export let accept = "";
   export let multiple = false;
   export let files: FileList | null = null;
+  export let color = "";
 </script>
 
-<label class="mdc-button mdc-button--raised mdc-ripple-upgraded">
-  <div class="mdc-button__ripple" />
-  <slot>Upload</slot>
+<label class="btn {color}">
+  Upload
   <input type="file" {accept} {multiple} bind:files hidden />
 </label>

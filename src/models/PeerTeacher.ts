@@ -11,7 +11,7 @@ interface PeerTeacherSerializeInfo {
         start: number,
         end: number
     }[],
-    labs: number[]
+    labs: number[],
 }
 
 export default class PeerTeacher {

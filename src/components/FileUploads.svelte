@@ -1,8 +1,9 @@
 <script lang="ts">
-  import Button, { Label } from "@smui/button";
+  import { Label } from "@smui/button";
   import IconButton from "@smui/icon-button";
   import Snackbar, { Actions } from "@smui/snackbar";
-  import FileUpload from "./FileUpload.svelte";
+  import UploadButton from "./UploadButton.svelte";
+  import Card from "./Card.svelte";
   import {
     parseDatabaseFile,
     parseLabScheduleFile,
@@ -35,6 +36,10 @@
             snackbarText = `Failed to add ${failed.length} PTs. See console for details.`;
             snackbar.open();
           }
+        })
+        .finally( () => {
+          snackbarText = "Sucessfullyed imported Peer Teacher/s!";
+          snackbar.open();
         });
     }
   }
@@ -49,6 +54,10 @@
           snackbarText =
             "Failed to import lab schedule. See console for details.";
           snackbar.open();
+        })
+        .finally(() => {
+          snackbarText = "Sucessfullyed imported Lab/s!";
+          snackbar.open();
         });
     }
   }
@@ -62,6 +71,10 @@
         })
         .catch(() => {
           snackbarText = "Failed to import database. See console for details.";
+          snackbar.open();
+        })
+        .finally(() => {
+          snackbarText = "Sucessfullyed imported database!";
           snackbar.open();
         });
     }
@@ -98,45 +111,57 @@
   }
 </script>
 
-<div id="action-bar">
-  <FileUpload accept="text/plain" multiple={true} bind:files={ptSchedules}>
-    <Label>Add PT</Label>
-  </FileUpload>
-  <FileUpload accept="application/json" bind:files={labSchedule}>
-    <Label>Import Labs</Label>
-  </FileUpload>
-  <FileUpload accept="application/json" bind:files={dbFile}>
-    <Label>Import DB</Label>
-  </FileUpload>
-  <Button
-    variant="raised"
-    ripple={false}
-    on:click={exportDB}
-    style="overflow: hidden; margin-left: 0.1em; margin-right: 0.5em;"
-  >
-    <Label>Export DB</Label>
-  </Button>
-  <div id="info" />
+<div class="flex flex-col items-center justify-center h-full ">
+  <div class="flex grid grid-cols-2 gap-6">
+    <Card
+      title="Peer Teacher"
+      desc="Upload one or more Peer Teacher schedule txt files"
+    >
+      <UploadButton
+        accept="text/plain"
+        multiple={true}
+        bind:files={ptSchedules}
+      />
+    </Card>
+
+    <Card
+      title="Labs"
+      desc="Upload one or more Labs as json file. Acquired from Howdy"
+    >
+      <UploadButton
+        color="btn-success"
+        accept="application/json"
+        multiple={true}
+        bind:files={labSchedule}
+      />
+    </Card>
+
+    <Card
+      title="Data Base"
+      desc="Upload the json database file to continue working"
+    >
+      <UploadButton
+        color="btn-info"
+        accept="application/json"
+        multiple={true}
+        bind:files={dbFile}
+      />
+    </Card>
+
+    <Card
+      title="Export DB"
+      desc="Download the json database file to save your work. Remember to save it on the cloud somewhere!"
+    >
+      <button class="btn btn-warning" on:click={exportDB}>Download</button>
+    </Card>
+  </div>
 </div>
+
+<!-- https://github.com/saadeghi/daisyui/issues/221 -->
+<!-- Snackbar is a work in progress for Daisyui. Until then, keep smui -->
 <Snackbar bind:this={snackbar} labelText={snackbarText}>
   <Label />
   <Actions>
     <IconButton class="material-icons" title="Dismiss">close</IconButton>
   </Actions>
 </Snackbar>
-
-<style>
-
-  #action-bar {
-    display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    border-radius: 1em;
-    /* background-image: linear-gradient(to right, red, purple); */
-    background-size: 100vw;
-    max-height: 2em;
-    max-width: 100vw;
-    overflow: hidden;
-    padding: 0.6em;
-  }
-</style>

@@ -117,3 +117,17 @@ typescript-project
 If we were to use Svelte (as in this project), then
 the `package.json` script would use `rollup` instead
 of `node`.
+
+## Tailwind
+
+This project began by mainly utilizing the Svelte UI library named [Svelte Material UI](https://sveltematerialui.com/). As this is the first time I am working with professional-level web development tools (other than a not-so-elegant React project), I began looking into web development philosophy and methodologies. I came across a popular tool named Tailwind that is used by global companies like Github, Netflix, Heroku, Kickstarter, Twitch, and Segment. 
+
+Tailwind's utility-first fundamentals favor inline CSS in HTML files over maintaining separate CSS classes for each component. It focuses on building complex components from a constrained set of primitive utilities (the utilities offered by Tailwind through `<div class="">`). Building designs through Tailwind's utilities 
+- Saves energy investing class names for everything
+- Reduces the overall CSS complexity of a project
+- Makes changes feel safer (changing a CSS class might unintentionall affect another component that uses this class)
+
+Although it may feel like basically inline css but with shorter text, Tailwind's utility classes provide advantages over inline styles such as
+- Designing with constraints: The predefined design system makes it easier to build visually consistent UI
+- Responsive design: `@media` breakpoints can easily be factored in through the `sm`, `md`, `lg`, `xl`, and `2xl` prefixes
+- Hover, focus, and other states: Inline styles cannot target states like hover or focus, while Tailwind's state variants make it easy through prefixes.
