@@ -25,10 +25,6 @@
     console.log("reading local database");
     parseDatabaseLocal(local_db);
   });
-
-  function chooseSection(sec) {
-    selected = sec;
-  }
 </script>
 
 <!-- Entire Page -->
@@ -53,7 +49,9 @@
           <li>
             <div
               class={selected == sec ? "active" : ""}
-              on:click={() => chooseSection(sec)}
+              on:click={() => {
+                selected = sec;
+              }}
             >
               {sec.name}
             </div>
