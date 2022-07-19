@@ -6,7 +6,7 @@
   import { parseDatabase, parseDatabaseLocal } from "../util/parser";
   import { parseDatabaseFile } from "../logic/EditorActions";
   import * as local_db from "../../pt-db.json";
-
+ //
   let sections = [
     { name: "File Uploads", component: FileUploads },
     { name: "Peer Teachers", component: null }, // TODO
