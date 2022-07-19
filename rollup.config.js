@@ -8,6 +8,7 @@ import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import json from '@rollup/plugin-json';
 
+// ROLLUP_WATCH is set by the `-w` flag in `rollup -c -w` in `package.json`
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -34,7 +35,7 @@ function serve() {
 export default {
   input: 'src/main.ts',
   output: {
-    sourcemap: true,
+    sourcemap: !production,
     format: 'iife',
     name: 'app',
     file: 'public/build/bundle.js'
