@@ -33,7 +33,7 @@
 <!-- Entire Page -->
 <div class="flex flex-row h-screen">
   <!-- SIDEBAR -->
-  <div class="w-2/12 flex flex-col border-r">
+  <div class="flex-none w-2/12 flex-col border-r">
     <!-- Header for sidebar sections -->
     <div
       class="font-serif flex-none text-center text-2xl text-neutral-900 p-4 border-b font-black overflow-hidden"
