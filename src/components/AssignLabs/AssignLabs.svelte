@@ -3,8 +3,6 @@
   import { labStore, ptStore } from "../../stores";
   import Lab from "./LabBox.svelte";
   import PT from "./PTBox.svelte";
-  import { onMount } from "svelte";
-  import { parseDatabaseLocal } from "../../util/parser";
 
   let selectedPeerTeacher: PeerTeacher | undefined;
 
@@ -58,14 +56,6 @@
     selectedPeerTeacher?.labs.delete(id);
     updateReactiveDeclarations();
   }
-
-  // Load db from local storage so I don't have to keep uploading
-  onMount(() => {
-    const db = localStorage.getItem("db");
-    if (db) {
-      parseDatabaseLocal(JSON.parse(db));
-    }
-  });
 </script>
 
 <div
@@ -96,7 +86,7 @@
 
     <!-- Available Labs -->
     <div class="assign-box">
-      <div class="assign-box-header">Labs</div>
+      <div class="assign-box-header">Labs: {labs.length}</div>
       <div class="assign-box-body">
         {#each compatibleLabs as lab}
           <svelte:component
@@ -124,7 +114,6 @@
             iconName="minus-circle"
             iconClick={() => {
               unassignLab(lab.id);
-              
             }}
           />
         {/each}
@@ -134,7 +123,7 @@
 
   <!-- Bottom half: Universal unassigned labs -->
   <div class="flex flex-col mt-2 text-center">
-    <h1>Unassigned Labs</h1>
+    <h1>Unassigned Labs: {unassignedLabs.length}</h1>
     <div
       class="flex flex-row overflow-auto border-y-4 mt-1 border-slate-500 w-full items-center text-sm"
     >

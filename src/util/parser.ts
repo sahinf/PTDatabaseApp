@@ -164,7 +164,8 @@ export function parseDatabase(database: DatabaseFile) {
  * and updates local storage
  * @param database The database object from a db file
  */
-export function parseDatabaseLocal(database: DatabaseFile) {
+export function parseDatabaseLocalStorage(database_string: string) {
+    const database = JSON.parse(database_string)
     const result = {
         labs: new Map<number, Lab>(),
         peerTeachers: new Map<number, PeerTeacher>()

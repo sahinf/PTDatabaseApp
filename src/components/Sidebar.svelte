@@ -3,10 +3,8 @@
   import AssignLabs from "./AssignLabs/AssignLabs.svelte";
   import FileUploads from "./FileUploads.svelte";
   import { onMount } from "svelte";
-  import { parseDatabase, parseDatabaseLocal } from "../util/parser";
-  import { parseDatabaseFile } from "../logic/EditorActions";
-  import * as local_db from "../../pt-db.json";
- //
+  import { parseDatabaseLocalStorage } from "../util/parser";
+
   let sections = [
     { name: "File Uploads", component: FileUploads },
     { name: "Peer Teachers", component: null }, // TODO
@@ -20,10 +18,15 @@
   // Set initial page to Assign Labs while I work on it
   let selected = sections[2];
 
-  onMount(async () => {
-    // load database on mount for testing purposes
-    console.log("reading local database");
-    parseDatabaseLocal(local_db);
+  // Load from local storage. FOR TESTING PURPOSES ONLY. REMOVE THIS FROM PRODUCTION
+  onMount(() => {
+    const db = localStorage.getItem("db");
+    if (db) {
+      console.log("Using database found in local storage");
+      parseDatabaseLocalStorage(db);
+    } else {
+      console.log("No database found in local storage");
+    }
   });
 </script>
 
