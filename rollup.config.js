@@ -82,7 +82,8 @@ export default {
     production && terser(),
 
     // Reading from local json should only happen in development - Furkan
-    !production && json()
+    // !production && json()
+    json()
   ],
   watch: {
     clearScreen: false
