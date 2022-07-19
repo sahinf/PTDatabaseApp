@@ -37,7 +37,7 @@
             snackbar.open();
           }
         })
-        .finally( () => {
+        .finally(() => {
           snackbarText = "Sucessfullyed imported Peer Teacher/s!";
           snackbar.open();
         });
@@ -80,7 +80,7 @@
     }
   }
 
-  function exportDB() {
+  function dbStringify(): string {
     const peerTeachers = [...$ptStore.values()];
     const labs = [...$labStore.values()];
     const database = {
@@ -98,6 +98,11 @@
       return value;
     });
 
+    return dbObj;
+  }
+
+  function exportDB() {
+    const dbObj = dbStringify();
     const blob = new Blob([dbObj], { type: "text/json" });
     const anchor = document.createElement("a");
     const url = window.URL.createObjectURL(blob);
@@ -108,6 +113,11 @@
     anchor.click();
     document.body.removeChild(anchor);
     window.URL.revokeObjectURL(url);
+  }
+
+  function exportDB2LocalStorage() {
+    const db = dbStringify();
+    localStorage.setItem("db", db);
   }
 </script>
 
@@ -153,6 +163,15 @@
       desc="Download the json database file to save your work. Remember to save it on the cloud somewhere!"
     >
       <button class="btn btn-warning" on:click={exportDB}>Download</button>
+    </Card>
+
+    <Card
+      title="Export to Local Storage"
+      desc="Save current DB to local storage. Local storage db should only be used for testing purposes to avoid data anomalies"
+    >
+      <button class="btn btn-warning" on:click={exportDB2LocalStorage}
+        >LocalStorage</button
+      >
     </Card>
   </div>
 </div>
