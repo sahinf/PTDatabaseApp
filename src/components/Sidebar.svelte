@@ -36,10 +36,14 @@
   <div class="flex-none w-2/12 flex-col border-r">
     <!-- Header for sidebar sections -->
     <div
-      class="font-serif flex-none text-center text-2xl text-neutral-900 p-4 border-b font-black overflow-hidden"
+      class="font-serif flex-none text-center text-3xl p-1 border-b font-black overflow-hidden"
     >
       <!-- Text -->
-      <div>Peer Teacher Manager</div>
+      <div
+        class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+      >
+        Peer Teacher Manager
+      </div>
       <div>
         <DarkModeSwitch />
       </div>

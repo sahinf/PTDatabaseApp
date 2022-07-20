@@ -38,7 +38,7 @@
           }
         })
         .finally(() => {
-          snackbarText = "Sucessfullyed imported Peer Teacher/s!";
+          snackbarText = "Successfully imported Peer Teacher/s!";
           snackbar.open();
         });
     }
@@ -56,7 +56,7 @@
           snackbar.open();
         })
         .finally(() => {
-          snackbarText = "Sucessfullyed imported Lab/s!";
+          snackbarText = "Successfully imported Lab/s!";
           snackbar.open();
         });
     }
@@ -74,7 +74,7 @@
           snackbar.open();
         })
         .finally(() => {
-          snackbarText = "Sucessfullyed imported database!";
+          snackbarText = "Successfully imported database!";
           snackbar.open();
         });
     }
