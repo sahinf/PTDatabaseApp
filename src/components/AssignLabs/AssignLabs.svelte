@@ -6,6 +6,7 @@
   import PT from "./PTBox.svelte";
 
   let selectedPeerTeacher: PeerTeacher | undefined;
+  let selectedLab: Lab | undefined;
 
   $: peerTeachers = [...$ptStore.values()].sort((a, b) =>
     a.lastname.toUpperCase() === b.lastname.toUpperCase()
@@ -15,7 +16,7 @@
 
   $: labs = [...$labStore.values()].sort((a, b) => a.id - b.id);
 
-  $: assignedLabs = [...(selectedPeerTeacher?.labs.values() ?? [])]
+  $: selectedPtAssignedLabs = [...(selectedPeerTeacher?.labs.values() ?? [])]
     .flatMap((labId) => {
       const lab = $labStore.get(labId);
       return lab === undefined ? [] : [lab];
@@ -24,27 +25,29 @@
 
   $: unassignedLabs = labs.filter((lab) => !lab.assigned);
 
-  $: compatibleLabs = labs.filter((lab) => {
-    if (selectedPeerTeacher == undefined) return true; // show all labs if no PT selected
-    return isPTandLabCompatible(lab, selectedPeerTeacher);
-  });
+  $: compatibleLabs = labs.filter((lab) =>
+    isPTandLabCompatible(lab, selectedPeerTeacher)
+  );
 
-  // TODO given a selected lab, highlight all PTs that can be assigned it
-  function isPTandLabCompatible(lab: Lab, pt: PeerTeacher): boolean {
+  $: compatiblePTs = peerTeachers.filter((pt) =>
+    isPTandLabCompatible(selectedLab, pt)
+  );
+
+  function isPTandLabCompatible(
+    lab: Lab | undefined,
+    pt: PeerTeacher | undefined
+  ): boolean {
     return (
-      // Lab not already assigned
+      pt != undefined &&
+      lab != undefined &&
       !lab?.assigned &&
-      // PT schedule not conflict with lab
-      !pt?.conflictsWith(lab.event) &&
-      // PT's labs not conflict with this lab
-      !assignedLabs.some((assignment) =>
-        assignment.event.conflictsWith(lab.event)
-      )
+      !pt?.conflictsWith(lab.event)
     );
   }
 
   function updateReactiveDeclarations() {
     selectedPeerTeacher = selectedPeerTeacher;
+    selectedLab = selectedLab;
     peerTeachers = peerTeachers;
     labs = labs;
   }
@@ -79,9 +82,9 @@
       <div class="assign-box-body">
         {#each peerTeachers as pt}
           <div
-            class={selectedPeerTeacher == pt
-              ? "border-l-8 border-blue-500"
-              : ""}
+            class={compatiblePTs.includes(pt) //selectedPeerTeacher == pt
+              ? "bg-info text-info-content" // "border-l-8 border-blue-500"
+              : "bg-base-100 text-base-100-content"}
             on:click={() => {
               selectedPeerTeacher = pt;
             }}
@@ -115,7 +118,7 @@
         {selectedPeerTeacher?.name ?? "PT's Labs"}
       </div>
       <div class="assign-box-body">
-        {#each assignedLabs as lab}
+        {#each selectedPtAssignedLabs as lab}
           <svelte:component
             this={LabBox}
             {lab}
@@ -132,18 +135,17 @@
   <!-- Bottom half: Universal unassigned labs -->
   <div class="flex flex-col mt-2 text-center">
     <h1>Unassigned Labs: {unassignedLabs.length}</h1>
-    <div
-      class="flex flex-row overflow-auto border-y-4 mt-1 border-slate-500 w-full items-center text-sm"
-    >
+    <ul class="menu menu-horizontal bg-base-100 rounded-box overflow-auto">
       {#each unassignedLabs as lab}
-        <!-- TODO on click, lab should be selected -->
-        <div
-          class="hover:animate-bounce border rounded-xl hover:bg-sky-100 hover:text-black px-3 py-1 mx-2"
+        <li
+          on:click={() => {
+            selectedLab = lab;
+          }}
+          class={selectedLab == lab ? "bg-info text-info-content" : ""}
         >
-          <p>{lab.course}</p>
-          <p>{lab.section}</p>
-        </div>
+          <span>{lab.course} {lab.section}</span>
+        </li>
       {/each}
-    </div>
+    </ul>
   </div>
 </div>
