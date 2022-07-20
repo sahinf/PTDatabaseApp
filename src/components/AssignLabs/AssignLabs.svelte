@@ -1,7 +1,8 @@
 <script lang="ts">
   import type PeerTeacher from "../../models/PeerTeacher";
+  import type Lab from "../../models/Lab";
   import { labStore, ptStore } from "../../stores";
-  import Lab from "./LabBox.svelte";
+  import LabBox from "./LabBox.svelte";
   import PT from "./PTBox.svelte";
 
   let selectedPeerTeacher: PeerTeacher | undefined;
@@ -23,17 +24,24 @@
 
   $: unassignedLabs = labs.filter((lab) => !lab.assigned);
 
-  $: compatibleLabs = labs.filter(
-    (lab) =>
+  $: compatibleLabs = labs.filter((lab) => {
+    if (selectedPeerTeacher == undefined) return true; // show all labs if no PT selected
+    return isPTandLabCompatible(lab, selectedPeerTeacher);
+  });
+
+  // TODO given a selected lab, highlight all PTs that can be assigned it
+  function isPTandLabCompatible(lab: Lab, pt: PeerTeacher): boolean {
+    return (
       // Lab not already assigned
-      !lab.assigned &&
+      !lab?.assigned &&
       // PT schedule not conflict with lab
-      !selectedPeerTeacher?.conflictsWith(lab.event) &&
+      !pt?.conflictsWith(lab.event) &&
       // PT's labs not conflict with this lab
       !assignedLabs.some((assignment) =>
         assignment.event.conflictsWith(lab.event)
       )
-  );
+    );
+  }
 
   function updateReactiveDeclarations() {
     selectedPeerTeacher = selectedPeerTeacher;
@@ -90,7 +98,7 @@
       <div class="assign-box-body">
         {#each compatibleLabs as lab}
           <svelte:component
-            this={Lab}
+            this={LabBox}
             {lab}
             iconName="plus-circle"
             iconClick={() => {
@@ -109,7 +117,7 @@
       <div class="assign-box-body">
         {#each assignedLabs as lab}
           <svelte:component
-            this={Lab}
+            this={LabBox}
             {lab}
             iconName="minus-circle"
             iconClick={() => {
@@ -128,6 +136,7 @@
       class="flex flex-row overflow-auto border-y-4 mt-1 border-slate-500 w-full items-center text-sm"
     >
       {#each unassignedLabs as lab}
+        <!-- TODO on click, lab should be selected -->
         <div
           class="hover:animate-bounce border rounded-xl hover:bg-sky-100 hover:text-black px-3 py-1 mx-2"
         >
