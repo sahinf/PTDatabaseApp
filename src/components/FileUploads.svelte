@@ -1,4 +1,6 @@
 <script lang="ts">
+  let x: number | null;
+
   import { Label } from "@smui/button";
   import IconButton from "@smui/icon-button";
   import Snackbar, { Actions } from "@smui/snackbar";
