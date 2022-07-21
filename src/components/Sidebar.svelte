@@ -2,12 +2,13 @@
   import DarkModeSwitch from "./DarkModeSwitch.svelte";
   import AssignLabs from "./AssignLabs/AssignLabs.svelte";
   import FileUploads from "./FileUploads.svelte";
+  import PeerTeachers from "./PeerTeachers/PeerTeachers.svelte";
   import { onMount } from "svelte";
   import { parseDatabaseLocalStorage } from "../util/parser";
 
   let sections = [
     { name: "File Uploads", component: FileUploads },
-    { name: "Peer Teachers", component: null }, // TODO
+    { name: "Peer Teachers", component: PeerTeachers }, // TODO
     { name: "Assign Labs", component: AssignLabs },
     { name: "Labs", component: null }, // TODO
     { name: "Active Peer Teachers", component: null }, // TODO
@@ -15,8 +16,7 @@
     { name: "TAMU Html Output", component: null }, // TODO
   ];
 
-  // Set initial page to Assign Labs while I work on it
-  let selected = sections[2];
+  let selected = sections[1];
 
   // Load from local storage. FOR TESTING PURPOSES ONLY. REMOVE THIS FROM PRODUCTION
   onMount(() => {
@@ -69,7 +69,7 @@
   </div>
 
   <!-- Chosen Section / Component -->
-  <div class="flex-auto">
+  <div class="flex-auto h-full">
     <svelte:component this={selected.component} />
   </div>
 </div>
