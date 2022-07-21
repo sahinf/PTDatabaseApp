@@ -69,7 +69,7 @@
   </div>
 
   <!-- Chosen Section / Component -->
-  <div class="flex-auto">
+  <div class="flex-auto h-full">
     <svelte:component this={selected.component} />
   </div>
 </div>

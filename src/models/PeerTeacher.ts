@@ -12,6 +12,7 @@ interface PeerTeacherSerializeInfo {
         end: number
     }[],
     labs: number[],
+    email: string,
 }
 
 export default class PeerTeacher {
@@ -20,6 +21,7 @@ export default class PeerTeacher {
     lastname: string;
     events: EventInfo[];
     labs: Set<number>;
+    email: string;
 
     constructor(id: number | string, firstname: string, lastname: string) {
         if (typeof id === "string") {
