@@ -1,42 +1,41 @@
 <script lang="ts">
+  import { each } from "svelte/internal";
+  import { labStore, ptStore } from "../../stores";
+  import type PeerTeacher from "src/models/PeerTeacher";
+
+  $: peerTeachers = [...$ptStore.values()].sort((a, b) =>
+    a.lastname.toUpperCase() === b.lastname.toUpperCase()
+      ? a.firstname.toUpperCase().localeCompare(b.firstname.toUpperCase())
+      : a.lastname.toUpperCase().localeCompare(b.lastname.toUpperCase())
+  );
+  const headers = ["", "Name", "UIN", "Labs"];
 </script>
 
-<div class="overflow-x-auto">
-    <h1>TODO</h1>
-    <div class="overflow-x-auto">
-        <table class="table w-full">
-          <!-- head -->
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- row 1 -->
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
-            <!-- row 2 -->
-            <tr>
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-            </tr>
-            <!-- row 3 -->
-            <tr>
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<div class="overflow-scroll">
+  <div class="overflow-auto ">
+    <table class="table w-full">
+      <!-- head -->
+      <thead>
+        <tr>
+          {#each headers as header}
+            <th>{header}</th>
+          {/each}
+        </tr>
+      </thead>
+      <tbody>
+        {#each peerTeachers as pt, i}
+          <tr>
+            <th>{i + 1}</th>
+            <th>{pt.name}</th>
+            <th>{pt.id}</th>
+            <th>
+              {#each Array.from(pt.labs) as lab_id}
+                {lab_id}, 
+              {/each}
+            </th>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  </div>
 </div>
