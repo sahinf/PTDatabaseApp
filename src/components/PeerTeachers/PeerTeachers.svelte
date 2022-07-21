@@ -25,7 +25,9 @@
     });
   }
 
-  const headers = ["", "First", "Last", "UIN", "Email", "Lab Hours", ""];
+  let headers = ["", "First", "Last", "UIN", "Email", "Lab Hours", ""];
+
+  $: console.log(headers);
 </script>
 
 <div class="overflow-auto h-full">
@@ -33,8 +35,8 @@
     <!-- head -->
     <thead>
       <tr>
-        {#each headers as header}
-          <th>{header}</th>
+        {#each headers as header, i}
+          <th> {i == 0 ? peerTeachers.length : header}</th>
         {/each}
       </tr>
     </thead>
