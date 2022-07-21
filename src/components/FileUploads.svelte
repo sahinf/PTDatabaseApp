@@ -26,6 +26,7 @@
         .then((results) =>
           results.flatMap((result) => {
             if (result.status === "fulfilled") {
+              // TODO uploading a new schedule to a PT just updates the previous value. This means that if we re-upload a PT that already exists (and who has labs assigned), then the new version of this PT will not have those labs (good), but all those labs will still be marked as assigned in `lab.assigned`. Maybe call a `pt.delete` function if the PT already exists when attempting to add.
               ptStore.update((val) => val.set(result.value.id, result.value));
               return [];
             } else {
