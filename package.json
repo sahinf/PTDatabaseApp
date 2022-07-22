@@ -5,8 +5,9 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "start": "vite preview",  
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "start": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "deploy": "npx gh-pages -d dist"
   },
   "devDependencies": {
     "@smui/button": "^4.2.0",
@@ -17,6 +18,7 @@
     "@tsconfig/svelte": "^2.0.1",
     "autoprefixer": "^10.4.7",
     "concurrently": "^7.2.1",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "svelte": "^3.44.2",
