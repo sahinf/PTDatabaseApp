@@ -51,7 +51,8 @@ interface DatabaseFile {
             start: number,
             end: number
         }[],
-        labs: number[]
+        labs: number[],
+        email: string
     }[]
 }
 
@@ -73,7 +74,9 @@ export function parsePTSchedule(schedule: string) {
     }
 
     const [, firstname, lastname, uin] = nameLine.match(namePattern) as RegExpMatchArray;
-    const peerTeacher = new PeerTeacher(uin, firstname, lastname);
+    // TODO email should be parsed from the student's file too I guess, or just end up changing the parser to use survey results for everything, then parse schedules separately.
+    const email = "undefined"
+    const peerTeacher = new PeerTeacher(uin, firstname, lastname, email);
 
     const events = lines
         .filter(line => line.match(eventPattern))
