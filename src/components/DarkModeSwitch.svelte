@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     function selectDaisyTheme(new_theme) {
         document.querySelector(":root").setAttribute("data-theme", new_theme);
     }
@@ -15,8 +15,8 @@
     }
 
     function isDarkMode() {
-        if (localStorage.theme == "dark") return "";
-        return "checked"
+        if (localStorage.theme == "dark") return false;
+        return true;
     }
 </script>
 
