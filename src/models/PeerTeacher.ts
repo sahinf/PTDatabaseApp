@@ -23,7 +23,7 @@ export default class PeerTeacher {
     labs: Set<number>;
     email: string;
 
-    constructor(id: number | string, firstname: string, lastname: string) {
+    constructor(id: number | string, firstname: string, lastname: string, email: string) {
         if (typeof id === "string") {
             id = parseInt(id, 10);
         }
@@ -33,10 +33,11 @@ export default class PeerTeacher {
         this.lastname = lastname;
         this.events = [];
         this.labs = new Set();
+        this.email = email;
     }
 
-    static fromJSON({ id, firstname, lastname, events, labs }: PeerTeacherSerializeInfo) {
-        const pt = new PeerTeacher(id, firstname, lastname);
+    static fromJSON({ id, firstname, lastname, events, labs, email }: PeerTeacherSerializeInfo) {
+        const pt = new PeerTeacher(id, firstname, lastname, email);
         pt.events = events.map(e => EventInfo.fromJSON(e));
         pt.labs = new Set(labs);
         return pt;
