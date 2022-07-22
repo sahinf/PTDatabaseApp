@@ -3,6 +3,7 @@
   import AssignLabs from "./AssignLabs/AssignLabs.svelte";
   import FileUploads from "./FileUploads.svelte";
   import PeerTeachers from "./PeerTeachers/PeerTeachers.svelte";
+  import Labs from "./Labs/Labs.svelte";
   import { onMount } from "svelte";
   import { parseDatabaseLocalStorage } from "../util/parser";
 
@@ -10,13 +11,13 @@
     { name: "File Uploads", component: FileUploads },
     { name: "Peer Teachers", component: PeerTeachers }, // TODO
     { name: "Assign Labs", component: AssignLabs },
-    { name: "Labs", component: null }, // TODO
+    { name: "Labs", component: Labs }, // TODO
     { name: "Active Peer Teachers", component: null }, // TODO
     { name: "Stats", component: null }, // TODO
     { name: "TAMU Html Output", component: null }, // TODO
   ];
 
-  let selected = sections[1];
+  let selected = sections[3];
 
   // Load from local storage. FOR TESTING PURPOSES ONLY. REMOVE THIS FROM PRODUCTION
   onMount(() => {
