@@ -45,7 +45,7 @@ export default class PeerTeacher {
 
     conflictsWith(event: EventInfo) {
         const all_labs = get(labStore);
-        const lab_events = [...this.labs.values()].flatMap((lab_id) => {
+        const lab_events: EventInfo[] = [...this.labs.values()].flatMap((lab_id) => {
             const lab = all_labs.get(lab_id);
             return lab != undefined ? lab.event : [];
         })
