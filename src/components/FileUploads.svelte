@@ -1,6 +1,4 @@
 <script lang="ts">
-  let x: number | null;
-
   import { Label } from "@smui/button";
   import IconButton from "@smui/icon-button";
   import Snackbar, { Actions } from "@smui/snackbar";
@@ -16,8 +14,8 @@
   let ptSchedules: FileList | null;
   let labSchedule: FileList | null;
   let dbFile: FileList | null;
-  let snackbar;
-  let snackbarText;
+  let snackbar : Snackbar;
+  let snackbarText : Snackbar;
 
   $: {
     if (ptSchedules?.length) {
@@ -124,59 +122,57 @@
   }
 </script>
 
-<div class="flex flex-col items-center justify-center h-full ">
-  <div class="flex grid grid-cols-2 gap-6">
-    <Card
-      title="Peer Teacher"
-      desc="Upload one or more Peer Teacher schedule txt files"
-    >
-      <UploadButton
-        accept="text/plain"
-        multiple={true}
-        bind:files={ptSchedules}
-      />
-    </Card>
+<div class="flex grid m-10 grid-cols-2 gap-2">
+  <Card
+    title="Peer Teacher"
+    desc="Upload one or more Peer Teacher schedule txt files"
+  >
+    <UploadButton
+      accept="text/plain"
+      multiple={true}
+      bind:files={ptSchedules}
+    />
+  </Card>
 
-    <Card
-      title="Labs"
-      desc="Upload one or more Labs as json file. Acquired from Howdy"
-    >
-      <UploadButton
-        color="btn-success"
-        accept="application/json"
-        multiple={true}
-        bind:files={labSchedule}
-      />
-    </Card>
+  <Card
+    title="Labs"
+    desc="Upload one or more Labs as json file. Acquired from Howdy"
+  >
+    <UploadButton
+      color="btn-success"
+      accept="application/json"
+      multiple={true}
+      bind:files={labSchedule}
+    />
+  </Card>
 
-    <Card
-      title="Data Base"
-      desc="Upload the json database file to continue working"
-    >
-      <UploadButton
-        color="btn-info"
-        accept="application/json"
-        multiple={true}
-        bind:files={dbFile}
-      />
-    </Card>
+  <Card
+    title="Data Base"
+    desc="Upload the json database file to continue working"
+  >
+    <UploadButton
+      color="btn-info"
+      accept="application/json"
+      multiple={true}
+      bind:files={dbFile}
+    />
+  </Card>
 
-    <Card
-      title="Export DB"
-      desc="Download the json database file to save your work. Remember to save it on the cloud somewhere!"
-    >
-      <button class="btn btn-warning" on:click={exportDB}>Download</button>
-    </Card>
+  <Card
+    title="Export DB"
+    desc="Download the json database file to save your work. Remember to save it on the cloud somewhere!"
+  >
+    <button class="btn btn-warning" on:click={exportDB}>Download</button>
+  </Card>
 
-    <Card
-      title="Export to Local Storage"
-      desc="Save current DB to local storage. Local storage db should only be used for testing purposes to avoid data anomalies"
+  <Card
+    title="Export to Local Storage"
+    desc="Save current DB to local storage. Local storage db should only be used for testing purposes to avoid data anomalies"
+  >
+    <button class="btn btn-warning" on:click={exportDB2LocalStorage}
+      >LocalStorage</button
     >
-      <button class="btn btn-warning" on:click={exportDB2LocalStorage}
-        >LocalStorage</button
-      >
-    </Card>
-  </div>
+  </Card>
 </div>
 
 <!-- https://github.com/saadeghi/daisyui/issues/221 -->
