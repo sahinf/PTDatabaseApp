@@ -21,11 +21,6 @@
         }];
     });
 
-    // $: console.log("pt", pts.find( (pt) => {
-    //    return pt.firstname == "Adam"
-    // }))
-
-
 </script>
 
 <div class="overflow-auto h-full">

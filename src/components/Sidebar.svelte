@@ -17,7 +17,7 @@
     { name: "TAMU Html Output", component: null }, // TODO
   ];
 
-  let selected = sections[3];
+  let selected = sections[0];
 
   // Load from local storage. FOR TESTING PURPOSES ONLY. REMOVE THIS FROM PRODUCTION
   onMount(() => {
