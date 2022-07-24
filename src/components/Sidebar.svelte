@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DarkModeSwitch from "./DarkModeSwitch.svelte";
+  import DarkModeSwitch from "./helpers/DarkModeSwitch.svelte";
   import AssignLabs from "./AssignLabs.svelte";
   import FileUploads from "./FileUploads.svelte";
   import PeerTeachers from "./PeerTeachers.svelte";

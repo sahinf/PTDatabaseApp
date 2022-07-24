@@ -3,7 +3,7 @@
   import IconButton from "@smui/icon-button";
   import Snackbar, { Actions } from "@smui/snackbar";
   import UploadButton from "./helpers/UploadButton.svelte";
-  import Card from "./Card.svelte";
+  import Card from "./helpers/Card.svelte";
   import {
     parseDatabaseFile,
     parseLabScheduleFile,
