@@ -2,7 +2,7 @@
   import { Label } from "@smui/button";
   import IconButton from "@smui/icon-button";
   import Snackbar, { Actions } from "@smui/snackbar";
-  import UploadButton from "./UploadButton.svelte";
+  import UploadButton from "./helpers/UploadButton.svelte";
   import Card from "./Card.svelte";
   import {
     parseDatabaseFile,

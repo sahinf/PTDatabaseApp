@@ -1,6 +1,6 @@
 <script lang="ts">
   import type Lab from "../../models/Lab";
-  import Icon from "../helpers/Icon.svelte";
+  import Icon from "./Icon.svelte";
   export let lab: Lab;
   export let iconClick = () => {};
   export let iconName: string;

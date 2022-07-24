@@ -1,6 +1,6 @@
 <script lang="ts">
     import type PeerTeacher from "../../models/PeerTeacher";
-    import Icon from "../helpers/Icon.svelte";
+    import Icon from "./Icon.svelte";
     export let pt: PeerTeacher;
 
     let modalID = () => {

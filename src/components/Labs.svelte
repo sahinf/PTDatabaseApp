@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { labStore, ptStore } from "../../stores";
-    import type Lab from "../../models/Lab";
+    import { labStore, ptStore } from "../stores";
+    import type Lab from "../models/Lab";
 
     let selected_lab: Lab | undefined;
 

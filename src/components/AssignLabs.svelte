@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type PeerTeacher from "../../models/PeerTeacher";
-  import type Lab from "../../models/Lab";
-  import { labStore, ptStore } from "../../stores";
-  import LabBox from "./LabBox.svelte";
-  import PT from "./PTBox.svelte";
+  import type PeerTeacher from "../models/PeerTeacher";
+  import type Lab from "../models/Lab";
+  import { labStore, ptStore } from "../stores";
+  import LabBox from "./helpers/LabBox.svelte";
+  import PT from "./helpers/PTBox.svelte";
 
   let selectedPeerTeacher: PeerTeacher | undefined;
   let selectedLab: Lab | undefined;

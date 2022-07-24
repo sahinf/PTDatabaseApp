@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { labStore, ptStore } from "../../stores";
-  import type PeerTeacher from "../../models/PeerTeacher";
+  import { labStore, ptStore } from "../stores";
+  import type PeerTeacher from "../models/PeerTeacher";
 
   let selected_pt: PeerTeacher | undefined;
 

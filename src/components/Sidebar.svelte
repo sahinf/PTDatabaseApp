@@ -1,9 +1,9 @@
 <script lang="ts">
   import DarkModeSwitch from "./DarkModeSwitch.svelte";
-  import AssignLabs from "./AssignLabs/AssignLabs.svelte";
+  import AssignLabs from "./AssignLabs.svelte";
   import FileUploads from "./FileUploads.svelte";
-  import PeerTeachers from "./PeerTeachers/PeerTeachers.svelte";
-  import Labs from "./Labs/Labs.svelte";
+  import PeerTeachers from "./PeerTeachers.svelte";
+  import Labs from "./Labs.svelte";
   import { onMount } from "svelte";
   import { parseDatabaseLocalStorage } from "../util/parser";
 
