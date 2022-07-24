@@ -17,20 +17,23 @@ cd PTDatabaseApp &&
 npm i
 ```
 
-Then start [Rollup](https://rollupjs.org)
+The original version of this app (forked from Scott Wilkins) used [Rollup](https://rollupjs.org/guide/en/). It has now been switched to use [Vite](https://vitejs.dev/), which allows an effortless project setup for various frameworks. A project that uses `Svelte`, `tailwind`, `postcss`, can easily be instantiated with
 
+```shell
+npm create vite@latest
+```
+
+To run the development build
 ```bash
 npm run dev
 ```
 
 **note** that `npm run <arg>` is defined in [`package.json`](./package.json)
 
-Navigate to [localhost:1776](http://localhost:1776) to interact with the app through the browser. The port is *always* subject to change, so read the output in your terminal to see the port chosen by `sirv`. 
+Navigate to whichever `localhost:PORT/PTDatabaseApp` URL Vite chose for the server. The link should be written to `STDOUT` so keep an eye on your shell after running the command above.
 
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-This application uses Svelte and Typescript.
+This application uses Svelte, Typescript, Tailwind, and daisyUI.
 
 ## Svelte
 Svelte is a tool for building fast web applications, similar to React, Angular, or Vue. 
@@ -55,10 +58,8 @@ and then run the compiled js file using `node` as such
 ```bash
 node app.js
 ```
-
-## Tailwind
-
-This project began by mainly utilizing the Svelte UI library named [Svelte Material UI](https://sveltematerialui.com/). As this is the first time I am working with professional-level web development tools (other than a not-so-elegant React project), I began looking into web development philosophy and methodologies. I came across a popular tool named Tailwind that is used by global companies like Github, Netflix, Heroku, Kickstarter, Twitch, and Segment. 
+Once you become familiar with Typescript, you will never go back to plain Javascript. 
+## Tailwind CSS
 
 Tailwind's utility-first fundamentals favor inline CSS in HTML files over maintaining separate CSS classes for each component. It focuses on building complex components from a constrained set of primitive utilities (the utilities offered by Tailwind through `<div class="">`). Building designs through Tailwind's utilities 
 - Saves energy investing class names for everything
@@ -69,3 +70,9 @@ Although it may feel like basically inline css but with shorter text, Tailwind's
 - Designing with constraints: The predefined design system makes it easier to build visually consistent UI
 - Responsive design: `@media` breakpoints can easily be factored in through the `sm`, `md`, `lg`, `xl`, and `2xl` prefixes
 - Hover, focus, and other states: Inline styles cannot target states like hover or focus, while Tailwind's state variants make it easy through prefixes.
+
+In this project, Tailwind directives are located in [app.css](./src/app.css)
+
+## daisyUI
+
+[daisyUI](https://daisyui.com/components/) is a Tailwind CSS component library. There are a million of component libraries to choose from when using `Svelte` and `Tailwind`. I chose this because I liked their components. 
