@@ -14,8 +14,8 @@
   let ptSchedules: FileList | null;
   let labSchedule: FileList | null;
   let dbFile: FileList | null;
-  let snackbar : Snackbar;
-  let snackbarText : Snackbar;
+  let snackbar: Snackbar;
+  let snackbarText;
 
   $: {
     if (ptSchedules?.length) {

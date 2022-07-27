@@ -2,7 +2,6 @@
   import { labStore, ptStore } from "../stores";
   import type Lab from "../models/Lab";
   import Icon from "./helpers/Icon.svelte";
-  var csvwriter = require("csvwriter");
 
   let selected_lab: Lab | undefined;
 
@@ -26,8 +25,26 @@
 
   function download() {
     // prepare data in CSV format
-    let data: [""];
-    
+    let cols = headers.slice(1, -1);
+    let csv = cols.join(",") + "\n";
+    labsAndPts.forEach((row) => {
+      let l = row.lab;
+      csv += `${l.course},${l.section},${l.time},${l.location},${
+        row.pt?.name ?? "UNASSIGNED"
+      }\n`;
+    });
+    console.log(csv);
+
+    const blob = new Blob([csv], { type: "text/csv" });
+    const anchor = document.createElement("a");
+    const url = window.URL.createObjectURL(blob);
+    anchor.href = url;
+    anchor.download = "lab-assignments.csv";
+    anchor.style.display = "none";
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    window.URL.revokeObjectURL(url);
   }
 </script>
 
@@ -40,8 +57,8 @@
           {#if i == 0}
             <th>
               {labs.length}
-              <Icon name="info" class="h-4 w-4" handleClick={download} /></th
-            >
+              <Icon name="download" class="h-4 w-4" handleClick={download} />
+            </th>
           {:else}
             <th>{header}</th>
           {/if}
