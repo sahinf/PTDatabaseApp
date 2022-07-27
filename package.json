@@ -30,6 +30,7 @@
     "vite": "^3.0.2"
   },
   "dependencies": {
+    "csvwriter": "^1.3.0",
     "daisyui": "^2.15.2",
     "svelte-add": "^2022.7.0-8.0"
   }

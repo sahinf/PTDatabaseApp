@@ -3,6 +3,7 @@
   import type PeerTeacher from "../models/PeerTeacher";
 
   let selected_pt: PeerTeacher | undefined;
+  let editing: boolean = false;
 
   $: peerTeachers = [...$ptStore.values()].sort((a, b) =>
     a.lastname.toUpperCase() === b.lastname.toUpperCase()
@@ -49,7 +50,20 @@
           class={selected_pt == pt ? "active" : "hover"}
         >
           <th>{i + 1}</th>
-          <th>{pt.firstname}</th>
+          <th>
+            {#if editing && selected_pt == pt}
+              <input
+                bind:value={pt.firstname}
+                type="text"
+                class="input input-bordered input-primary  w-full max-w-xs"
+                on:blur={() => (editing = false)}
+              />
+            {:else}
+              <div on:dblclick={() => (editing = true)}>
+                {pt.firstname}
+              </div>
+            {/if}
+          </th>
           <th>{pt.lastname}</th>
           <th>{pt.id}</th>
           <th>{pt.email}</th>

@@ -10,11 +10,7 @@
     {
       box: 24,
       name: "plus-circle",
-      path: `<path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />`,
+      path: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
     },
     {
       box: 24,
@@ -24,11 +20,12 @@
     {
       name: "info",
       box: 24,
-      path: `<path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />`,
+      path: `<path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`,
+    },
+    {
+      name: "download",
+      box: 24,
+      path: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" `,
     },
   ];
   let displayIcon = icons.find((e) => e.name === name);
