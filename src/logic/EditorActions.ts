@@ -1,9 +1,19 @@
-import { parseDatabase, parseLabSchedule, parsePTSchedule } from "../util/parser";
+import { parseDatabase, parseLabSchedule, parsePTSchedule, parseQuestionairreCSV } from "../util/parser";
 
 export async function parsePTFile(file: File) {
     try {
         const text = await file.text();
         return parsePTSchedule(text);
+    } catch (error) {
+        console.error(file.name, error);
+        throw error;
+    }
+}
+
+export async function readQuestionairre(file: File) {
+    try {
+        const text = await file.text();
+        return parseQuestionairreCSV(text);
     } catch (error) {
         console.error(file.name, error);
         throw error;

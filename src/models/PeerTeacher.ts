@@ -13,6 +13,16 @@ interface PeerTeacherSerializeInfo {
     }[],
     labs: number[],
     email: string,
+    phone_number: string,
+    gender: string,
+    ethnicity: string,
+    graduation: string,
+    can_teach: number[],
+    pref_teach: number[],
+    pref_work: number,
+    new_ret: string,
+    prof_pic_url: string,
+    schedule_url: string,
 }
 
 export default class PeerTeacher {
@@ -22,6 +32,16 @@ export default class PeerTeacher {
     events: EventInfo[];
     labs: Set<number>;
     email: string;
+    phone_number: string;
+    gender: string;
+    ethnicity: string;
+    graduation: string;
+    can_teach: Set<number>;
+    pref_teach: Set<number>;
+    pref_work: number;
+    new_ret: string;
+    prof_pic_url: string;
+    schedule_url: string;
 
     constructor(id: number | string, firstname: string, lastname: string, email: string) {
         if (typeof id === "string") {
@@ -36,10 +56,23 @@ export default class PeerTeacher {
         this.email = email;
     }
 
-    static fromJSON({ id, firstname, lastname, events, labs, email }: PeerTeacherSerializeInfo) {
+    static fromJSON(qt: PeerTeacherSerializeInfo) {
+        const { id, firstname, lastname, events, labs, email } = qt;
         const pt = new PeerTeacher(id, firstname, lastname, email);
         pt.events = events.map(e => EventInfo.fromJSON(e));
         pt.labs = new Set(labs);
+        pt.email = qt.email;
+        pt.phone_number = qt.phone_number;
+        pt.gender = qt.gender;
+        pt.ethnicity = qt.ethnicity;
+        pt.graduation = qt.graduation;
+        pt.can_teach = new Set(qt.can_teach);
+        pt.pref_teach = new Set(qt.pref_teach);
+        pt.pref_work = qt.pref_work;
+        pt.new_ret = qt.new_ret;
+        pt.prof_pic_url = qt.prof_pic_url;
+        pt.schedule_url = qt.schedule_url;
+
         return pt;
     }
 

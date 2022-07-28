@@ -3,6 +3,8 @@ import Lab from "../models/Lab";
 import PeerTeacher from "../models/PeerTeacher";
 import { labStore, ptStore } from "../stores";
 import { PeerTeacherImportError } from "./error";
+import { get } from "svelte/store"
+import { attr } from "svelte/internal";
 
 interface LabSchedule {
     data: {
@@ -42,18 +44,7 @@ interface DatabaseFile {
         room: string,
         assigned: boolean
     }[],
-    peerTeachers: {
-        id: number,
-        firstname: string,
-        lastname: string,
-        events: {
-            days: string,
-            start: number,
-            end: number
-        }[],
-        labs: number[],
-        email: string
-    }[]
+    peerTeachers: PeerTeacher[]
 }
 
 /**
@@ -184,4 +175,67 @@ export function parseDatabaseLocalStorage(database_string: string) {
 
     labStore.set(result.labs);
     ptStore.set(result.peerTeachers)
+}
+
+export function parseQuestionairreCSV(csv: string) {
+    const attributes = [
+        "Timestamp",
+        "UIN",
+        "First Name",
+        "Last Name",
+        "Email Address",
+        "Phone Number",
+        "Gender",
+        "Racial Background",
+        "When are you graduating? (Day does not matter)",
+        "Classes you CAN peer teach for",
+        "Classes you PREFER to peer teach for",
+        "Number of hours you prefer to work",
+        "Are you a new hire or returning?",
+        "Profile picture for website (image)",
+        "Schedule (text file)"
+    ]
+    const t = csv.split("\n")
+    const sheet = t.map((val) => {
+        const reg = new RegExp(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))")
+        return val.split(reg)
+    })
+
+    const m = mapAttributeToIndex(attributes, sheet[0]);
+
+    const pts = get(ptStore);
+    const data = sheet.slice(1, sheet.length);
+    data.forEach((row) => {
+        const uin = row[m["UIN"]];
+        const u = parseInt(uin, 10);
+        if (pts.has(u)) {
+            const pt = pts.get(u);
+            pt.email = row[m["Email Address"]];
+            pt.phone_number = row[m["Phone Number"]];
+            pt.gender = row[m["Gender"]];
+            pt.ethnicity = row[m["Racial Background"]];
+            pt.graduation = row[m["When are you graduating? (Day does not matter)"]]
+            const c_teach = row[m["Classes you CAN peer teach for"]].split(",").map((val) => parseInt(val));
+            pt.can_teach = new Set(c_teach)
+            const p_teach = row[m["Classes you PREFER to peer teach for"]].split(",").map((val) => parseInt(val));
+            pt.pref_teach = new Set(p_teach);
+            const hours_work: number = parseInt(row[m["Number of hours you prefer to work"]]);
+            pt.pref_work = hours_work;
+            pt.new_ret = row[m["Are you a new hire or returning?"]]
+            pt.prof_pic_url = row[m["Profile picture for website (image)"]];
+            pt.schedule_url = row[m["Schedule (text file)"]];
+        }
+    })
+}
+
+/**
+ * @param {Array} attributes Strings of attributes to look for
+ * @param {Array} title_row Title row of sheet (usually first row: data[0])
+ * @return {Object} [key: attribute, value: index]
+ */
+function mapAttributeToIndex(attributes: string[], title_row: string[]) {
+    return attributes.reduce((prev, curr) => ({
+        ...prev,
+        [curr]: title_row.findIndex((cell) => cell.toString().toLocaleLowerCase().split(" ").join("").trim() == curr.toLocaleLowerCase().split(" ").join("").trim())
+    }), {})
 }

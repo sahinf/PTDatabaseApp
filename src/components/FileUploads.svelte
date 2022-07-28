@@ -8,12 +8,14 @@
     parseDatabaseFile,
     parseLabScheduleFile,
     parsePTFile,
+    readQuestionairre,
   } from "../logic/EditorActions";
   import { labStore, ptStore } from "../stores";
 
   let ptSchedules: FileList | null;
   let labSchedule: FileList | null;
   let dbFile: FileList | null;
+  let questionairreFile: FileList | null;
   let snackbar: Snackbar;
   let snackbarText;
 
@@ -78,6 +80,12 @@
           snackbarText = "Successfully imported database!";
           snackbar.open();
         });
+    }
+  }
+
+  $: {
+    if (questionairreFile?.length) {
+      readQuestionairre(questionairreFile[0]);
     }
   }
 
@@ -172,6 +180,18 @@
     <button class="btn btn-warning" on:click={exportDB2LocalStorage}
       >LocalStorage</button
     >
+  </Card>
+
+  <Card
+    title="Upload PTs from Questionnairre"
+    desc="Gather all data from the questionnairre results. Should be in CSV format"
+  >
+    <UploadButton
+      color="btn-info"
+      accept="text/csv"
+      multiple={false}
+      bind:files={questionairreFile}
+    />
   </Card>
 </div>
 

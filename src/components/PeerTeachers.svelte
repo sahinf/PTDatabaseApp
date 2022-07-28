@@ -26,13 +26,12 @@
     });
   }
 
-  let headers = ["", "First", "Last", "UIN", "Email", "Lab Hours", ""];
+  let headers = ["", "First", "Last", "Email", "UIN", "Phone", "Pref", "Lab", "Gen","Ethnicity", "Grad", "Status", ""];
 
-  $: console.log(headers);
 </script>
 
 <div class="overflow-auto h-full">
-  <table class="table w-full">
+  <table class="table table-compact w-full">
     <!-- head -->
     <thead>
       <tr>
@@ -65,11 +64,15 @@
             {/if}
           </th>
           <th>{pt.lastname}</th>
-          <th>{pt.id}</th>
           <th>{pt.email}</th>
-          <th>
-            {pt.lab_hours}
-          </th>
+          <th>{pt.id}</th>
+          <th>{pt.phone_number}</th>
+          <th>{pt.pref_work}</th>
+          <th>{pt.lab_hours}</th>
+          <th>{pt.gender}</th>
+          <th>{pt.ethnicity}</th>
+          <th>{pt.graduation}</th>
+          <th>{pt.new_ret}</th>
           <th
             ><button
               on:click={() => deletePT(pt.id)}
