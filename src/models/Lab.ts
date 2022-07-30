@@ -11,7 +11,14 @@ interface LabSerializeInfo {
     },
     building: string,
     room: string,
-    assigned: boolean
+    assigned: boolean,
+    faculty: {
+        bannerId: string,
+        courseReferenceNumber: string,
+        displayName: string,
+        emailAddress: string,
+
+    }[]
 }
 
 export default class Lab {
@@ -22,8 +29,15 @@ export default class Lab {
     building: string;
     room: string;
     assigned: boolean;
+    faculty: {
+        bannerId: string;
+        courseReferenceNumber: string;
+        displayName: string;
+        emailAddress: string;
 
-    constructor(course: number | string, section: number | string, event: EventInfo, building = "", room = "", assigned = false) {
+    }[]
+
+    constructor(course: number | string, section: number | string, event: EventInfo, building = "", room = "", assigned = false, faculty = []) {
         if (typeof course === "string") {
             course = parseInt(course, 10);
         }
@@ -38,10 +52,11 @@ export default class Lab {
         this.building = building;
         this.room = room;
         this.assigned = assigned;
+        this.faculty = faculty;
     }
 
-    static fromJSON({ course, section, event, building, room, assigned }: LabSerializeInfo) {
-        return new Lab(course, section, EventInfo.fromJSON(event), building, room, assigned);
+    static fromJSON({ course, section, event, building, room, assigned, faculty }: LabSerializeInfo) {
+        return new Lab(course, section, EventInfo.fromJSON(event), building, room, assigned, faculty);
     }
 
     get time() {

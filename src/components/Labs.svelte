@@ -7,7 +7,16 @@
 
   $: labs = [...$labStore.values()].sort((a, b) => a.id - b.id);
 
-  let headers = ["", "Course", "Sec", "Time", "Location", "Assigned PT", ""];
+  let headers = [
+    "",
+    "Course",
+    "Sec",
+    "Time",
+    "Location",
+    "Instructor",
+    "Assigned PT",
+    "",
+  ];
 
   $: pts = [...$ptStore.values()];
 
@@ -23,6 +32,17 @@
     ];
   });
 
+  function displayFaculty(lab: Lab): string {
+    if (lab.faculty.length > 0) {
+      let s: string[] = [];
+      lab.faculty.forEach((f) => {
+        s.push(f.displayName);
+      });
+      return s.join(",");
+    } else {
+      return "N/A";
+    }
+  }
   function download() {
     // prepare data in CSV format
     let cols = headers.slice(1, -1);
@@ -78,6 +98,7 @@
           <th>{l.lab?.section}</th>
           <th>{l.lab?.time}</th>
           <th>{l.lab?.location}</th>
+          <th>{displayFaculty(l.lab)}</th>
           <th>{l.pt?.name ?? "UNASSIGNED"}</th>
           <th><button class="btn btn-ghost btn-xs">Delete</button></th>
         </tr>

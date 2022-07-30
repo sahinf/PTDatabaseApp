@@ -4,12 +4,18 @@ import PeerTeacher from "../models/PeerTeacher";
 import { labStore, ptStore } from "../stores";
 import { PeerTeacherImportError } from "./error";
 import { get } from "svelte/store"
-import { attr } from "svelte/internal";
 
 interface LabSchedule {
     data: {
         courseNumber: string,
         sequenceNumber: string,
+        faculty: {
+            bannerId: string,
+            courseReferenceNumber: string,
+            displayName: string,
+            emailAddress: string,
+
+        }[],
         meetingsFaculty: {
             meetingTime: {
                 beginTime: string | null,
@@ -40,6 +46,13 @@ interface DatabaseFile {
             start: number,
             end: number
         },
+        faculty: {
+            bannerId: string,
+            courseReferenceNumber: string,
+            displayName: string,
+            emailAddress: string,
+
+        }[],
         building: string,
         room: string,
         assigned: boolean
@@ -87,7 +100,7 @@ export function parsePTSchedule(schedule: string) {
  * @param schedule The course schedule object from Howdy
  * @returns An array of labs
  */
-export function parseLabSchedule(schedule: LabSchedule) {
+export function parseLabSchedule(schedule: LabSchedule): Lab[] {
     const taughtCourses = ['110', '111', '120', '121', '206', '221', '312', '313', '315', '331'];
     const results: Lab[] = [];
 
@@ -116,15 +129,7 @@ export function parseLabSchedule(schedule: LabSchedule) {
             const { courseNumber, sequenceNumber } = course;
             const { building, room } = meetingTime;
 
-            results.push(
-                new Lab(
-                    courseNumber,
-                    sequenceNumber,
-                    new EventInfo(days, start, end),
-                    building,
-                    room
-                )
-            );
+            results.push(new Lab(courseNumber, sequenceNumber, new EventInfo(days, start, end), building, room, false, course.faculty));
         }
     }
 

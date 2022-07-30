@@ -95,7 +95,7 @@ export default class PeerTeacher {
 
         let total_hours = 0;
         this.labs.forEach((lab_id) => {
-            total_hours += all_labs.get(lab_id)!.pay_hours;
+            total_hours += all_labs.get(lab_id)?.pay_hours;
         })
 
         return total_hours;
