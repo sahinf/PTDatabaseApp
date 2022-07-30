@@ -2,9 +2,9 @@
 
 The latest production build can be accessed [here](https://sahinf.github.io/PTDatabaseApp/).
 
-The app is hosted on the [gh-pages](https://github.com/sahinf/PTDatabaseApp/tree/gh-pages) branch. It utilizes Github Actions through our workflow defined by this [`YAML`](./.github/workflows/deploy.yml) file. 
+Please use the [example template file](./pt-db-example.json) to play around with the app. Download that file and upload it with "Data Base Upload" button. 
 
-If, for some reason, the live build is down (404 Error perhaps), we can always clone this repository and run it manually
+The app is hosted on the [gh-pages](https://github.com/sahinf/PTDatabaseApp/tree/gh-pages) branch. It utilizes Github Actions through our workflow defined by this [`YAML`](./.github/workflows/deploy.yml) file. All pushes to `origin/master` should trigger deployment, basically. If, for some reason, the live build is down (404 Error perhaps), we can always clone this repository and run it manually with the steps below
 
 # Development 
 

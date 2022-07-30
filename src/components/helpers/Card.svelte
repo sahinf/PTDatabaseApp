@@ -8,7 +8,7 @@
         <h2 class="card-title">{title}</h2>
         <p>{desc}</p>
         <div class="card-actions justify-end">
-            <slot/>
+            <slot />
         </div>
     </div>
 </div>

@@ -1,0 +1,3548 @@
+{
+    "labs": [
+        {
+            "id": 110500,
+            "course": 110,
+            "section": 500,
+            "event": {
+                "days": "TR",
+                "start": 1245,
+                "end": 1335
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "45405",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 110501,
+            "course": 110,
+            "section": 501,
+            "event": {
+                "days": "TR",
+                "start": 1435,
+                "end": 1525
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "45406",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 110502,
+            "course": 110,
+            "section": 502,
+            "event": {
+                "days": "TR",
+                "start": 1555,
+                "end": 1645
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "45407",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 110503,
+            "course": 110,
+            "section": 503,
+            "event": {
+                "days": "TR",
+                "start": 1730,
+                "end": 1820
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "45408",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 110504,
+            "course": 110,
+            "section": 504,
+            "event": {
+                "days": "TR",
+                "start": 825,
+                "end": 915
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46736",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 110505,
+            "course": 110,
+            "section": 505,
+            "event": {
+                "days": "TR",
+                "start": 935,
+                "end": 1025
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46737",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 110506,
+            "course": 110,
+            "section": 506,
+            "event": {
+                "days": "TR",
+                "start": 1135,
+                "end": 1225
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46738",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 110507,
+            "course": 110,
+            "section": 507,
+            "event": {
+                "days": "TR",
+                "start": 1245,
+                "end": 1335
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129984",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46739",
+                    "displayName": "Ki Hwan K. Yum",
+                    "emailAddress": "khyum107@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111500,
+            "course": 111,
+            "section": 500,
+            "event": {
+                "days": "TR",
+                "start": 1435,
+                "end": 1525
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49744",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111501,
+            "course": 111,
+            "section": 501,
+            "event": {
+                "days": "TR",
+                "start": 1555,
+                "end": 1645
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10917",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111502,
+            "course": 111,
+            "section": 502,
+            "event": {
+                "days": "TR",
+                "start": 1730,
+                "end": 1820
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10918",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111503,
+            "course": 111,
+            "section": 503,
+            "event": {
+                "days": "TR",
+                "start": 1840,
+                "end": 1930
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "45409",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111504,
+            "course": 111,
+            "section": 504,
+            "event": {
+                "days": "TR",
+                "start": 825,
+                "end": 915
+            },
+            "building": "ZACH",
+            "room": "592",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "22909",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111505,
+            "course": 111,
+            "section": 505,
+            "event": {
+                "days": "TR",
+                "start": 935,
+                "end": 1025
+            },
+            "building": "ZACH",
+            "room": "592",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46758",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111506,
+            "course": 111,
+            "section": 506,
+            "event": {
+                "days": "TR",
+                "start": 1135,
+                "end": 1225
+            },
+            "building": "ZACH",
+            "room": "592",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46759",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 111507,
+            "course": 111,
+            "section": 507,
+            "event": {
+                "days": "TR",
+                "start": 1245,
+                "end": 1335
+            },
+            "building": "ZACH",
+            "room": "592",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129982",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46760",
+                    "displayName": "Sandeep Kumar",
+                    "emailAddress": null,
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120500,
+            "course": 120,
+            "section": 500,
+            "event": {
+                "days": "M",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "48360",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120501,
+            "course": 120,
+            "section": 501,
+            "event": {
+                "days": "W",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "48361",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120502,
+            "course": 120,
+            "section": 502,
+            "event": {
+                "days": "M",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "48362",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120503,
+            "course": 120,
+            "section": 503,
+            "event": {
+                "days": "W",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "48363",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120550,
+            "course": 120,
+            "section": 550,
+            "event": {
+                "days": "M",
+                "start": 1350,
+                "end": 1440
+            },
+            "building": "MAIN",
+            "room": "212",
+            "assigned": false,
+            "faculty": []
+        },
+        {
+            "id": 120587,
+            "course": 120,
+            "section": 587,
+            "event": {
+                "days": "W",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52477",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120588,
+            "course": 120,
+            "section": 588,
+            "event": {
+                "days": "M",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52476",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120589,
+            "course": 120,
+            "section": 589,
+            "event": {
+                "days": "W",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52475",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120590,
+            "course": 120,
+            "section": 590,
+            "event": {
+                "days": "M",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52474",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120591,
+            "course": 120,
+            "section": 591,
+            "event": {
+                "days": "W",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52473",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120592,
+            "course": 120,
+            "section": 592,
+            "event": {
+                "days": "M",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52472",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120593,
+            "course": 120,
+            "section": 593,
+            "event": {
+                "days": "W",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52471",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120594,
+            "course": 120,
+            "section": 594,
+            "event": {
+                "days": "M",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52470",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120595,
+            "course": 120,
+            "section": 595,
+            "event": {
+                "days": "W",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52469",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120596,
+            "course": 120,
+            "section": 596,
+            "event": {
+                "days": "M",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52468",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120597,
+            "course": 120,
+            "section": 597,
+            "event": {
+                "days": "W",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52467",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120598,
+            "course": 120,
+            "section": 598,
+            "event": {
+                "days": "M",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52466",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 120599,
+            "course": 120,
+            "section": 599,
+            "event": {
+                "days": "W",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "ONLINE",
+            "room": null,
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129986",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49847",
+                    "displayName": "Michael Moore",
+                    "emailAddress": "jmichael@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121500,
+            "course": 121,
+            "section": 500,
+            "event": {
+                "days": "W",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129983",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "41419",
+                    "displayName": "Qin Huang",
+                    "emailAddress": "huangqin@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121501,
+            "course": 121,
+            "section": 501,
+            "event": {
+                "days": "M",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129983",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10921",
+                    "displayName": "Qin Huang",
+                    "emailAddress": "huangqin@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121502,
+            "course": 121,
+            "section": 502,
+            "event": {
+                "days": "W",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129983",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10922",
+                    "displayName": "Qin Huang",
+                    "emailAddress": "huangqin@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121520,
+            "course": 121,
+            "section": 520,
+            "event": {
+                "days": "M",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129983",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51169",
+                    "displayName": "Qin Huang",
+                    "emailAddress": "huangqin@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121521,
+            "course": 121,
+            "section": 521,
+            "event": {
+                "days": "W",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129983",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51170",
+                    "displayName": "Qin Huang",
+                    "emailAddress": "huangqin@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121522,
+            "course": 121,
+            "section": 522,
+            "event": {
+                "days": "M",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129983",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51171",
+                    "displayName": "Qin Huang",
+                    "emailAddress": "huangqin@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121530,
+            "course": 121,
+            "section": 530,
+            "event": {
+                "days": "M",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51889",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121531,
+            "course": 121,
+            "section": 531,
+            "event": {
+                "days": "W",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51890",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121532,
+            "course": 121,
+            "section": 532,
+            "event": {
+                "days": "M",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51891",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121533,
+            "course": 121,
+            "section": 533,
+            "event": {
+                "days": "W",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51892",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121580,
+            "course": 121,
+            "section": 580,
+            "event": {
+                "days": "W",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": []
+        },
+        {
+            "id": 121581,
+            "course": 121,
+            "section": 581,
+            "event": {
+                "days": "M",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": []
+        },
+        {
+            "id": 121582,
+            "course": 121,
+            "section": 582,
+            "event": {
+                "days": "W",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": []
+        },
+        {
+            "id": 121583,
+            "course": 121,
+            "section": 583,
+            "event": {
+                "days": "M",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": []
+        },
+        {
+            "id": 121584,
+            "course": 121,
+            "section": 584,
+            "event": {
+                "days": "W",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52545",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121585,
+            "course": 121,
+            "section": 585,
+            "event": {
+                "days": "M",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52544",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121586,
+            "course": 121,
+            "section": 586,
+            "event": {
+                "days": "W",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52543",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121587,
+            "course": 121,
+            "section": 587,
+            "event": {
+                "days": "M",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52542",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121588,
+            "course": 121,
+            "section": 588,
+            "event": {
+                "days": "W",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52541",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121589,
+            "course": 121,
+            "section": 589,
+            "event": {
+                "days": "M",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52540",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121590,
+            "course": 121,
+            "section": 590,
+            "event": {
+                "days": "W",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52539",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121591,
+            "course": 121,
+            "section": 591,
+            "event": {
+                "days": "M",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52538",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121592,
+            "course": 121,
+            "section": 592,
+            "event": {
+                "days": "W",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52537",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121593,
+            "course": 121,
+            "section": 593,
+            "event": {
+                "days": "M",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52536",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121594,
+            "course": 121,
+            "section": 594,
+            "event": {
+                "days": "W",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52535",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121595,
+            "course": 121,
+            "section": 595,
+            "event": {
+                "days": "M",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129987",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52534",
+                    "displayName": "Timothy J. McGuire",
+                    "emailAddress": "tmcguire@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121596,
+            "course": 121,
+            "section": 596,
+            "event": {
+                "days": "M",
+                "start": 910,
+                "end": 1000
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129986",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "41423",
+                    "displayName": "Michael Moore",
+                    "emailAddress": "jmichael@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121597,
+            "course": 121,
+            "section": 597,
+            "event": {
+                "days": "W",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129986",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49851",
+                    "displayName": "Michael Moore",
+                    "emailAddress": "jmichael@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121598,
+            "course": 121,
+            "section": 598,
+            "event": {
+                "days": "M",
+                "start": 800,
+                "end": 850
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129986",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49852",
+                    "displayName": "Michael Moore",
+                    "emailAddress": "jmichael@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 121599,
+            "course": 121,
+            "section": 599,
+            "event": {
+                "days": "W",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "ONLINE",
+            "room": null,
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129986",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49848",
+                    "displayName": "Michael Moore",
+                    "emailAddress": "jmichael@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 206500,
+            "course": 206,
+            "section": 500,
+            "event": {
+                "days": "MW",
+                "start": 800,
+                "end": 850
+            },
+            "building": "EABA",
+            "room": "121",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49904",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 206501,
+            "course": 206,
+            "section": 501,
+            "event": {
+                "days": "MW",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "EABA",
+            "room": "121",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "45543",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 206502,
+            "course": 206,
+            "section": 502,
+            "event": {
+                "days": "MW",
+                "start": 1350,
+                "end": 1440
+            },
+            "building": "EABA",
+            "room": "121",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129985",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10928",
+                    "displayName": "Christiana S. Chamon",
+                    "emailAddress": "chrischa11@hotmail.com",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221500,
+            "course": 221,
+            "section": 500,
+            "event": {
+                "days": "MW",
+                "start": 1350,
+                "end": 1440
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49905",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221501,
+            "course": 221,
+            "section": 501,
+            "event": {
+                "days": "MW",
+                "start": 1500,
+                "end": 1550
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10933",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221502,
+            "course": 221,
+            "section": 502,
+            "event": {
+                "days": "MW",
+                "start": 1610,
+                "end": 1700
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "37701",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221503,
+            "course": 221,
+            "section": 503,
+            "event": {
+                "days": "MW",
+                "start": 1745,
+                "end": 1835
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10935",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221504,
+            "course": 221,
+            "section": 504,
+            "event": {
+                "days": "MW",
+                "start": 1900,
+                "end": 1950
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "37702",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221505,
+            "course": 221,
+            "section": 505,
+            "event": {
+                "days": "TR",
+                "start": 825,
+                "end": 915
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "13021",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221506,
+            "course": 221,
+            "section": 506,
+            "event": {
+                "days": "MW",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "37703",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221507,
+            "course": 221,
+            "section": 507,
+            "event": {
+                "days": "MW",
+                "start": 1350,
+                "end": 1440
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "24211",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221508,
+            "course": 221,
+            "section": 508,
+            "event": {
+                "days": "MW",
+                "start": 1500,
+                "end": 1550
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "37730",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221509,
+            "course": 221,
+            "section": 509,
+            "event": {
+                "days": "MW",
+                "start": 1610,
+                "end": 1700
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129944",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "31250",
+                    "displayName": "Teresa Leyk",
+                    "emailAddress": "teresa19@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221510,
+            "course": 221,
+            "section": 510,
+            "event": {
+                "days": "MW",
+                "start": 1745,
+                "end": 1835
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129945",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "31251",
+                    "displayName": "Philip C. Ritchey",
+                    "emailAddress": "pcr@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221511,
+            "course": 221,
+            "section": 511,
+            "event": {
+                "days": "MW",
+                "start": 1900,
+                "end": 1950
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129945",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49906",
+                    "displayName": "Philip C. Ritchey",
+                    "emailAddress": "pcr@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221512,
+            "course": 221,
+            "section": 512,
+            "event": {
+                "days": "MW",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129945",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49907",
+                    "displayName": "Philip C. Ritchey",
+                    "emailAddress": "pcr@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 221513,
+            "course": 221,
+            "section": 513,
+            "event": {
+                "days": "MW",
+                "start": 1350,
+                "end": 1440
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "129945",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "49908",
+                    "displayName": "Philip C. Ritchey",
+                    "emailAddress": "pcr@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 312203,
+            "course": 312,
+            "section": 203,
+            "event": {
+                "days": "TR",
+                "start": 1435,
+                "end": 1525
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130054",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51145",
+                    "displayName": "Eun Kim",
+                    "emailAddress": "ejkim@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 312500,
+            "course": 312,
+            "section": 500,
+            "event": {
+                "days": "TR",
+                "start": 935,
+                "end": 1025
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130044",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50078",
+                    "displayName": "Abdullah Muzahid",
+                    "emailAddress": "abdullah.muzahid@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 312501,
+            "course": 312,
+            "section": 501,
+            "event": {
+                "days": "TR",
+                "start": 1135,
+                "end": 1225
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130044",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10937",
+                    "displayName": "Abdullah Muzahid",
+                    "emailAddress": "abdullah.muzahid@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 312502,
+            "course": 312,
+            "section": 502,
+            "event": {
+                "days": "TR",
+                "start": 1245,
+                "end": 1335
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130044",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "10938",
+                    "displayName": "Abdullah Muzahid",
+                    "emailAddress": "abdullah.muzahid@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 312503,
+            "course": 312,
+            "section": 503,
+            "event": {
+                "days": "TR",
+                "start": 1435,
+                "end": 1525
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130054",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "37708",
+                    "displayName": "Eun Kim",
+                    "emailAddress": "ejkim@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 312504,
+            "course": 312,
+            "section": 504,
+            "event": {
+                "days": "TR",
+                "start": 1555,
+                "end": 1645
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130054",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "42978",
+                    "displayName": "Eun Kim",
+                    "emailAddress": "ejkim@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 312505,
+            "course": 312,
+            "section": 505,
+            "event": {
+                "days": "TR",
+                "start": 1730,
+                "end": 1820
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130054",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "45887",
+                    "displayName": "Eun Kim",
+                    "emailAddress": "ejkim@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313200,
+            "course": 313,
+            "section": 200,
+            "event": {
+                "days": "TR",
+                "start": 1245,
+                "end": 1335
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51146",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313500,
+            "course": 313,
+            "section": 500,
+            "event": {
+                "days": "TR",
+                "start": 1840,
+                "end": 1930
+            },
+            "building": "ZACH",
+            "room": "590",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50079",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313501,
+            "course": 313,
+            "section": 501,
+            "event": {
+                "days": "TR",
+                "start": 2025,
+                "end": 2115
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50080",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313502,
+            "course": 313,
+            "section": 502,
+            "event": {
+                "days": "TR",
+                "start": 935,
+                "end": 1025
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50081",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313503,
+            "course": 313,
+            "section": 503,
+            "event": {
+                "days": "TR",
+                "start": 1135,
+                "end": 1225
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50082",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313504,
+            "course": 313,
+            "section": 504,
+            "event": {
+                "days": "TR",
+                "start": 1840,
+                "end": 1930
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50083",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313505,
+            "course": 313,
+            "section": 505,
+            "event": {
+                "days": "TR",
+                "start": 825,
+                "end": 915
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "24217",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313506,
+            "course": 313,
+            "section": 506,
+            "event": {
+                "days": "TR",
+                "start": 935,
+                "end": 1025
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "31256",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313507,
+            "course": 313,
+            "section": 507,
+            "event": {
+                "days": "TR",
+                "start": 1135,
+                "end": 1225
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "34148",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313508,
+            "course": 313,
+            "section": 508,
+            "event": {
+                "days": "TR",
+                "start": 1840,
+                "end": 1930
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "34149",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313509,
+            "course": 313,
+            "section": 509,
+            "event": {
+                "days": "TR",
+                "start": 825,
+                "end": 915
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "35966",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313510,
+            "course": 313,
+            "section": 510,
+            "event": {
+                "days": "TR",
+                "start": 935,
+                "end": 1025
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "37712",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313511,
+            "course": 313,
+            "section": 511,
+            "event": {
+                "days": "TR",
+                "start": 1135,
+                "end": 1225
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130050",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "37713",
+                    "displayName": "David K. Houngninou",
+                    "emailAddress": "davidkebo@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313592,
+            "course": 313,
+            "section": 592,
+            "event": {
+                "days": "TR",
+                "start": 1730,
+                "end": 1820
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46909",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313593,
+            "course": 313,
+            "section": 593,
+            "event": {
+                "days": "TR",
+                "start": 1555,
+                "end": 1645
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46908",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313594,
+            "course": 313,
+            "section": 594,
+            "event": {
+                "days": "TR",
+                "start": 1435,
+                "end": 1525
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46907",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313595,
+            "course": 313,
+            "section": 595,
+            "event": {
+                "days": "TR",
+                "start": 1245,
+                "end": 1335
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46906",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313596,
+            "course": 313,
+            "section": 596,
+            "event": {
+                "days": "TR",
+                "start": 1730,
+                "end": 1820
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46905",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313597,
+            "course": 313,
+            "section": 597,
+            "event": {
+                "days": "TR",
+                "start": 1555,
+                "end": 1645
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46904",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313598,
+            "course": 313,
+            "section": 598,
+            "event": {
+                "days": "TR",
+                "start": 1435,
+                "end": 1525
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "46903",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 313599,
+            "course": 313,
+            "section": 599,
+            "event": {
+                "days": "TR",
+                "start": 1245,
+                "end": 1335
+            },
+            "building": "ZACH",
+            "room": "582",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130073",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "48513",
+                    "displayName": "Aakash Tyagi",
+                    "emailAddress": "tyagi@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315901,
+            "course": 315,
+            "section": 901,
+            "event": {
+                "days": "MW",
+                "start": 1610,
+                "end": 1700
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130060",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40503",
+                    "displayName": "Shawna Thomas",
+                    "emailAddress": "sthomas@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315902,
+            "course": 315,
+            "section": 902,
+            "event": {
+                "days": "MW",
+                "start": 1745,
+                "end": 1835
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130060",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40504",
+                    "displayName": "Shawna Thomas",
+                    "emailAddress": "sthomas@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315903,
+            "course": 315,
+            "section": 903,
+            "event": {
+                "days": "MW",
+                "start": 1900,
+                "end": 1950
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130060",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40505",
+                    "displayName": "Shawna Thomas",
+                    "emailAddress": "sthomas@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315904,
+            "course": 315,
+            "section": 904,
+            "event": {
+                "days": "MW",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40506",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315905,
+            "course": 315,
+            "section": 905,
+            "event": {
+                "days": "MW",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40507",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315906,
+            "course": 315,
+            "section": 906,
+            "event": {
+                "days": "MW",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40508",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315907,
+            "course": 315,
+            "section": 907,
+            "event": {
+                "days": "MW",
+                "start": 1350,
+                "end": 1440
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40509",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315908,
+            "course": 315,
+            "section": 908,
+            "event": {
+                "days": "MW",
+                "start": 1500,
+                "end": 1550
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40510",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315909,
+            "course": 315,
+            "section": 909,
+            "event": {
+                "days": "MW",
+                "start": 1610,
+                "end": 1700
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40511",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315910,
+            "course": 315,
+            "section": 910,
+            "event": {
+                "days": "MW",
+                "start": 1745,
+                "end": 1835
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40512",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315911,
+            "course": 315,
+            "section": 911,
+            "event": {
+                "days": "MW",
+                "start": 1900,
+                "end": 1950
+            },
+            "building": "ZACH",
+            "room": "596",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130062",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "40513",
+                    "displayName": "Robert H. Lightfoot",
+                    "emailAddress": "rob.light@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315912,
+            "course": 315,
+            "section": 912,
+            "event": {
+                "days": "MW",
+                "start": 1020,
+                "end": 1110
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52368",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315913,
+            "course": 315,
+            "section": 913,
+            "event": {
+                "days": "MW",
+                "start": 1130,
+                "end": 1220
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52369",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315914,
+            "course": 315,
+            "section": 914,
+            "event": {
+                "days": "MW",
+                "start": 1240,
+                "end": 1330
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52370",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315915,
+            "course": 315,
+            "section": 915,
+            "event": {
+                "days": "MW",
+                "start": 1350,
+                "end": 1440
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "52371",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315970,
+            "course": 315,
+            "section": 970,
+            "event": {
+                "days": "MW",
+                "start": 1500,
+                "end": 1550
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130060",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51148",
+                    "displayName": "Shawna Thomas",
+                    "emailAddress": "sthomas@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 315971,
+            "course": 315,
+            "section": 971,
+            "event": {
+                "days": "MW",
+                "start": 1500,
+                "end": 1550
+            },
+            "building": "ZACH",
+            "room": "584",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130060",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "51325",
+                    "displayName": "Shawna Thomas",
+                    "emailAddress": "sthomas@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 331904,
+            "course": 331,
+            "section": 904,
+            "event": {
+                "days": "MW",
+                "start": 1500,
+                "end": 1550
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50185",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 331905,
+            "course": 331,
+            "section": 905,
+            "event": {
+                "days": "MW",
+                "start": 1610,
+                "end": 1700
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50186",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 331906,
+            "course": 331,
+            "section": 906,
+            "event": {
+                "days": "MW",
+                "start": 1745,
+                "end": 1835
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50187",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        },
+        {
+            "id": 331907,
+            "course": 331,
+            "section": 907,
+            "event": {
+                "days": "MW",
+                "start": 1900,
+                "end": 1950
+            },
+            "building": "ZACH",
+            "room": "598",
+            "assigned": false,
+            "faculty": [
+                {
+                    "bannerId": "130077",
+                    "category": null,
+                    "class": "net.hedtech.banner.student.faculty.FacultyResultDecorator",
+                    "courseReferenceNumber": "50188",
+                    "displayName": "Paul P. Taele",
+                    "emailAddress": "ptaele@email.tamu.edu",
+                    "id": null,
+                    "primaryIndicator": true,
+                    "term": "202231",
+                    "version": null
+                }
+            ]
+        }
+    ],
+    "peerTeachers": [
+        {
+            "id": 224047506,
+            "firstname": "Dio",
+            "lastname": "Brando",
+            "events": [
+                {
+                    "days": "TR",
+                    "start": 1110,
+                    "end": 1225
+                },
+                {
+                    "days": "TR",
+                    "start": 1555,
+                    "end": 1710
+                },
+                {
+                    "days": "TR",
+                    "start": 1730,
+                    "end": 1845
+                },
+                {
+                    "days": "F",
+                    "start": 1020,
+                    "end": 1200
+                }
+            ],
+            "labs": [
+                312500,
+                312502,
+                315901
+            ],
+            "email": "DioDaddy@tamu.edu",
+            "phone_number": "1234567890",
+            "gender": "Male",
+            "ethnicity": "White",
+            "graduation": "5/12/2023",
+            "can_teach": [
+                null
+            ],
+            "pref_teach": [
+                null
+            ],
+            "pref_work": 10,
+            "new_ret": "Returning",
+            "prof_pic_url": "",
+            "schedule_url": ""
+        },
+        {
+            "id": 620305406,
+            "firstname": "Joseph",
+            "lastname": "Joestar",
+            "events": [
+                {
+                    "days": "MWF",
+                    "start": 800,
+                    "end": 850
+                },
+                {
+                    "days": "MWF",
+                    "start": 1130,
+                    "end": 1220
+                },
+                {
+                    "days": "MW",
+                    "start": 1240,
+                    "end": 1330
+                },
+                {
+                    "days": "TR",
+                    "start": 1420,
+                    "end": 1535
+                },
+                {
+                    "days": "TR",
+                    "start": 1530,
+                    "end": 1820
+                }
+            ],
+            "labs": [
+                120503
+            ],
+            "email": "joseph.joestar@tamu.edu",
+            "phone_number": "0987654321",
+            "gender": "Male",
+            "ethnicity": "American",
+            "graduation": "5/13/2024",
+            "can_teach": [
+                null
+            ],
+            "pref_teach": [
+                null
+            ],
+            "pref_work": 7,
+            "new_ret": "Returning",
+            "prof_pic_url": "",
+            "schedule_url": ""
+        }
+    ]
+}

@@ -5,7 +5,7 @@
 
     let modalID = () => {
         return `my-modal-${pt.id}`;
-    }
+    };
 </script>
 
 <!-- PT Box -->

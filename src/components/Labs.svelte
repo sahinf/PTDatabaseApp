@@ -20,7 +20,6 @@
 
   $: pts = [...$ptStore.values()];
 
-  // TODO Make this more efficient rather than checking each PT per each Lab
   $: labsAndPts = [...$labStore.values()].flatMap((lab) => {
     return [
       {
@@ -53,7 +52,6 @@
         l
       )},${row.pt?.name ?? "UNASSIGNED"}\n`;
     });
-    console.log(csv);
 
     const blob = new Blob([csv], { type: "text/csv" });
     const anchor = document.createElement("a");
