@@ -26,8 +26,21 @@
     });
   }
 
-  let headers = ["", "First", "Last", "Email", "UIN", "Phone", "Pref", "Lab", "Gen","Ethnicity", "Grad", "Status", ""];
-
+  let headers = [
+    "",
+    "First",
+    "Last",
+    "Email",
+    "UIN",
+    "Phone",
+    "Pref",
+    "Lab",
+    "Gen",
+    "Ethnicity",
+    "Grad",
+    "Status",
+    "",
+  ];
 </script>
 
 <div class="overflow-auto h-full">
