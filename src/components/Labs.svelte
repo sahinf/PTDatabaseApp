@@ -10,7 +10,6 @@
   let headers = [
     "",
     "Course",
-    "Sec",
     "Time",
     "Location",
     "Instructor",
@@ -92,8 +91,7 @@
           class={selected_lab == l.lab ? "active" : "hover"}
         >
           <th>{i + 1}</th>
-          <th>{l.lab?.course}</th>
-          <th>{l.lab?.section}</th>
+          <th>{l.lab?.course} - {l.lab?.section}</th>
           <th>{l.lab?.time}</th>
           <th>{l.lab?.location}</th>
           <th>{displayFaculty(l.lab)}</th>
