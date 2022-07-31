@@ -67,6 +67,8 @@
     selectedPeerTeacher?.labs.delete(id);
     updateReactiveDeclarations();
   }
+
+  // TODO Figure out way for PT boxes to both be blue if compat labs AND be bordered if selected_pt
 </script>
 
 <div
@@ -74,11 +76,9 @@
 >
   <!-- Top half: 3 Columns -->
   <div class="flex flex-row h-[80vh]">
-    <!-- PT Box -->
+    <!-- Peer Teacher -->
     <div class="assign-box rounded-l-xl">
-      <!-- PT Header -->
       <div class="assign-box-header">Peer Teacher</div>
-      <!-- PT Body -->
       <div class="assign-box-body">
         {#each peerTeachers as pt}
           <div
