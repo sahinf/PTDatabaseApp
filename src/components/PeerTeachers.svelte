@@ -1,9 +1,15 @@
 <script lang="ts">
   import { labStore, ptStore } from "../stores";
   import type PeerTeacher from "../models/PeerTeacher";
+  import Icon from "./helpers/Icon.svelte";
+  import type { SnackbarComponentDev } from "@smui/snackbar";
+  import Snackbar, { Label, Actions } from "@smui/snackbar";
+  import IconButton from "@smui/icon-button";
 
   let selected_pt: PeerTeacher | undefined;
   let editing: boolean = false;
+
+  let snackbarSuccess: SnackbarComponentDev;
 
   $: peerTeachers = [...$ptStore.values()].sort((a, b) =>
     a.lastname.toUpperCase() === b.lastname.toUpperCase()
@@ -12,7 +18,6 @@
   );
 
   function deletePT(id: number) {
-    // if (selected_pt.id != id) return;
     // Unassign all labs assigned to this Peer Teacher
     $ptStore.get(id)?.labs.forEach((lab_id) => {
       const lab = $labStore?.get(lab_id);
@@ -24,6 +29,12 @@
       map.delete(id);
       return map;
     });
+  }
+
+  function handleEmail() {
+    const emails = peerTeachers.flatMap((pt) => pt.email).join(",");
+    navigator.clipboard.writeText(emails);
+    if (snackbarSuccess) snackbarSuccess.open();
   }
 
   let headers = [
@@ -49,7 +60,23 @@
     <thead>
       <tr>
         {#each headers as header, i}
-          <th> {i == 0 ? peerTeachers.length : header}</th>
+          <th>
+            {#if i == 0}
+              {peerTeachers.length}
+            {:else if header == "Email"}
+              <div class="flex flex-row items-center">
+                {header}
+                <Icon
+                  name="clipboard-copy"
+                  class="h-4 w-4 ml-2 mt-0.5"
+                  handleClick={handleEmail}
+                />
+                <!-- </Button> -->
+              </div>
+            {:else}
+              {header}
+            {/if}
+          </th>
         {/each}
       </tr>
     </thead>
@@ -61,8 +88,8 @@
           }}
           class={selected_pt == pt ? "active" : "hover"}
         >
-          <th>{i + 1}</th>
-          <th>
+          <td>{i + 1}</td>
+          <td>
             {#if editing && selected_pt == pt}
               <input
                 bind:value={pt.firstname}
@@ -75,17 +102,17 @@
                 {pt.firstname}
               </div>
             {/if}
-          </th>
-          <th>{pt.lastname}</th>
-          <th>{pt.email}</th>
-          <th>{pt.id}</th>
-          <th>{pt.phone_number}</th>
-          <th>{pt.pref_work}</th>
-          <th>{pt.lab_hours}</th>
-          <th>{pt.gender}</th>
-          <th>{pt.ethnicity}</th>
-          <th>{pt.graduation}</th>
-          <th>{pt.new_ret}</th>
+          </td>
+          <td>{pt.lastname}</td>
+          <td>{pt.email}</td>
+          <td>{pt.id}</td>
+          <td>{pt.phone_number}</td>
+          <td>{pt.pref_work}</td>
+          <td>{pt.lab_hours}</td>
+          <td>{pt.gender}</td>
+          <td>{pt.ethnicity}</td>
+          <td>{pt.graduation}</td>
+          <td>{pt.new_ret}</td>
           <th
             ><button
               on:click={() => deletePT(pt.id)}
@@ -97,3 +124,10 @@
     </tbody>
   </table>
 </div>
+
+<Snackbar bind:this={snackbarSuccess} class="demo-success">
+  <Label>Successfully copied comma-separated list of emails</Label>
+  <Actions>
+    <IconButton class="material-icons" title="Dismiss">close</IconButton>
+  </Actions>
+</Snackbar>

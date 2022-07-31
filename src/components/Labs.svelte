@@ -73,8 +73,14 @@
         {#each headers as header, i}
           {#if i == 0}
             <th>
-              {labs.length}
-              <Icon name="download" class="h-4 w-4" handleClick={download} />
+              <div class="flex flex-row">
+                {labs.length}
+                <Icon
+                  name="download"
+                  class="h-4 w-4 ml-2"
+                  handleClick={download}
+                />
+              </div>
             </th>
           {:else}
             <th>{header}</th>
@@ -90,13 +96,13 @@
           }}
           class={selected_lab == l.lab ? "active" : "hover"}
         >
-          <th>{i + 1}</th>
-          <th>{l.lab?.course} - {l.lab?.section}</th>
-          <th>{l.lab?.time}</th>
-          <th>{l.lab?.location}</th>
-          <th>{displayFaculty(l.lab)}</th>
-          <th>{l.pt?.name ?? "UNASSIGNED"}</th>
-          <th><button class="btn btn-ghost btn-xs">Delete</button></th>
+          <td>{i + 1}</td>
+          <td>{l.lab?.course} - {l.lab?.section}</td>
+          <td>{l.lab?.time}</td>
+          <td>{l.lab?.location}</td>
+          <td>{displayFaculty(l.lab)}</td>
+          <td>{l.pt?.name ?? "UNASSIGNED"}</td>
+          <td><button class="btn btn-ghost btn-xs">Delete</button></td>
         </tr>
       {/each}
     </tbody>
