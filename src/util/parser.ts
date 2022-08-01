@@ -182,7 +182,15 @@ export function parseDatabaseLocalStorage(database_string: string) {
     ptStore.set(result.peerTeachers)
 }
 
-export function parseQuestionairreCSV(csv: string) {
+/**
+ * @param csv csv representation of PT Quentionairre
+ * The questionairre collects all sorts of information
+ * from Peer Teachers. The `attributes` variable below 
+ * houses all of the attributes we want to collect.
+ * It looks for those attributes in the header row of the
+ * questionnairre to begin populating PT data.
+ */
+export function parseQuestionnaireCSV(csv: string) {
     const attributes = [
         "Timestamp",
         "UIN",
@@ -200,11 +208,7 @@ export function parseQuestionairreCSV(csv: string) {
         "Profile picture for website (image)",
         "Schedule (text file)"
     ]
-    const t = csv.split("\n")
-    const sheet = t.map((val) => {
-        const reg = new RegExp(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))")
-        return val.split(reg)
-    })
+    const sheet = csv2sheet(csv);
 
     const m = mapAttributeToIndex(attributes, sheet[0]);
 
@@ -221,6 +225,7 @@ export function parseQuestionairreCSV(csv: string) {
             pt.ethnicity = row[m["Racial Background"]];
             pt.graduation = row[m["When are you graduating? (Day does not matter)"]]
             const c_teach = row[m["Classes you CAN peer teach for"]].split(",").map((val) => parseInt(val));
+            // TODO parsing of this information is wrong, Cannot ParseInt("CSCE 110")
             pt.can_teach = new Set(c_teach)
             const p_teach = row[m["Classes you PREFER to peer teach for"]].split(",").map((val) => parseInt(val));
             pt.pref_teach = new Set(p_teach);
@@ -231,6 +236,46 @@ export function parseQuestionairreCSV(csv: string) {
             pt.schedule_url = row[m["Schedule (text file)"]];
         }
     })
+}
+
+/**
+ * 
+ * @param csv a string in csv format
+ * @returns 2d array representation of CSV file
+ */
+function csv2sheet(csv: string): string[][] {
+    const t = csv.split("\n");
+    return t.map((val) => {
+        const reg = new RegExp(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+        return val.split(reg);
+    });
+}
+
+/**
+ * @param csv csv representation of a Strawpoll output
+ * Specific function, should be updated to parse whatever office hour format is being used
+ * The current format is a Strawpoll output in csv format
+ * It should be a messy function, but it has to be
+ */
+export function parseOfficeHours(csv: string) {
+    const sheet = csv2sheet(csv);
+    const begin = sheet.findIndex((row) => row[0].trim().toLowerCase() == "name");
+    const end = sheet.findIndex((row) => row[0].trim() == "Total ✓ Votes");
+    const pts = get(ptStore);
+    for (let i = begin + 1; i < end; i++) {
+        for (let j = 1; j < sheet[0]?.length ?? 0; j++) {
+            if (sheet[i][j] == "1") {
+                const pt_uin = parseInt(sheet[i][0]);
+                console.log("Found", sheet[begin][j], "for PT", pts.get(pt_uin));
+                const datestr = sheet[begin][j];
+                const regex = /\(([^)]*)\)/; // find time between parantheses eg ($1) find $1
+                const match = datestr.match(regex)
+                const date_time_form = datestr.split(" ")[0] + `T${match[1].split(" ")[0]}`;
+                const date = new Date(date_time_form);
+                console.log(pts.get(pt_uin).name, date, date.getDate())
+            }
+        }
+    }
 }
 
 /**

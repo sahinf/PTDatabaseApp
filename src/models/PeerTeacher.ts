@@ -101,6 +101,8 @@ export default class PeerTeacher {
         return total_hours;
     }
 
+    // The public URL for displaying an an image on Google Drive has to be in this format
+    // This function simply replaces everthing before '=' with ''
     get drive_pic(): string {
         if (this.prof_pic_url == null || this.prof_pic_url == undefined) return ""
         return `https://drive.google.com/uc?export=view&id=${this.prof_pic_url.replace(/^[^=]*=/, '')}`;

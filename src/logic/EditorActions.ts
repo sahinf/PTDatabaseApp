@@ -1,4 +1,4 @@
-import { parseDatabase, parseLabSchedule, parsePTSchedule, parseQuestionairreCSV } from "../util/parser";
+import { parseDatabase, parseLabSchedule, parsePTSchedule, parseQuestionnaireCSV, parseOfficeHours } from "../util/parser";
 
 export async function parsePTFile(file: File) {
     try {
@@ -10,10 +10,20 @@ export async function parsePTFile(file: File) {
     }
 }
 
-export async function readQuestionairre(file: File) {
+export async function readQuestionnaire(file: File) {
     try {
         const text = await file.text();
-        return parseQuestionairreCSV(text);
+        return parseQuestionnaireCSV(text);
+    } catch (error) {
+        console.error(file.name, error);
+        throw error;
+    }
+}
+
+export async function parseOfficeHoursFile(file: File) {
+    try {
+        const text = await file.text();
+        return parseOfficeHours(text);
     } catch (error) {
         console.error(file.name, error);
         throw error;

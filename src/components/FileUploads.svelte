@@ -7,8 +7,9 @@
   import {
     parseDatabaseFile,
     parseLabScheduleFile,
+    parseOfficeHoursFile,
     parsePTFile,
-    readQuestionairre,
+    readQuestionnaire,
   } from "../logic/EditorActions";
   import { labStore, ptStore } from "../stores";
 
@@ -16,6 +17,7 @@
   let labSchedule: FileList | null;
   let dbFile: FileList | null;
   let questionairreFile: FileList | null;
+  let officehoursFiles: FileList | null;
   let snackbar: Snackbar;
   let snackbarText;
 
@@ -85,7 +87,13 @@
 
   $: {
     if (questionairreFile?.length) {
-      readQuestionairre(questionairreFile[0]);
+      readQuestionnaire(questionairreFile[0]);
+    }
+  }
+
+  $: {
+    if (officehoursFiles?.length) {
+      parseOfficeHoursFile(officehoursFiles[0]);
     }
   }
 
@@ -193,6 +201,18 @@
       bind:files={questionairreFile}
     />
   </Card>
+
+  <Card
+    title="Office Hours"
+    desc="Upload the office hours output file for it to be parsed. Currently we accept a CSV file representation of a Strawpoll output"
+  >
+    <UploadButton
+      color="btn-warn"
+      accept="text/csv"
+      multiple={false}
+      bind:files={officehoursFiles}
+    /></Card
+  >
 </div>
 
 <!-- https://github.com/saadeghi/daisyui/issues/221 -->
