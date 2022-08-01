@@ -47,9 +47,9 @@
     let csv = cols.join(",") + "\n";
     labsAndPts.forEach((row) => {
       let l = row.lab;
-      csv += `${l.course},${l.section},${l.time},${l.location},${displayFaculty(
-        l
-      )},${row.pt?.name ?? "UNASSIGNED"}\n`;
+      csv += `${l.course} - ${l.section},${l.time},${
+        l.location
+      },${displayFaculty(l)},${row.pt?.name ?? "UNASSIGNED"}\n`;
     });
 
     const blob = new Blob([csv], { type: "text/csv" });
