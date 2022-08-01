@@ -101,4 +101,9 @@ export default class PeerTeacher {
         return total_hours;
     }
 
+    get drive_pic(): string {
+        if (this.prof_pic_url == null || this.prof_pic_url == undefined) return ""
+        return `https://drive.google.com/uc?export=view&id=${this.prof_pic_url.replace(/^[^=]*=/, '')}`;
+    }
+
 }

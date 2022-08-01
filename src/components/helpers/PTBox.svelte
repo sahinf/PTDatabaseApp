@@ -40,5 +40,5 @@
     </div>
 
     <!-- Bottom half, hours -->
-    <div class="">Hours: {pt.lab_hours}</div>
+    <div class="">Hours: {pt.lab_hours}/{pt.pref_work}</div>
 </div>

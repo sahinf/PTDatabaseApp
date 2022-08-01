@@ -4,17 +4,18 @@
   import FileUploads from "./FileUploads.svelte";
   import PeerTeachers from "./PeerTeachers.svelte";
   import Labs from "./Labs.svelte";
+  import TamuOutput from "./TamuOutput.svelte";
   import { onMount } from "svelte";
   import { parseDatabaseLocalStorage } from "../util/parser";
 
   let sections = [
     { name: "File Uploads", component: FileUploads },
-    { name: "Peer Teachers", component: PeerTeachers }, // TODO
+    { name: "Peer Teachers", component: PeerTeachers },
     { name: "Assign Labs", component: AssignLabs },
-    { name: "Labs", component: Labs }, // TODO
+    { name: "Labs", component: Labs },
     { name: "Active Peer Teachers", component: null }, // TODO
     { name: "Stats", component: null }, // TODO
-    { name: "TAMU Html Output", component: null }, // TODO
+    { name: "TAMU Html Output", component: TamuOutput },
   ];
 
   let selected = sections[0];
@@ -70,7 +71,7 @@
   </div>
 
   <!-- Chosen Section / Component -->
-  <div class="flex-auto h-full">
+  <div class="flex-auto h-full overflow-y-hidden">
     <svelte:component this={selected.component} />
   </div>
 </div>
