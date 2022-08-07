@@ -31,7 +31,7 @@
     });
   }
 
-  function handleEmail() {
+  function copyEmailsToClipboard() {
     const emails = peerTeachers.flatMap((pt) => pt.email).join(",");
     navigator.clipboard.writeText(emails);
     if (snackbarSuccess) snackbarSuccess.open();
@@ -56,7 +56,7 @@
 
 <div class="h-full overflow-auto">
   <table class="table table-compact w-full h-full">
-    <thead class="bg-white border-b sticky top-0">
+    <thead class="sticky top-0">
       <tr>
         {#each headers as header, i}
           <th>
@@ -69,9 +69,8 @@
                 <Icon
                   name="clipboard-copy"
                   class="h-4 w-4 ml-2 mt-0.5"
-                  handleClick={handleEmail}
+                  handleClick={copyEmailsToClipboard}
                 />
-                <!-- </Button> -->
               </div>
             {:else}
               {header}
