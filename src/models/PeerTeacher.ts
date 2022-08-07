@@ -108,4 +108,9 @@ export default class PeerTeacher {
         return `https://drive.google.com/uc?export=view&id=${this.prof_pic_url.replace(/^[^=]*=/, '')}`;
     }
 
+    get phone(): string {
+        if (this.phone_number)
+            return `(${this?.phone_number.substring(0, 3)})-${this?.phone_number.substring(3, 6)}-${this?.phone_number.substring(6, 10)}`;
+    }
+
 }
