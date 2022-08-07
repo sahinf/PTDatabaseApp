@@ -68,7 +68,7 @@
 <div class="overflow-auto h-full">
   <table class="table w-full">
     <!-- head -->
-    <thead>
+    <thead class="sticky top-0">
       <tr>
         {#each headers as header, i}
           {#if i == 0}

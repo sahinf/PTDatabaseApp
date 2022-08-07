@@ -54,14 +54,14 @@
   ];
 </script>
 
-<div class="overflow-auto h-full">
-  <table class="table table-compact w-full">
-    <!-- head -->
-    <thead>
+<div class="h-full overflow-auto">
+  <table class="table table-compact w-full h-full">
+    <thead class="bg-white border-b sticky top-0">
       <tr>
         {#each headers as header, i}
           <th>
             {#if i == 0}
+              <!-- display num PTs if first row -->
               {peerTeachers.length}
             {:else if header == "Email"}
               <div class="flex flex-row items-center">
@@ -80,6 +80,7 @@
         {/each}
       </tr>
     </thead>
+
     <tbody>
       {#each peerTeachers as pt, i}
         <tr
@@ -106,7 +107,7 @@
           <td>{pt.lastname}</td>
           <td>{pt.email}</td>
           <td>{pt.id}</td>
-          <td>{pt.phone_number}</td>
+          <td>{pt.phone}</td>
           <td>{pt.pref_work}</td>
           <td>{pt.lab_hours}</td>
           <td>{pt.gender}</td>
