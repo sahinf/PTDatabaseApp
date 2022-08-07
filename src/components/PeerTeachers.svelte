@@ -11,11 +11,13 @@
 
   let snackbarSuccess: SnackbarComponentDev;
 
-  $: peerTeachers = [...$ptStore.values()].sort((a, b) =>
-    a.lastname.toUpperCase() === b.lastname.toUpperCase()
+  // TODO introducing layer of indirection to how Peer Teachers are displayed in order to sort based on aribitrary paramters
+  function ptSort(a: PeerTeacher, b: PeerTeacher): number {
+    return a.lastname.toUpperCase() === b.lastname.toUpperCase()
       ? a.firstname.toUpperCase().localeCompare(b.firstname.toUpperCase())
-      : a.lastname.toUpperCase().localeCompare(b.lastname.toUpperCase())
-  );
+      : a.lastname.toUpperCase().localeCompare(b.lastname.toUpperCase());
+  }
+  $: peer_teachers = [...$ptStore.values()].sort(ptSort);
 
   function deletePT(id: number) {
     // Unassign all labs assigned to this Peer Teacher
