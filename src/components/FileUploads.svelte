@@ -16,7 +16,7 @@
   let ptSchedules: FileList | null;
   let labSchedule: FileList | null;
   let dbFile: FileList | null;
-  let questionairreFile: FileList | null;
+  let questionnaire_file: FileList | null;
   let officehoursFiles: FileList | null;
   let snackbar: Snackbar;
   let snackbarText;
@@ -86,8 +86,8 @@
   }
 
   $: {
-    if (questionairreFile?.length) {
-      readQuestionnaire(questionairreFile[0]);
+    if (questionnaire_file?.length) {
+      readQuestionnaire(questionnaire_file[0]);
     }
   }
 
@@ -198,7 +198,7 @@
       color="btn-info"
       accept="text/csv"
       multiple={false}
-      bind:files={questionairreFile}
+      bind:files={questionnaire_file}
     />
   </Card>
 

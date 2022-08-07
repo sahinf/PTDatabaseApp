@@ -32,7 +32,7 @@
   }
 
   function copyEmailsToClipboard() {
-    const emails = peerTeachers.flatMap((pt) => pt.email).join(",");
+    const emails = peer_teachers.flatMap((pt) => pt.email).join(",");
     navigator.clipboard.writeText(emails);
     if (snackbarSuccess) snackbarSuccess.open();
   }
@@ -62,7 +62,7 @@
           <th>
             {#if i == 0}
               <!-- display num PTs if first row -->
-              {peerTeachers.length}
+              {peer_teachers.length}
             {:else if header == "Email"}
               <div class="flex flex-row items-center">
                 {header}
@@ -81,7 +81,7 @@
     </thead>
 
     <tbody>
-      {#each peerTeachers as pt, i}
+      {#each peer_teachers as pt, i}
         <tr
           on:click={() => {
             selected_pt = pt;
