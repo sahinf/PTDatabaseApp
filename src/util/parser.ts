@@ -208,7 +208,7 @@ export function parseQuestionnaireCSV(csv: string) {
         "Profile picture for website (image)",
         "Schedule (text file)"
     ]
-    const sheet = csv2sheet(csv);
+    const sheet = parseCSV(csv);
 
     const m = mapAttributeToIndex(attributes, sheet[0]);
 
@@ -225,7 +225,7 @@ export function parseQuestionnaireCSV(csv: string) {
             pt.ethnicity = row[m["Racial Background"]];
             pt.graduation = row[m["When are you graduating? (Day does not matter)"]]
             const c_teach = row[m["Classes you CAN peer teach for"]].split(",").map((val) => parseInt(val));
-            // TODO parsing of this information is wrong, Cannot ParseInt("CSCE 110")
+            // TODO The answers to the questionnaire question "what classes can you peer teach for" needs logic for parsing.It's basically trying to ParseInt("CSCE 110").  
             pt.can_teach = new Set(c_teach)
             const p_teach = row[m["Classes you PREFER to peer teach for"]].split(",").map((val) => parseInt(val));
             pt.pref_teach = new Set(p_teach);
@@ -243,7 +243,7 @@ export function parseQuestionnaireCSV(csv: string) {
  * @param csv a string in csv format
  * @returns 2d array representation of CSV file
  */
-function csv2sheet(csv: string): string[][] {
+function parseCSV(csv: string): string[][] {
     const t = csv.split("\n");
     return t.map((val) => {
         const reg = new RegExp(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
@@ -256,26 +256,50 @@ function csv2sheet(csv: string): string[][] {
  * Specific function, should be updated to parse whatever office hour format is being used
  * The current format is a Strawpoll output in csv format
  * It should be a messy function, but it has to be
+ * 
  */
 export function parseOfficeHours(csv: string) {
-    const sheet = csv2sheet(csv);
+    const sheet = parseCSV(csv);
     const begin = sheet.findIndex((row) => row[0].trim().toLowerCase() == "name");
     const end = sheet.findIndex((row) => row[0].trim() == "Total ✓ Votes");
     const pts = get(ptStore);
     for (let i = begin + 1; i < end; i++) {
-        for (let j = 1; j < sheet[0]?.length ?? 0; j++) {
-            if (sheet[i][j] == "1") {
-                const pt_uin = parseInt(sheet[i][0]);
-                console.log("Found", sheet[begin][j], "for PT", pts.get(pt_uin));
-                const datestr = sheet[begin][j];
-                const regex = /\(([^)]*)\)/; // find time between parantheses eg ($1) find $1
-                const match = datestr.match(regex)
-                const date_time_form = datestr.split(" ")[0] + `T${match[1].split(" ")[0]}`;
-                const date = new Date(date_time_form);
-                console.log(pts.get(pt_uin).name, date, date.getDate())
-            }
+        const pt_uin = parseInt(sheet[i][0]);
+        const pt = pts.get(pt_uin);
+        if (pt != undefined || pt != null) {
+            console.log("Parsing office hours of pt: ", pt.name)
+            parseStrawpollTimesEntry(sheet[i], sheet[begin])
         }
     }
+}
+
+/**
+ * 
+ * @param pt_slots Strawpoll's peer teacher chosen hours row
+ * @param time_slots Strawpoll's available office hours row
+ * @returns List of office hours (events)
+ */
+function parseStrawpollTimesEntry(pt_slots: string[], time_slots: string[]): EventInfo[] {
+    let res: EventInfo[];
+    pt_slots.forEach((val, i) => {
+        let start: string, end: string;
+        if (val == "1") {
+            const regex = /\(([^)]*)\)/; // find value between parantheses eg ($1) find $1
+            const match = time_slots[i].match(regex)
+            const date_time_form = time_slots[i].split(" ")[0] + `T${match[1].split(" ")[0]}`;
+            const date = new Date(date_time_form);
+
+            const map_UTC_day = { 0: "U", 1: "M", 2: "T", 3: "W", 4: "R", 5: "F", 6: "S" };
+            const day = map_UTC_day[date.getDay()];
+
+            // TODO previous algorithm fails (maintaining prev/next)
+            // const hrs = date.getHours();
+            // const min = `0${date.getMinutes()}`.slice(-2); // pad minute with 0
+            // start = `${hrs}${min}`;
+            // console.log(day, start)
+        }
+    })
+    return res
 }
 
 /**

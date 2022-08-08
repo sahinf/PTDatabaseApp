@@ -42,6 +42,7 @@ export default class PeerTeacher {
     new_ret: string;
     prof_pic_url: string;
     schedule_url: string;
+    office_hours: EventInfo[];
 
     constructor(id: number | string, firstname: string, lastname: string, email: string) {
         if (typeof id === "string") {
