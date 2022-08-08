@@ -14,6 +14,7 @@
     "Location",
     "Instructor",
     "Assigned PT",
+    "PT Email",
     "",
   ];
 
@@ -43,13 +44,19 @@
   }
   function download() {
     // prepare data in CSV format
-    let cols = headers.slice(1, -1);
+    let cols = headers.slice(1);
     let csv = cols.join(",") + "\n";
     labsAndPts.forEach((row) => {
       let l = row.lab;
-      csv += `${l.course} - ${l.section},${l.time},${
-        l.location
-      },${displayFaculty(l)},${row.pt?.name ?? "UNASSIGNED"}\n`;
+      csv +=
+        [
+          `${l.course} - ${l.section}`,
+          l.time,
+          l.location,
+          displayFaculty(l),
+          row.pt?.name ?? "UNASSIGNED",
+          row.pt?.email ?? "N/A",
+        ].join(",") + "\n";
     });
 
     const blob = new Blob([csv], { type: "text/csv" });
@@ -102,6 +109,7 @@
           <td>{l.lab?.location}</td>
           <td>{displayFaculty(l.lab)}</td>
           <td>{l.pt?.name ?? "UNASSIGNED"}</td>
+          <td>{l.pt?.email ?? "N/A"}</td>
           <td><button class="btn btn-ghost btn-xs">Delete</button></td>
         </tr>
       {/each}
