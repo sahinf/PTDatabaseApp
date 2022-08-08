@@ -285,19 +285,17 @@ function parseStrawpollTimesEntry(pt_slots: string[], time_slots: string[]): Eve
     let i = 0;
     for (; i < pt_slots.length; i++) {
         if (pt_slots[i] == "1") {
-            const e_i = idk(time_slots[i]);
+            const e_i = timeslotToEvent(time_slots[i]);
             while (pt_slots[i + 1] == "1") ++i;
-            // BUG When the end time is the last timeslot, i is not incremented when it clearly should be. I can see through logging that it safely registers a next element and that the next element is == 1, however the next step of incrementing does not occur. 
-            console.log("End time i+1", pt_slots[i + 1])
-            const e_f = idk(time_slots[i]);
-            console.log("got e_f with, ", time_slots[i])
+            // * Hacky bugfix for last timeslot never being used
+            const e_f = i == pt_slots.length - 2 ? timeslotToEvent(time_slots[i + 1]) : timeslotToEvent(time_slots[i]);
             res.push(new EventInfo(e_i.days, e_i.start, e_f.end));
         }
     };
     return res
 }
 
-function idk(time_slot: string): EventInfo {
+function timeslotToEvent(time_slot: string): EventInfo {
     const regex = /\(([^)]*)\)/; // find value between parantheses eg ($1) find $1
     const match = time_slot.match(regex)
     const strawpoll_date = time_slot.split(" ")[0] + `T${match[1].split(" ")[0]}`;
