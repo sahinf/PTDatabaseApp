@@ -263,27 +263,24 @@ export function parseOfficeHours(csv: string) {
     const begin = sheet.findIndex((row) => row[0].trim().toLowerCase() == "name");
     const end = sheet.findIndex((row) => row[0].trim() == "Total ✓ Votes");
     const pts = get(ptStore);
-    console.log("Parsing Office Hours", sheet[begin])
     for (let i = begin + 1; i < end; i++) {
         const pt_uin = parseInt(sheet[i][0]);
         const pt = pts.get(pt_uin);
         if (pt != undefined || pt != null) {
-            console.log(pt.name, pt.id,
-                parseStrawpollTimesEntry(sheet[i], sheet[begin]))
+            pt.office_hours = parseStrawpollTimesEntry(sheet[i], sheet[begin]);
         }
     }
 }
 
 /**
  * 
- * @param pt_slots Strawpoll's peer teacher chosen hours row
- * @param time_slots Strawpoll's available office hours row
+ * @param pt_slots Strawpoll: peer teacher's chosen hours row
+ * @param time_slots Strawpoll: available office hours row (same row as cell 'Name')
  * @returns List of office hours (events)
  */
 function parseStrawpollTimesEntry(pt_slots: string[], time_slots: string[]): EventInfo[] {
     let res = new Array<EventInfo>;
-    let i = 0;
-    for (; i < pt_slots.length; i++) {
+    for (let i = 0; i < pt_slots.length; i++) {
         if (pt_slots[i] == "1") {
             const e_i = timeslotToEvent(time_slots[i]);
             while (pt_slots[i + 1] == "1") ++i;
