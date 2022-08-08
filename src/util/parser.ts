@@ -263,12 +263,13 @@ export function parseOfficeHours(csv: string) {
     const begin = sheet.findIndex((row) => row[0].trim().toLowerCase() == "name");
     const end = sheet.findIndex((row) => row[0].trim() == "Total ✓ Votes");
     const pts = get(ptStore);
+    console.log("Parsing Office Hours", sheet[begin])
     for (let i = begin + 1; i < end; i++) {
         const pt_uin = parseInt(sheet[i][0]);
         const pt = pts.get(pt_uin);
         if (pt != undefined || pt != null) {
-            console.log("Parsing office hours of pt: ", pt.name)
-            parseStrawpollTimesEntry(sheet[i], sheet[begin])
+            console.log(pt.name, pt.id,
+                parseStrawpollTimesEntry(sheet[i], sheet[begin]))
         }
     }
 }
@@ -280,26 +281,32 @@ export function parseOfficeHours(csv: string) {
  * @returns List of office hours (events)
  */
 function parseStrawpollTimesEntry(pt_slots: string[], time_slots: string[]): EventInfo[] {
-    let res: EventInfo[];
-    pt_slots.forEach((val, i) => {
-        let start: string, end: string;
-        if (val == "1") {
-            const regex = /\(([^)]*)\)/; // find value between parantheses eg ($1) find $1
-            const match = time_slots[i].match(regex)
-            const date_time_form = time_slots[i].split(" ")[0] + `T${match[1].split(" ")[0]}`;
-            const date = new Date(date_time_form);
-
-            const map_UTC_day = { 0: "U", 1: "M", 2: "T", 3: "W", 4: "R", 5: "F", 6: "S" };
-            const day = map_UTC_day[date.getDay()];
-
-            // TODO previous algorithm fails (maintaining prev/next)
-            // const hrs = date.getHours();
-            // const min = `0${date.getMinutes()}`.slice(-2); // pad minute with 0
-            // start = `${hrs}${min}`;
-            // console.log(day, start)
+    let res = new Array<EventInfo>;
+    let i = 0;
+    for (; i < pt_slots.length; i++) {
+        if (pt_slots[i] == "1") {
+            const e_i = idk(time_slots[i]);
+            while (pt_slots[i + 1] == "1") ++i;
+            // BUG When the end time is the last timeslot, i is not incremented when it clearly should be. I can see through logging that it safely registers a next element and that the next element is == 1, however the next step of incrementing does not occur. 
+            console.log("End time i+1", pt_slots[i + 1])
+            const e_f = idk(time_slots[i]);
+            console.log("got e_f with, ", time_slots[i])
+            res.push(new EventInfo(e_i.days, e_i.start, e_f.end));
         }
-    })
+    };
     return res
+}
+
+function idk(time_slot: string): EventInfo {
+    const regex = /\(([^)]*)\)/; // find value between parantheses eg ($1) find $1
+    const match = time_slot.match(regex)
+    const strawpoll_date = time_slot.split(" ")[0] + `T${match[1].split(" ")[0]}`;
+    const start = match[1].split(" ")[0].replace(":", "");
+    const end = match[1].split(" ")[2].replace(":", "");
+    const date = new Date(strawpoll_date);
+    const map_UTC_day = { 0: "U", 1: "M", 2: "T", 3: "W", 4: "R", 5: "F", 6: "S" };
+    const day = map_UTC_day[date.getDay()];
+    return new EventInfo(day, start, end)
 }
 
 /**
