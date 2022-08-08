@@ -7,15 +7,15 @@
   import TamuOutput from "./TamuOutput.svelte";
   import { onMount } from "svelte";
   import { parseDatabaseLocalStorage } from "../util/parser";
-
+  import Icon from "../components/helpers/Icon.svelte";
   let sections = [
-    { name: "File Uploads", component: FileUploads },
-    { name: "Peer Teachers", component: PeerTeachers },
-    { name: "Assign Labs", component: AssignLabs },
-    { name: "Labs", component: Labs },
+    { name: "File Uploads", component: FileUploads, icon: "checkmark" },
+    { name: "Peer Teachers", component: PeerTeachers, icon: "checkmark" },
+    { name: "Assign Labs", component: AssignLabs, icon: "checkmark" },
+    { name: "Labs", component: Labs, icon: "checkmark" },
     { name: "Active Peer Teachers", component: null }, // TODO
     { name: "Stats", component: null }, // TODO
-    { name: "TAMU HTML Output", component: TamuOutput },
+    { name: "TAMU HTML Output", component: TamuOutput, icon: "checkmark" },
   ];
 
   let selected = sections[0];
@@ -30,6 +30,8 @@
       console.log("No database found in local storage");
     }
   });
+
+  $: console.log(selected.icon);
 </script>
 
 <!-- Entire Page -->
@@ -62,7 +64,12 @@
                 selected = sec;
               }}
             >
-              {sec.name}
+              <div>
+                {sec.name}
+              </div>
+              <div>
+                <Icon name={sec.icon} />
+              </div>
             </div>
           </li>
         {/each}
