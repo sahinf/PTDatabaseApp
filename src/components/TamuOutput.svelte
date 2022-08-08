@@ -32,7 +32,7 @@
     class="flex flex-col overflow-y-auto h-full overflow-x-hidden mx-[25%] pt-10"
 >
     {#each peerTeachers as pt}
-        <div class="h-40">
+        <div class="flex-none h-40">
             <hr />
             <p>
                 <img
