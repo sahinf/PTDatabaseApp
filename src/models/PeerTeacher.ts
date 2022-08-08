@@ -111,7 +111,7 @@ export default class PeerTeacher {
 
     get phone(): string {
         if (this.phone_number)
-            return `(${this?.phone_number.substring(0, 3)})-${this?.phone_number.substring(3, 6)}-${this?.phone_number.substring(6, 10)}`;
+            return `${this?.phone_number.substring(0, 3)}-${this?.phone_number.substring(3, 6)}-${this?.phone_number.substring(6, 10)}`;
     }
 
 }
