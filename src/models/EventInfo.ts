@@ -63,4 +63,23 @@ export default class EventInfo {
         const diff_mins = this.end % 100 - this.start % 100;
         return (diff_hours * 60 + diff_mins) * this.days.length;
     }
+
+    get longInfo() {
+        const m = {
+            "U": "Sunday",
+            "M": "Monday",
+            "T": "Tuesday",
+            "W": "Wednesday",
+            "R": "Thursday",
+            "F": "Friday",
+            "S": "Saturday"
+        }
+        let info = this.info.split(" ");
+        let days = new Array<string>;
+        let old_days = info[0];
+        for (let i = 0; i < old_days.length; i++)
+            days.push(m[old_days.charAt(i).toUpperCase()])
+        info[0] = days.join(" and ");
+        return info.join(" ");
+    }
 }
