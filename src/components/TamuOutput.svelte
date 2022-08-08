@@ -32,7 +32,7 @@
     class="flex flex-col overflow-y-auto h-full overflow-x-hidden mx-[25%] pt-10"
 >
     {#each peerTeachers as pt}
-        <div class="flex-none h-40">
+        <div class="pb-4">
             <hr />
             <p>
                 <img
@@ -63,6 +63,16 @@
                         <li>
                             CSCE {lab[0]} - {lab[1]}
                         </li>
+                    {/each}
+                </ul>
+            {/if}
+            {#if pt.office_hours != undefined && pt.office_hours.length > 0}
+                <p>
+                    <strong class="text-lg">Office Hours:</strong>
+                </p>
+                <ul class="text-lg">
+                    {#each pt.office_hours as ofh}
+                        <li>{ofh.longInfo}</li>
                     {/each}
                 </ul>
             {/if}

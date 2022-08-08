@@ -266,10 +266,32 @@ export function parseOfficeHours(csv: string) {
     for (let i = begin + 1; i < end; i++) {
         const pt_uin = parseInt(sheet[i][0]);
         const pt = pts.get(pt_uin);
-        if (pt != undefined || pt != null) {
+        if (pt != undefined && pt != null)
             pt.office_hours = parseStrawpollTimesEntry(sheet[i], sheet[begin]);
-        }
     }
+
+
+    // Merge office hours that take place during the same time of day
+    pts.forEach((pt) => {
+        if (pt.office_hours != undefined && pt.office_hours != null) {
+            const flag = {};
+            const unique: EventInfo[] = [];
+            pt.office_hours.forEach((curr_event) => {
+                const key = `${curr_event.start}${curr_event.end}`;
+                if (!flag[key]) {
+                    flag[key] = true;
+                    unique.push(curr_event);
+                }
+                else {
+                    const head_event = unique.find((val) => {
+                        return val.start === curr_event.start && val.end === curr_event.end;
+                    })
+                    head_event.days += curr_event.days;
+                }
+            })
+            pt.office_hours = unique;
+        }
+    });
 }
 
 /**

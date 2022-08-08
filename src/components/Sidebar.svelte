@@ -15,7 +15,7 @@
     { name: "Labs", component: Labs },
     { name: "Active Peer Teachers", component: null }, // TODO
     { name: "Stats", component: null }, // TODO
-    { name: "TAMU Html Output", component: TamuOutput },
+    { name: "TAMU HTML Output", component: TamuOutput },
   ];
 
   let selected = sections[0];

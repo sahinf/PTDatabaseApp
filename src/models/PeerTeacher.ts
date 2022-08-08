@@ -23,6 +23,11 @@ interface PeerTeacherSerializeInfo {
     new_ret: string,
     prof_pic_url: string,
     schedule_url: string,
+    office_hours: {
+        days: string,
+        start: number,
+        end: number
+    }[]
 }
 
 export default class PeerTeacher {
@@ -55,10 +60,11 @@ export default class PeerTeacher {
         this.events = [];
         this.labs = new Set();
         this.email = email;
+        this.events = [];
     }
 
     static fromJSON(qt: PeerTeacherSerializeInfo) {
-        const { id, firstname, lastname, events, labs, email } = qt;
+        const { id, firstname, lastname, events, labs, email, office_hours } = qt;
         const pt = new PeerTeacher(id, firstname, lastname, email);
         pt.events = events.map(e => EventInfo.fromJSON(e));
         pt.labs = new Set(labs);
@@ -73,6 +79,7 @@ export default class PeerTeacher {
         pt.new_ret = qt.new_ret;
         pt.prof_pic_url = qt.prof_pic_url;
         pt.schedule_url = qt.schedule_url;
+        pt.office_hours = office_hours.map(e => EventInfo.fromJSON(e));
 
         return pt;
     }
