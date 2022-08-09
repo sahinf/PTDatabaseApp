@@ -56,8 +56,8 @@
   ];
 </script>
 
-<div class="h-full overflow-auto">
-  <table class="table table-compact w-full h-full">
+<div class="overflow-auto h-full">
+  <table class="table w-full table-compact">
     <thead class="sticky top-0">
       <tr>
         {#each headers as header, i}
