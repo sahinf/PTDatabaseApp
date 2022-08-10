@@ -64,7 +64,7 @@ export default class Lab {
     }
 
     get location() {
-        return `${this.building} ${this.room}`;
+        return `${this.building } ${this.room ?? ""}`;
     }
 
     get pay_hours() {
