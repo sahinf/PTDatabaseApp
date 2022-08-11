@@ -138,16 +138,43 @@
   }
 </script>
 
-<div class="flex grid m-10 grid-cols-2 gap-2">
-  <Card
-    title="Peer Teacher"
-    desc="Upload one or more Peer Teacher schedule txt files"
-  >
+<div class="flex grid m-10 grid-cols-2 gap-2 w-[70%] ">
+  <Card title="Data Base" desc="">
     <UploadButton
-      accept="text/plain"
+      color="btn-info"
+      accept="application/json"
       multiple={true}
-      bind:files={ptSchedules}
+      bind:files={dbFile}
     />
+    <button class="btn btn-warning" on:click={exportDB}>Download</button>
+    <button class="btn btn-ghost" on:click={exportDB2LocalStorage}
+      >LocalStorage</button
+    >
+  </Card>
+
+  <Card title="Peer Teachers" desc="">
+    <label class="btn btn-info">
+      Schedules
+      <input type="file" accept="text/plain" bind:files={ptSchedules} hidden />
+    </label>
+    <label class="btn btn-secondary">
+      Straw Poll
+      <input
+        type="file"
+        accept="text/csv"
+        bind:files={officehoursFiles}
+        hidden
+      />
+    </label>
+    <label class="btn btn-error">
+      Questionnaire
+      <input
+        type="file"
+        accept="text/csv"
+        bind:files={questionnaire_file}
+        hidden
+      />
+    </label>
   </Card>
 
   <Card
@@ -161,58 +188,6 @@
       bind:files={labSchedule}
     />
   </Card>
-
-  <Card
-    title="Data Base"
-    desc="Upload the json database file to continue working"
-  >
-    <UploadButton
-      color="btn-info"
-      accept="application/json"
-      multiple={true}
-      bind:files={dbFile}
-    />
-  </Card>
-
-  <Card
-    title="Export DB"
-    desc="Download the json database file to save your work. Remember to save it on the cloud somewhere!"
-  >
-    <button class="btn btn-warning" on:click={exportDB}>Download</button>
-  </Card>
-
-  <Card
-    title="Export to Local Storage"
-    desc="Save current DB to local storage. Local storage db should only be used for testing purposes to avoid data anomalies"
-  >
-    <button class="btn btn-warning" on:click={exportDB2LocalStorage}
-      >LocalStorage</button
-    >
-  </Card>
-
-  <Card
-    title="Upload PTs from Questionnairre"
-    desc="Gather all data from the questionnairre results. Should be in CSV format"
-  >
-    <UploadButton
-      color="btn-info"
-      accept="text/csv"
-      multiple={false}
-      bind:files={questionnaire_file}
-    />
-  </Card>
-
-  <Card
-    title="Office Hours"
-    desc="Upload the office hours output file for it to be parsed. Currently we accept a CSV file representation of a Strawpoll output"
-  >
-    <UploadButton
-      color="btn-warn"
-      accept="text/csv"
-      multiple={false}
-      bind:files={officehoursFiles}
-    /></Card
-  >
 </div>
 
 <!-- https://github.com/saadeghi/daisyui/issues/221 -->
