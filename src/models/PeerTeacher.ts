@@ -79,7 +79,7 @@ export default class PeerTeacher {
         pt.new_ret = qt.new_ret;
         pt.prof_pic_url = qt.prof_pic_url;
         pt.schedule_url = qt.schedule_url;
-        pt.office_hours = office_hours.map(e => EventInfo.fromJSON(e));
+        pt.office_hours = office_hours?.map(e => EventInfo.fromJSON(e));
 
         return pt;
     }
@@ -103,9 +103,8 @@ export default class PeerTeacher {
 
         let total_hours = 0;
         this.labs.forEach((lab_id) => {
-            total_hours += all_labs.get(lab_id)?.pay_hours;
+            total_hours += all_labs?.get(lab_id)?.pay_hours ?? 0;
         })
-
         return total_hours;
     }
 
