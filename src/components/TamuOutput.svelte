@@ -7,25 +7,6 @@
             ? a.firstname.toUpperCase().localeCompare(b.firstname.toUpperCase())
             : a.lastname.toUpperCase().localeCompare(b.lastname.toUpperCase())
     );
-
-    function getCourses(pt: PeerTeacher) {
-        const courses = new Map<number, number[]>();
-        const getCourse = (x: number) => Math.floor(x / 1000);
-        pt.labs.forEach((lab_id) => {
-            const key = getCourse(lab_id);
-            const sec = lab_id % 1000;
-            if (courses.has(key)) {
-                courses.get(key).push(sec);
-            } else {
-                courses.set(key, [sec]);
-            }
-        });
-        pt.can_teach.forEach((course) => {
-            if (course == null || course == undefined) return;
-            if (!courses.has(course)) courses.set(course, []);
-        });
-        return courses;
-    }
 </script>
 
 <div
@@ -59,7 +40,7 @@
                     <strong class="text-lg">Courses:</strong>
                 </p>
                 <ul class="text-lg">
-                    {#each Array.from(getCourses(pt)) as lab}
+                    {#each Array.from(pt.coursesAndLabs()) as lab}
                         <li>
                             CSCE {lab[0]} - {lab[1]}
                         </li>

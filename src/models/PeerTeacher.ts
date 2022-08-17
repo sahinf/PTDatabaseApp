@@ -120,4 +120,30 @@ export default class PeerTeacher {
             return `${this?.phone_number.substring(0, 3)}-${this?.phone_number.substring(3, 6)}-${this?.phone_number.substring(6, 10)}`;
     }
 
+    get office_hours_hours(): number {
+        let hours = 0;
+        this.office_hours.forEach((e) => {
+            hours += e.duration_mins / 60;
+        })
+        return hours;
+    }
+
+    coursesAndLabs() {
+        const courses = new Map<number, number[]>();
+        const getCourse = (x: number) => Math.floor(x / 1000);
+        this.labs.forEach((lab_id) => {
+            const key = getCourse(lab_id);
+            const sec = lab_id % 1000;
+            if (courses.has(key)) {
+                courses.get(key).push(sec);
+            } else {
+                courses.set(key, [sec]);
+            }
+        });
+        this.can_teach.forEach((course) => {
+            if (course == null || course == undefined) return;
+            if (!courses.has(course)) courses.set(course, []);
+        });
+        return courses;
+    }
 }
