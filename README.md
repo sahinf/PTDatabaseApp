@@ -17,16 +17,21 @@ cd PTDatabaseApp &&
 npm i
 ```
 
+To run the development build after letting `npm` install the required packages:
+```bash
+npm run dev
+```
+Now Vite's live server should be running and automatically recompiling with each change to the source code.
+
+
 The original version of this app (forked from Scott Wilkins) used [Rollup](https://rollupjs.org/guide/en/). It has now been switched to use [Vite](https://vitejs.dev/), which allows an effortless project setup for various frameworks. A project that uses `Svelte`, `tailwind`, `postcss`, can easily be instantiated with
+
+
 
 ```shell
 npm create vite@latest
 ```
 
-To run the development build
-```bash
-npm run dev
-```
 
 **note** that `npm run <arg>` is defined in [`package.json`](./package.json)
 
