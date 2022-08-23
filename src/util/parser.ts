@@ -317,12 +317,29 @@ function parseStrawpollTimesEntry(pt_slots: string[], time_slots: string[]): Eve
 function timeslotToEvent(time_slot: string): EventInfo {
     const regex = /\(([^)]*)\)/; // find value between parantheses eg ($1) find $1
     const match = time_slot.match(regex)
+
+    // Convert Strawpoll time to ISO
     const strawpoll_date = time_slot.split(" ")[0] + `T${match[1].split(" ")[0]}`;
-    const start = match[1].split(" ")[0].replace(":", "");
-    const end = match[1].split(" ")[2].replace(":", "");
-    const date = new Date(strawpoll_date);
+
+    const tim2str = (t: number) => t < 10 ? `0${t}` : `${t}`;
+    const add_min = (date: Date, m: number) => new Date(date.getTime() + m * 60000);
+
+    const s_dat = new Date(strawpoll_date);
+
+    // convert EST to CST
+    s_dat.setHours(s_dat.getHours() - 1); 
+    const s_hrs = tim2str(s_dat.getHours());
+    const s_min = tim2str(s_dat.getMinutes());
+    const start = s_hrs + s_min;
+
+    const e_dat = add_min(s_dat, 30);
+    const e_hrs = tim2str(e_dat.getHours());
+    const e_min = tim2str(e_dat.getMinutes());
+    const end = e_hrs + e_min;
+
     const map_UTC_day = { 0: "U", 1: "M", 2: "T", 3: "W", 4: "R", 5: "F", 6: "S" };
-    const day = map_UTC_day[date.getDay()];
+    const day = map_UTC_day[s_dat.getDay()];
+
     return new EventInfo(day, start, end)
 }
 
